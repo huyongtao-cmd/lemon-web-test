@@ -1,0 +1,17 @@
+{
+  "taskKey": "ACC_A45_02_RES_APPR_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "selfEvalList": 0
+    }
+  }
+}

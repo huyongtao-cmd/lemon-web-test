@@ -1,0 +1,293 @@
+<style>
+  body {
+    font-family: verdana, "宋体";
+    font-size: 12px;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  .tw-content {
+    width: 100%;
+    margin: 0 auto
+  }
+
+  .tw-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tw-row {
+    width: 100%;
+    padding: 10px;
+    clear: both;
+  }
+
+  .tw-table {
+    width: 99%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    padding: 0;
+  }
+
+  .tw-bold {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .tw-cl {
+    clear: both;
+  }
+
+  /*表格-表头*/
+  .tw-th {
+    text-align: center;
+    background-color: #d9d9d9;
+    min-height: 35px;
+  }
+
+  .tw-th>td,
+  .tw-th>th {
+    vertical-align: middle;
+    border: 1px #000000 solid;
+    font-size: 10px;
+  }
+
+  /*表格-行*/
+  .tw-tr {
+    vertical-align: middle;
+    height: 35px;
+  }
+
+  .tw-tr td,
+  .tw-tr th {
+    border: 1px #000000 solid;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .tw-tr .tw-td-c {
+    text-align: center !important;
+  }
+
+  /*居左*/
+  .tw-tr .tw-td-l {
+    text-align: left !important;
+  }
+
+  /*居右*/
+  .tw-tr .tw-td-r {
+    text-align: right !important;
+    padding-right: 15px;
+  }
+
+  /*单元格名称*/
+  .tw-w-c1 {
+    width: 15%;
+  }
+
+  /*单元格值*/
+  .tw-w-c2 {
+    width: 35%;
+  }
+
+  .tw-w-c3 {
+    width: 15%;
+  }
+
+  .tw-w-c4 {
+    width: 20%;
+  }
+
+  .tw-w-2 {
+    width: 50%;
+  }
+</style>
+<div class="tw-content">
+  <div class="tw-title tw-cl">付款申请单</div>
+  <div class="tw-row">
+    <div class="tw-bold  tw-td-l">{{formData.chargeCompanyDesc}}</div>
+    <table class="tw-table">
+      <tr class="tw-tr">
+        <td colspan="2" class="tw-w-2">流程编号：{{formData.docNo}}</td>
+        <td colspan="2" class="tw-w-2">流程名称：{{formData.docName}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">基本信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">创建人</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.createUserName}}</td>
+        <td class="tw-w-c1 tw-td-l">创建日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.createTime}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">供应商</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.supplierName}}</td>
+        <td class="tw-w-c1 tw-td-l">费用承担项目</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.chargeProjectName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">费用承担部门</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.chargeBuName}}</td>
+        <td class="tw-w-c1 tw-td-l">费用承担公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.chargeCompanyDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">外币业务</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.foreignCurrencyFlagDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">本币金额</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.baseCurrencyAmt}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">原币/汇率</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.originalCurrencyDesc}}/{{formData.exchangeRate}}</td>
+        <td class="tw-w-c1 tw-td-l">原币金额</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.originalCurrencyAmt}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">记账日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.accountingDate}}</td>
+        <td class="tw-w-c1 tw-td-l">状态</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.paymentRequestStatusDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">付款单号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.paymentOrderNo}}</td>
+        <td class="tw-w-c1 tw-td-l">备注</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.remark}}</td>
+
+      </tr>
+    </table>
+
+    <table class="tw-table" id="exspense-item">
+      <tr>
+        <td colspan="4">付款计划明细</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>付款阶段</td>
+        <td class='tw-w-c1'>核算项目</td>
+        <td class='tw-w-c1'>预算项目</td>
+        <td class='tw-w-c1'>会计科目</td>
+        <td class='tw-w-c1'>金额</td>
+      </tr>
+      {{#each formData.paymentPlanDetails}}
+      <tr class="tw-tr">
+        <td class="tw-td-c tw-w-c1">{{paymentStage}}</td>
+        <td class="tw-td-c tw-w-c1">{{busAccItemName}}</td>
+        <td class="tw-td-c tw-w-c1">{{budgetItemName}}</td>
+        <td class="tw-td-c tw-w-c1">{{finAccSubjName}}</td>
+        <td class="tw-td-c tw-w-c1">{{paymentAmt}}</td>
+      </tr>
+      {{/each}}
+      <tr class="tw-tr">
+        <td colspan="1" class=" tw-td-c">合计</td>
+        <td colspan="4" class=" tw-td-r">{{totalRow.totalPaymentAmt}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table" id="exspense-item">
+      <tr>
+        <td colspan="4">发票明细</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>关联发票号</td>
+        <td class='tw-w-c1'>发票金额</td>
+        <td class='tw-w-c1'>本次核销金额</td>
+        <td class='tw-w-c1'>已核销金额</td>
+        <td class='tw-w-c1'>含税金额</td>
+        <td class='tw-w-c1'>不含税金额</td>
+        <td class='tw-w-c1'>税额</td>
+      </tr>
+      {{#each formData.invDocList}}
+      <tr class="tw-tr">
+        <td class="tw-td-c tw-w-c1">{{invoiceNo}}</td>
+        <td class="tw-td-c tw-w-c1">{{amountTax}}</td>
+        <td class="tw-td-c tw-w-c1">{{currWrittenAmt}}</td>
+        <td class="tw-td-c tw-w-c1">{{writtenOffAmt}}</td>
+        <td class="tw-td-c tw-w-c1">{{amtIncludingTax}}</td>
+        <td class="tw-td-c tw-w-c1">{{amtExcludingTax}}</td>
+        <td class="tw-td-c tw-w-c1">{{taxAmt}}</td>
+      </tr>
+      {{/each}}
+      <tr class="tw-tr">
+        <td class="tw-td-c tw-w-c1">合计</td>
+        <td class="tw-td-c tw-w-c1">{{sumRow.totalAmountTax}}</td>
+        <td class="tw-td-c tw-w-c1">{{sumRow.totalCurrWrittenAmt}}</td>
+        <td class="tw-td-c tw-w-c1">{{sumRow.totalWrittenOffAmt}}</td>
+        <td class="tw-td-c tw-w-c1">{{sumRow.totalAmtIncludingTax}}</td>
+        <td class="tw-td-c tw-w-c1">{{sumRow.totalAmtExcludingTax}}</td>
+        <td class="tw-td-c tw-w-c1">{{sumRow.totalTaxAmt}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">支付信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">支付方式</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.paymentMethodDesc}}</td>
+        <td class="tw-w-c1 tw-td-l"></td>
+        <td class="tw-w-c2 tw-td-l"></td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">期望付款日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.expectedPaymentDate}}</td>
+        <td class="tw-w-c1 tw-td-l">实际付款日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.actualPaymentDate}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">收款账户</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.accountNo}}</td>
+        <td class="tw-w-c1 tw-td-l">收款银行</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.bankName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">户名</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.holderName}}</td>
+        <td class="tw-w-c1 tw-td-l">收款银行网点</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.bankBranch}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="6">流转意见</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>日期时间</td>
+        <td class='tw-w-c3'>操作者</td>
+        <td class='tw-w-c4'>岗位</td>
+        <td class='tw-w-c1'>节点</td>
+        <td class='tw-w-c3'>操作类型</td>
+        <td class='tw-w-c4'>流转意见</td>
+      </tr>
+      {{#each logList}}
+      <tr class="tw-tr">
+        <td class="tw-td-c tw-w-c1">{{logTime}}</td>
+        <td class="tw-td-c tw-w-c3">{{workerNames}}</td>
+        <td class="tw-td-c tw-w-c4">{{workerRoles}}</td>
+        <td class="tw-td-c tw-w-c1">{{taskName}}</td>
+        <td class="tw-td-c tw-w-c3">{{resultDesc}}</td>
+        <td class="tw-td-l tw-w-c4">{{remark}}</td>
+      </tr>
+      {{/each}}
+    </table>
+
+  </div>
+
+</div>

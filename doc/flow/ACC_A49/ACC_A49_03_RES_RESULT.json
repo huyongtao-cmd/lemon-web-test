@@ -1,0 +1,26 @@
+{
+  "taskKey": "ACC_A49_03_RES_RESULT",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "keyResultScore": 0,
+      "topDivider": 0,
+      "scoreDetail": 0
+    }
+  }
+}

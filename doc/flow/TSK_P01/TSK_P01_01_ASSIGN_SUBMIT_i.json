@@ -1,0 +1,20 @@
+{
+  "taskKey": "TSK_P01_01_ASSIGN_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "app.setting.flow.tsk.p01.edit.assign.info",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDITABLE",
+      "title": "app.setting.flow.tsk.p01.edit.assign.package",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

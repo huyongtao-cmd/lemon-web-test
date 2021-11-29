@@ -1,0 +1,36 @@
+{
+  "taskKey": "RES_R01_02_BU_CHARGRE_CHK",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_PASS",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_RETURN",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "applyResId": 1,
+      "ename": 1,
+      "baseBuName": 1,
+      "ouId": 0,
+      "mobile": 1,
+      "email": 1,     
+      "ctitle": 0,
+      "etitle": 0,
+      "mailFlag": 1,
+      "mailAddr": 1,
+      "remark": 0
+    }
+  }
+}
+
+

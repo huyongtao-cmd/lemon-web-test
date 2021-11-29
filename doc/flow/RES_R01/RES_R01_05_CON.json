@@ -1,0 +1,29 @@
+{
+  "taskKey": "RES_R01_05_CON",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_PASS",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "applyResId": 1,
+      "ename": 1,
+      "baseBuName": 1,
+      "ouId": 1,
+      "mobile": 1,
+      "email": 1,     
+      "ctitle": 1,
+      "etitle": 1,
+      "mailFlag": 1,
+      "mailAddr": 1,
+      "remark": 1,
+      "applyResult":1,
+      "cancelReason":1      
+    }
+  }
+}

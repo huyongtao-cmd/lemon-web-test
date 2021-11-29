@@ -1,0 +1,10 @@
+{
+	"taskKey": "ACC_A19_01_FEE_APPLY_SUBMIT_i",
+	"buttons": [{
+		"type": "button",
+		"icon": "form",
+		"key": "EDIT",
+		"title": "misc.update",
+		"className": "tw-btn-primary"
+	}]
+}

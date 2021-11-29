@@ -1,0 +1,39 @@
+{
+  "taskKey": "ACC_A43_03_SUPER_APPR_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "evalType": "P_RES",
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "baseBuId": 1,
+      "presId": 1,
+      "probationPeriod": 1,
+      "enrollDate": 1,
+      "mobile": 1,
+      "emailAddr": 1,
+      "remark": 1,
+      "applyResName": 1,
+      "applyDate": 1,
+      "selfEvalList": 0,
+      "pResEvalList": 0,
+      "buPicCheckResult": 0,
+      "buPicRegularDate": 0,
+      "capacity": 0
+    }
+  }
+}

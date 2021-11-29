@@ -1,0 +1,69 @@
+import React from 'react';
+import { Icon, Row, Col, Table, Button } from 'antd';
+import { equals, type } from 'ramda';
+
+class TransferView extends React.Component {
+  constructor(props) {
+    super(props);
+    const { data = {}, leftColumns = [], rightColumns = [] } = props;
+    this.state = {
+      data,
+      selectedColRows: [],
+      leftColumns,
+      rightColumns,
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (snapshot !== null) {
+      setTimeout(() => {
+        this.setState({ data: snapshot });
+      }, 0);
+    }
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState, snapshot) {
+    const { data } = this.props;
+    if (!equals(prevState.data, data)) {
+      return data;
+    }
+    return null;
+  }
+
+  render() {
+    const {
+      data: { leftData = [], rightData = [] },
+      selectedColRows,
+      leftColumns,
+      rightColumns,
+    } = this.state;
+
+    const tableProps = {
+      rowKey: 'id',
+      dataSource: leftData,
+      pagination: false,
+      columns: leftColumns,
+    };
+
+    const selectedTableProps = {
+      rowKey: 'id',
+      dataSource: rightData,
+      pagination: false,
+      columns: rightColumns,
+    };
+
+    return (
+      <Row type="flex" align="middle" style={{ flexWrap: 'nowrap' }}>
+        <Col span={10}>
+          <Table {...tableProps} />
+        </Col>
+        <Button icon="caret-right" style={{ margin: '0 15px' }} disabled />
+        <Col span={10}>
+          <Table {...selectedTableProps} />
+        </Col>
+      </Row>
+    );
+  }
+}
+
+export default TransferView;

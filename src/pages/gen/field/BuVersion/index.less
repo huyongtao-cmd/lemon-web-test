@@ -1,0 +1,32 @@
+.buVersionBox {
+  font-size: 0;
+  line-height: 32px;
+}
+.buVersionSelect {
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 5px;
+  width: ~'calc(100% - 105px)';
+}
+.buVersionCheckbox {
+  display: inline-block;
+  font-size: 14px;
+  width: 100px;
+  :global {
+    .ant-checkbox + span {
+      letter-spacing: -1px;
+      padding-left: 4px;
+      padding-right: 0;
+    }
+  }
+}
+.buVersionSelectPop {
+  :global {
+    .ant-cascader-menu-item-expand {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 130px;
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.mindMap {
+  padding: 10px;
+  overflow-x: auto;
+  :global {
+    .table {
+      white-space: nowrap;
+    }
+
+    .text-header {
+      display: inline-block;
+      white-space: nowrap;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-left: 30px;
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .text-header > .after {
+      content: '';
+      height: 1px;
+      width: 30px;
+      background: #ccc;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      border: none;
+      padding: 0;
+    }
+
+    .text-header > .before {
+      content: '';
+      height: 1px;
+      width: 30px;
+      background: #ccc;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      border: none;
+      padding: 0;
+    }
+
+    .text-header > div {
+      width: 120px;
+      // height: 40px;
+      text-align: center;
+      // line-height: 40px;
+    }
+
+    .content {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .before:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid #ccc;
+      position: absolute;
+      top: -5.5px;
+      left: 24px;
+    }
+
+    .node {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .nodeActive {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #d4dffb;
+    }
+
+    // /*线条*/
+    .line,
+    .line-only {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .line > div,
+    .line-only > div {
+      height: 29px;
+      width: 30px;
+    }
+
+    .tr > div {
+      vertical-align: middle;
+    }
+
+    .tr {
+      position: relative;
+    }
+
+    .tr > .tr_children {
+      position: absolute;
+      left: 0%;
+      height: 100%;
+      width: 1px;
+      background: #ccc;
+      bottom: 0%;
+    }
+
+    .table > .tr:first-child > .tr_children {
+      position: absolute;
+      left: 0%;
+      height: 50%;
+      width: 1px;
+      background: #ccc;
+      top: 50%;
+    }
+
+    .table > .tr:last-child > .tr_children {
+      position: absolute;
+      left: 0%;
+      height: 50%;
+      width: 1px;
+      background: #ccc;
+      bottom: 50%;
+    }
+
+    .tr > .line > div:nth-of-type(1) {
+      display: inline-block;
+      white-space: nowrap;
+
+      border-left: 1px dashed red;
+      border-bottom: 1px dashed red;
+    }
+
+    .tr > .line > div:nth-of-type(2) {
+      border-left: 1px dashed red;
+    }
+
+    .tr:nth-of-type(1) > .line > div:nth-of-type(1) {
+      border-left: none;
+    }
+
+    .tr:nth-last-child(1) > .line > div:nth-of-type(2) {
+      border-left: none;
+    }
+
+    .line-only > div:nth-of-type(1) {
+      border-bottom: 1px dashed red;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.row {
+  font-size: 16px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  .col {
+    float: left;
+    margin-right: 20px;
+    img {
+      height: 15px;
+    }
+    .imgWrapper {
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #99c6fe;
+      width: 22px;
+      height: 22px;
+      text-align: center;
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  .addTag {
+    cursor: pointer !important;
+  }
+  ul {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    li {
+      width: 16.6%;
+      float: left;
+      padding: 5px;
+      position: relative;
+      transform-origin: 30px 10px;
+      img {
+        width: 17px;
+        vertical-align: middle;
+      }
+      .closeIcon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        line-height: 12px;
+        color: #444;
+        background-color: #e8e8e8;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        text-align: center;
+        font-weight: 100;
+        font-style: normal;
+        svg {
+          width: 0.6em;
+        }
+      }
+    }
+  }
+}
+
+@keyframes editShortCutMenu {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+
+.shakeli {
+  animation: editShortCutMenu 0.1s alternate infinite;
+}

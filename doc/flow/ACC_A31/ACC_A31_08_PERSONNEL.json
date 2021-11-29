@@ -1,0 +1,31 @@
+{
+  "taskKey": "ACC_A31_08_PERSONNEL",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "enrollDate": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "ouId": 1,
+      "presId": 1,
+      "contractEndDate": 0,
+      "hrReason": 0,
+      "hrLeaveDesc": 0,
+      "leaveItemPerson": 0,
+      "leaveItemFinance": 0,
+      "leaveItemAdm": 0,
+      "hrChkData": 0,
+      "finChkDataView": 0,
+      "offiChkDataView": 0
+    }
+  }
+}

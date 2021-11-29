@@ -1,0 +1,95 @@
+.approval-box {
+  margin: 0 auto;
+  width: 300px;
+  :global {
+    .ant-select {
+      display: inline-block;
+      margin-right: 10px;
+      width: 216px !important;
+    }
+  }
+}
+.special-checkbox {
+  :global {
+    .ant-checkbox-inner {
+      border-radius: 50%;
+    }
+  }
+}
+
+.course-input-wrap {
+  text-align: center;
+  input {
+    margin-right: 3%;
+    width: 30%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.detail-point-style {
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 1.5;
+  min-height: 41px;
+  overflow: hidden;
+  padding: 8px 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &:last-child {
+    border-bottom: none;
+  }
+  .courseName {
+    color: #1890ff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+.table-clear-padding {
+  :global {
+    .ant-table {
+      .ant-table-tbody > tr:hover > td {
+        background: none !important;
+      }
+    }
+  }
+  td {
+    padding: 0 !important;
+  }
+}
+
+.inputWrap {
+  .courseName {
+    color: #1890ff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  :global {
+    .ant-input-group-addon {
+      width: 80%;
+      &:last-child {
+        width: 20%;
+      }
+    }
+    .ant-input {
+      padding: 0;
+      width: 0;
+    }
+  }
+}
+
+.progDesc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.progName {
+  color: #1890ff;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.cdDesc {
+  padding: 0 8px;
+}

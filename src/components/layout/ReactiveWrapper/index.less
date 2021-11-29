@@ -1,0 +1,31 @@
+@import '~antd/lib/style/themes/default.less';
+
+.tw-form-adjust {
+  :global {
+    .ant-form-item-control {
+      margin-right: 32px;
+    }
+  }
+}
+
+.reactiveWrapper {
+  :global {
+    .ant-row {
+      margin-bottom: -16px;
+      overflow: hidden;
+    }
+  }
+
+  &.small {
+    // offset the padding-bottom of last row
+    :global {
+      .ant-row {
+        margin-bottom: -8px;
+      }
+    }
+  }
+
+  &.large {
+    // ...
+  }
+}

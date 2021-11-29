@@ -1,0 +1,42 @@
+// @import antd/dist/antd.css;
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  :global {
+    .ant-tag,
+    .ant-tag a,
+    .ant-tag a:hover {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      text-overflow: ellipsis;
+      // font-size: 12px;
+      font-size: 13px !important;
+    }
+  }
+}
+
+.notes-month {
+  text-align: center;
+  font-size: 28px;
+}
+
+.notes-month section {
+  font-size: 28px;
+}
+
+.my-calendar {
+  width: 99%;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin: 10px 0;
+  :global {
+    .ant-fullcalendar-fullscreen:not(:first-child) {
+      border-top: 1px solid #d9d9d9 !important;
+    }
+    .ant-radio-group {
+      display: none;
+    }
+  }
+}

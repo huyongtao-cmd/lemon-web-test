@@ -1,0 +1,53 @@
+{
+  "taskKey": "ACC_A30_07_CREATE_ACCOUNT",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "ui.menu.hr.res.createAccount",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "job": 1,
+      "jobGrade": 1,
+      "presId": 1,
+      "foreignName": 1,
+      "mobile": 1,
+      "idType": 1,
+      "birthday": 1,
+      "ouId": 1,
+      "empNo": 1,
+      "enrollDate": 1,
+      "regularDate": 1,
+      "contractSignDate": 1,
+      "contractExpireDate": 1,
+      "probationBeginDate": 1,
+      "probationEndDate": 1,
+      "telfeeQuota": 1,
+      "compfeeQuota": 1,
+      "accessLevel": 1,
+      "emailAddr": 0,
+      "password": 0,
+      "internDate": 1,
+      "entryType":1,
+      "buFlag":1,
+      "oldSaleBu":1,
+      "inLieuFlag":1,
+      "busiTrainFlag":1
+    }
+  }
+}

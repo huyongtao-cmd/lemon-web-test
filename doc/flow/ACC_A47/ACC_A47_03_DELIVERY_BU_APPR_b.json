@@ -1,0 +1,42 @@
+{
+  "taskKey": "ACC_A47_03_DELIVERY_BU_APPR_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "projName": 1,
+      "workType": 1,
+      "projTempId": 1,
+      "currCode": 1,
+      "startDate": 1,
+      "endDate": 1,
+      "SOWAdjunct": 1,
+      "remark": 1,
+      "expenseBuId": 1,
+      "deliBuId": 1,
+      "deliResId": 1,
+      "pmResId": 1,
+      "totalDays": 1,
+      "totalEqva": 1,
+      "eqvaPrice": 1,
+      "eqvaPriceTotal": 1,
+      "totalReimbursement": 1,
+      "totalCost": 1,
+      "budgetAdjunct": 1
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import '~antd/lib/style/themes/default.less';
+
+.descriptionList {
+  // offset the padding-bottom of last row
+  :global {
+    .ant-row {
+      margin-bottom: -16px;
+      overflow: hidden;
+    }
+  }
+
+  .title {
+    position: relative;
+    font-size: 16px;
+    color: @primary-color;
+    text-indent: 8px;
+    font-weight: 500;
+    // margin-bottom: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 80%;
+      top: 10%;
+      width: 4px;
+      background-color: @primary-color;
+    }
+  }
+
+  .has-separator {
+    &::after {
+      display: table;
+      content: '';
+      clear: both;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px dashed @normal-color;
+    }
+
+    margin-bottom: 4px;
+  }
+
+  .row-offset {
+    padding: 16px;
+  }
+
+  .row-offset-noTop {
+    padding: 0 16px 16px 16px;
+  }
+
+  .termWrapper {
+    display: inline-block;
+  }
+
+  .term {
+    // Line-height is 22px IE dom height will calculate error
+    line-height: 24px;
+    padding-bottom: 8px;
+    margin-right: 8px;
+    color: #999;
+    white-space: nowrap;
+    // text-overflow: ellipsis;
+    display: table-cell;
+    text-align: right;
+
+    &.has-popover > span {
+      text-decoration: none;
+      border-bottom: 1px dotted currentColor;
+    }
+
+    &::after {
+      content: ':';
+      margin: 0 8px 0 2px;
+      position: relative;
+      top: -0.5px;
+    }
+  }
+
+  .detail {
+    line-height: 22px;
+    width: 100%;
+    padding-bottom: 8px;
+    color: @heading-color;
+    display: table-cell;
+  }
+
+  &.small {
+    // offset the padding-bottom of last row
+    :global {
+      .ant-row {
+        margin-bottom: -8px;
+      }
+    }
+    .title {
+      margin-bottom: 12px;
+      // color: @text-color;
+    }
+    .term,
+    .detail {
+      padding-bottom: 4px;
+    }
+  }
+
+  &.large {
+    .title {
+      font-size: 16px;
+    }
+  }
+
+  &.vertical {
+    .termWrapper {
+      width: auto !important;
+    }
+
+    .term {
+      padding-bottom: 4px;
+      display: block;
+      text-align: left;
+    }
+
+    .detail {
+      display: block;
+    }
+  }
+}

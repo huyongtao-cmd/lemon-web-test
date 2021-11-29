@@ -1,0 +1,30 @@
+{
+  "taskKey": "ACC_A43_05_INPUT_REWARD",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "evalType": "BU_PIC",
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "baseBuId": 1,
+      "presId": 1,
+      "probationPeriod": 1,
+      "enrollDate": 1,
+      "mobile": 1,
+      "emailAddr": 1,
+      "remark": 1,
+      "applyResName": 1,
+      "applyDate": 1,
+      "buPicCheckResult": 1,
+      "buPicRegularDate": 1,
+      "regularReward": 0
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "taskKey": "ACC_A30_04_PRESIDENT_AGREE",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "resType": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "preEnrollDate": 1,
+      "job": 1,
+      "jobGrade": 1,
+      "coopType": 1,
+      "presId": 1,
+      "artThumb": 1,
+      "remark": 1,
+      "applyResId": 1,
+      "applyDate": 1,
+      "entryType":1,
+      "buFlag":1,
+      "oldSaleBu":1,
+      "inLieuFlag":1,
+      "busiTrainFlag":1,
+      "eqvaRatioList":1
+    }
+  }
+}

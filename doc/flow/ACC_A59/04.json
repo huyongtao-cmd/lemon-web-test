@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A59_04_HR_CFM",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

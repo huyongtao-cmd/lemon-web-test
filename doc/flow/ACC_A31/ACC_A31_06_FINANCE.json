@@ -1,0 +1,24 @@
+{
+  "taskKey": "ACC_A31_06_FINANCE",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "enrollDate": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "ouId": 1,
+      "presId": 1,
+      "leaveItemList": 0,
+      "finChkData": 0
+    }
+  }
+}

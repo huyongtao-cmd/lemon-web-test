@@ -1,0 +1,17 @@
+{
+  "taskKey": "ACC_A45_04_BU_CFM_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "examResult": 0
+    }
+  }
+}

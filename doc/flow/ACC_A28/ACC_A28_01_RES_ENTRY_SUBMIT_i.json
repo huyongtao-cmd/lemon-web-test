@@ -1,0 +1,12 @@
+{
+  "taskKey": "ACC_A28_01_RES_ENTRY_SUBMIT_i",
+  "buttons": [{
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "misc.update",
+      "className": "tw-btn-primary stand"
+    }
+  ],
+  "fields": []
+}

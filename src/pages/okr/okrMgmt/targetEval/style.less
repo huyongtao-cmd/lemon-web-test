@@ -1,0 +1,64 @@
+.supObjective {
+  :global {
+    div {
+      color: #999 !important;
+      span {
+        line-height: 30px !important;
+      }
+    }
+    .supobjectiveCurProg {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      padding: 0 5px;
+      background-color: #f8c55b;
+      display: inline-block;
+      color: white;
+      font-size: 12px;
+      line-height: 22px;
+      text-align: center;
+    }
+    // 使用伪类制作箭头
+    .supobjectiveCurProg:after {
+      content: '';
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid #f8c55b;
+      position: absolute;
+      left: -5px;
+      top: 5.5px;
+    }
+  }
+}
+
+.keyResult {
+  :global {
+    .ant-col-4 {
+      width: auto;
+      color: black;
+    }
+    .ant-slider-disabled .ant-slider-track {
+      background-color: #22d7bb !important;
+    }
+  }
+}
+
+.slider {
+  :global {
+    .ant-slider-track {
+      background-color: #22d7bb !important;
+    }
+  }
+}
+
+.dataTableBox {
+  :global {
+    div {
+      div {
+        div:nth-child(2) {
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+}

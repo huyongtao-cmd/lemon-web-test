@@ -1,0 +1,26 @@
+{
+  "taskKey": "ACC_A43_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPLIED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "baseBuId": 1,
+      "presId": 1,
+      "enrollDate": 1,
+      "mobile": 1,
+      "emailAddr": 1,
+      "remark": 0,
+      "applyResName": 1,
+      "applyDate": 1,
+      "resultChkList": 0
+    }
+  }
+}

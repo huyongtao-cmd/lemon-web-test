@@ -1,0 +1,360 @@
+@import '~antd/lib/style/themes/default.less';
+@import '~@/utils/utils.less';
+
+.userinfocard {
+  :global {
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+}
+
+.userinfo {
+  float: left;
+  width: 100%;
+  padding: 10px 2%;
+
+  .avatarHolder {
+    text-align: center;
+    margin-top: 23px;
+
+    .userTitle {
+      color: @primary-color;
+      text-align: left;
+      font-size: 16px;
+
+      > span {
+        margin-left: 8px;
+        color: @heading-color;
+      }
+    }
+
+    & > img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 500;
+      color: @heading-color;
+      margin-bottom: 8px;
+    }
+
+    .level {
+      padding: 0 8px;
+      height: 24px;
+      line-height: 24px;
+      color: #ebba46;
+      font-size: 12px;
+      border: 1px solid #ebba46;
+    }
+
+    .promote {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+
+      & > span {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+.taskMonth {
+  width: 25%;
+  float: left;
+  padding: 0 10px;
+  cursor: pointer;
+  .num {
+    font-size: 26px;
+    color: '#000';
+    font-weight: bolder;
+  }
+}
+
+.taskMonthTitle {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #000;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  height: auto;
+}
+
+.todocard {
+  :global {
+    .ant-card-body {
+      padding: 0 3%;
+    }
+    ul.scroll {
+      overflow-y: scroll;
+      height: 360px;
+    }
+  }
+
+  ul {
+    height: 251px;
+    padding: 0;
+
+    > li {
+      padding: 10px 0;
+      border-bottom: 1px solid #efefef;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .item {
+        height: 20px;
+        line-height: 20px;
+
+        :global {
+          .anticon-file-text {
+            vertical-align: 5px;
+          }
+        }
+
+        p {
+          display: inline-block;
+          width: 70%;
+          margin-left: 5px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: @btn-info-color;
+          cursor: pointer;
+
+          &:hover {
+            // stylelint-disable-next-line
+            color: color(~`colorPalette('@{btn-info-color}', 8) `);
+          }
+        }
+
+        span {
+          width: 20%;
+          float: right;
+          text-align: right;
+        }
+      }
+
+      p.contennt {
+        color: @text-color-secondary;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    > li:last-child {
+      border-bottom: none;
+    }
+  }
+  ul.message {
+    overflow-y: scroll;
+    li {
+      .item {
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 6px;
+        :global {
+          .anticon-file-text {
+            vertical-align: 7px;
+          }
+        }
+        p {
+          height: 30px;
+          // overflow: auto;
+          span {
+            display: inline-block;
+            float: none;
+            text-align: left;
+            width: auto;
+          }
+          .messageTitle {
+            max-width: ~'calc(100% - 70px)';
+            margin-right: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .messageTag {
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid #f5222d;
+            color: #f5222d;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 56px;
+            vertical-align: top;
+          }
+        }
+      }
+      .itemInfo {
+        span {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.more {
+  margin-top: 3px;
+  font-size: 13px;
+  float: right;
+  color: @text-color-secondary;
+}
+
+.shortCut {
+  text-align: center;
+}
+
+.function {
+  display: inline-block;
+  height: 120px;
+  overflow: hidden;
+  width: 1060px;
+  position: relative;
+  padding: 0 50px;
+
+  .custom {
+    box-sizing: border-box;
+    width: 100px;
+    margin: 0 10px 10px;
+    padding: 6px;
+    text-align: center;
+
+    > div {
+      display: inline-block;
+      width: 90%;
+      border-radius: 50%;
+      background-color: #f5f5f5;
+      position: relative;
+
+      > i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      > i::before,
+      > i::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: #ccc;
+        border-radius: 2px;
+        content: '';
+        transform: translate(-50%, -50%);
+      }
+
+      > i::before {
+        width: 20px;
+        height: 2px;
+      }
+
+      > i::after {
+        width: 2px;
+        height: 20px;
+      }
+    }
+
+    > div::before {
+      display: block;
+      padding-top: 100%;
+      content: '';
+    }
+
+    > span {
+      color: #999;
+      line-height: 24px;
+    }
+  }
+}
+
+.left,
+.right {
+  color: #ddd;
+  font-size: 75px;
+  transform: translateY(-50%) scaleX(0.5);
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: -20px;
+}
+
+.right {
+  right: -20px;
+}
+
+.left:hover,
+.right:hover {
+  color: #999;
+}
+
+// 快捷入口
+.quickLinksWrapper {
+  flex-wrap: wrap;
+  cursor: pointer;
+
+  .quickLinks {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100px;
+    height: 100px;
+    // translate: scale(0.6);
+  }
+
+  .linkImgWrapper {
+    width: 100%;
+    height: 100px - 12px * 2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .linkImg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .linkBanner {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+.read {
+  color: #999 !important;
+}
+
+@centerColor: #284488;
+@centerGray: #666;
+@space: 10px;
+@linkColor: #008fdb;
+@placeholderColor: #f2f2f2;
+.tabName {
+  color: @centerColor;
+  font-size: 18px;
+  font-weight: bold;
+  img {
+    height: 32px;
+    margin-right: 8px;
+    top: -2px;
+    vertical-align: middle;
+    width: 32px;
+  }
+}

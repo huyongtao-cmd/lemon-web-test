@@ -1,0 +1,32 @@
+{
+  "taskKey": "TSK_S01_02_LEADS_ASSIGN",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "interation",
+      "key": "ASSIGN",
+      "title": "app.setting.flow.assign",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close",
+      "key": "CLOSE",
+      "title": "app.setting.flow.close",
+      "className": "tw-btn-error"
+    }
+  ],
+  "fields": [
+    {
+      "cardId": "leads",
+      "disabled": 0,
+      "items": [
+        {
+          "dataIndex": "salesmanResId",
+          "required": 1,
+          "disabled": 0
+        }
+      ]
+    }
+  ]
+}

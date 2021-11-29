@@ -1,0 +1,243 @@
+@finishBg: #f1f2f1;
+@vacationBg: #fff1f0;
+@workBg: #e6fffb;
+@finishColor: #616361;
+@vacationColor: #f5222d;
+@workColor: #13c2c2;
+@finishBorder: #aeb1ae;
+@vacationBorder: #ffa39e;
+@workBorder: #87e8de;
+@blue: #72c2f2;
+@orange: #f4ab7f;
+@grayGreen: #a0bfa1;
+@borderColor: #e8e8e8;
+@titleBg: #f0f4fc;
+
+.example-wrap {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 8px;
+  button {
+    height: 36px;
+    margin-right: 4px;
+    padding: 0 12px;
+    vertical-align: middle;
+    &:nth-child(2) {
+      margin-right: 40px;
+    }
+  }
+}
+.example-finish,
+.example-plan,
+.example-vacation {
+  border-radius: 4px;
+  color: #333;
+  display: inline-block;
+  line-height: 1;
+  margin-left: 10px;
+  padding: 3px 10px;
+  vertical-align: middle;
+}
+.example-finish {
+  border: 1px solid @finishBorder;
+  background: @finishBg;
+  color: @finishColor;
+}
+.example-plan {
+  border: 1px solid @workBorder;
+  background: @workBg;
+  color: @workColor;
+}
+.example-vacation {
+  border: 1px solid @vacationBorder;
+  background: @vacationBg;
+  color: @vacationColor;
+}
+.select-box {
+  width: 200px;
+}
+.calendar-box {
+  border: 1px solid @borderColor;
+  border-bottom: none;
+  text-align: center;
+}
+.calendar-title {
+  border-bottom: 1px solid @borderColor;
+  background: @titleBg;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  :global {
+    .ant-col-3 {
+      border-right: 1px solid @borderColor;
+      font-size: 16px;
+      padding: 15px 0;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+.week-title {
+  align-items: stretch;
+}
+// .week-info {
+// }
+.week-content {
+  align-items: stretch;
+  border-bottom: 1px solid @borderColor;
+}
+
+.calendar-content {
+  color: #333;
+  font-size: 16px;
+  text-align: left;
+  :global {
+    .ant-col-3 {
+      font-size: 16px;
+      padding-bottom: 5px;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    .ant-col-21 {
+      border-bottom: 1px dashed @borderColor;
+      font-size: 16px;
+      padding: 6px 6px 16px;
+    }
+  }
+  .week-title {
+    .ant-col-3 {
+      border-right: 0;
+    }
+  }
+}
+.year-week {
+  border-right: 1px solid @borderColor;
+  padding-top: 7px;
+  text-align: center;
+}
+.pro-color {
+  color: @blue;
+}
+.opp-color {
+  color: @orange;
+}
+.task-color {
+  color: @grayGreen;
+}
+.date-plan-info {
+  min-height: 30px;
+  div {
+    display: flex;
+    font-size: 12px;
+    margin-bottom: 5px;
+    height: 22px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 6px;
+    white-space: nowrap;
+    span {
+      flex-grow: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+.date-info {
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 6px 6px 0;
+  width: 80%;
+}
+.finish-color,
+.plan-color,
+.vacation-color {
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+.finish-color {
+  border-color: @finishBorder;
+  background: @finishBg;
+  color: @finishColor;
+}
+.plan-color {
+  border-color: @workBorder;
+  background: @workBg;
+  color: @workColor;
+}
+.vacation-color {
+  border-color: @vacationBorder;
+  background: @vacationBg;
+  color: @vacationColor;
+}
+.date-plan-left-cell {
+  border-right: 1px solid @borderColor;
+}
+.plan-handle {
+  display: inline-block;
+  flex-grow: 1;
+  min-width: 40px;
+  text-align: right;
+  :global {
+    .anticon {
+      cursor: pointer;
+      &:first-child {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+.left-radius {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.right-radius {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.cell-selected {
+  background: #e6f7ff;
+}
+.align-right {
+  text-align: right;
+}
+.date-line {
+  background: @titleBg;
+  height: 5px;
+  margin: 6px auto 10px;
+  width: 80%;
+}
+.plan-left-styles {
+  border-left-width: 1px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: 10%;
+}
+.plan-right-styles {
+  border-right-width: 1px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-right: 10%;
+}
+.calendar-styles {
+  width: 260px;
+}
+.pro-title {
+  display: inline-block;
+  width: 72px;
+}
+.opp-title {
+  display: inline-block;
+  width: 72px;
+}
+.task-title {
+  display: inline-block;
+  width: 120px;
+}

@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A25_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "misc.update",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

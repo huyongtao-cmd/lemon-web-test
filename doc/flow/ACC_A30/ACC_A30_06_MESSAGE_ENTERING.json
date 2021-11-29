@@ -1,0 +1,64 @@
+{
+  "taskKey": "ACC_A30_06_MESSAGE_ENTERING",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close",
+      "key": "CLOSE",
+      "title": "app.setting.flow.close",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "resType": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "preEnrollDate": 1,
+      "job": 1,
+      "jobGrade": 1,
+      "coopType": 1,
+      "presId": 1,
+      "artThumb": 1,
+      "foreignName": 0,
+      "mobile": 0,
+      "idType": 0,
+      "birthday": 0,
+      "ouId": 0,
+      "empNo": 0,
+      "enrollDate": 0,
+      "regularDate": 0,
+      "contractSignDate": 0,
+      "contractExpireDate": 0,
+      "probationBeginDate": 0,
+      "probationEndDate": 0,
+      "telfeeQuota": 0,
+      "compfeeQuota": 0,
+      "salaryMethod": 0,
+      "salaryPeriod": 0,
+      "internDate": 0,
+      "accessLevel": 0,
+      "periodFlag": 0,
+      "jobClass1": 0,
+      "jobClass2": 0,
+      "deliverOffer": 0,
+      "noneOfferReason": 0,
+      "offerReasonAccount": 0,
+      "entryType": 1,
+      "buFlag": 1,
+      "oldSaleBu": 1,
+      "inLieuFlag": 1,
+      "busiTrainFlag": 1,
+      "jobCapaSetId": 0
+    }
+  }
+}

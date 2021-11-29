@@ -1,0 +1,19 @@
+{
+  "taskKey": "ACC_A40_06_PM_EVAL_MEMBER_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "evalType": "PM_TO_MEMBER",
+  "panels": {
+    "disabledOrHidden": {
+      "remark": 1,
+      "evalInfoList": 0
+    }
+  }
+}

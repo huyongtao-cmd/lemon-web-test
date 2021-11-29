@@ -1,0 +1,88 @@
+@import '~antd/lib/style/themes/default.less';
+
+.container {
+  // display: flex;
+  // flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  background-color: @layout-body-background;
+}
+
+.content {
+  // padding: 32px 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: @screen-md-min) {
+  .container {
+    background: @layout-body-background url('@/assets/img/login-bg-ln.jpg') no-repeat 0 0;
+    background-size: cover;
+  }
+
+  .content {
+    position: relative;
+    // padding: 32px 0 12px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0;
+    flex-flow: row nowrap;
+
+    .left {
+      flex: 1 1 100%;
+    }
+
+    .right {
+      flex: 1 0 25%;
+      opacity: 0.9;
+    }
+  }
+}
+
+.top {
+  // width: 1024px; /* 这个尽量与下方登录子组件的宽度一致吧，没规定一定要一样，也许一样的话好看一点。。。 */
+  width: 100%;
+  padding: 32px 0 0 16px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.header {
+  height: 60px;
+  line-height: 60px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  vertical-align: top;
+  margin-right: 4px;
+  margin-left: 20px;
+  width: 300px;
+  img {
+    display: inline-block;
+    height: 100%;
+  }
+}
+
+.title {
+  position: relative;
+  top: -10px;
+  // color: @heading-color;
+  color: @heading-color-dark;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 18px;
+  color: @text-color-dark;
+  letter-spacing: 2px;
+  margin-top: -5px;
+}
+
+// ---------------- AntD default style overwrite ----------------

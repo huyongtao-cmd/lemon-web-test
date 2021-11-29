@@ -1,0 +1,35 @@
+{
+    "taskKey":"ACC_A29_03_FIN_PIC_CONFIRM",
+    "buttons":[
+        {
+            "type":"button",
+            "icon":"check-square",
+            "key":"APPROVED",
+            "title":"app.setting.flow.approved",
+            "className":"tw-btn-primary"
+        },{
+            "type":"button",
+            "icon":"close-square",
+            "key":"REJECTED",
+            "title":"app.setting.flow.rejected",
+            "className":"tw-btn-error",
+            "branches":[
+                {
+                    "id":1,
+                    "code":"REJECTED_INITIATOR",
+                    "name":"创建人提交"
+                },{
+                    "id":2,
+                    "code":"REJECTED_SUPERIOR",
+                    "name":"费用承担bu或平台总体负责人审批"
+                }
+            ]
+        }
+    ],
+    "panels":[
+        {
+            "id":"details",
+            "disable":0
+        }
+    ]
+}

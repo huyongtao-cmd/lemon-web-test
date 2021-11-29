@@ -1,0 +1,14 @@
+{
+	"taskKey": "ACC_A12_01_NO_TRAVEL_EXPENSE_CLAIM_SUBMIT_i",
+	"buttons": [{
+		"type": "button",
+		"icon": "form",
+		"key": "EDIT",
+		"title": "misc.update",
+		"className": "tw-btn-primary"
+	}],
+	"panels": [{
+		"id": "details",
+		"disabled": 1
+	}]
+}

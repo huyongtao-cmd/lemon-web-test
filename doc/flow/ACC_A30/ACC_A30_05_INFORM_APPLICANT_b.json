@@ -1,0 +1,38 @@
+{
+  "taskKey": "ACC_A30_05_INFORM_APPLICANT_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "resType": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "preEnrollDate": 0,
+      "job": 1,
+      "jobGrade": 1,
+      "coopType": 1,
+      "presId": 1,
+      "artThumb": 1,
+      "remark": 1,
+      "applyResId": 1,
+      "applyDate": 1,
+      "deliverOffer": 0,
+      "noneOfferReason": 0,
+      "offerReasonAccount": 0,
+      "entryType":1,
+      "buFlag":1,
+      "oldSaleBu":1,
+      "inLieuFlag":1,
+      "busiTrainFlag":1
+    }
+  }
+}

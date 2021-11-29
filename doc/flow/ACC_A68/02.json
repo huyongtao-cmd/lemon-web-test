@@ -1,0 +1,34 @@
+{
+  "taskKey": "ACC_A68_02_SUPPER_b",
+  "version": "1.0",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_PASS",
+      "title": "通过",
+      "className": "tw-btn-primary",
+      "branches": [
+        {
+          "id": 1,
+          "code": "FLOW_PASS",
+          "name": "通过"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_RETURN",
+      "title": "退回",
+      "className": "tw-btn-error",
+      "branches": [
+        {
+          "id": 2,
+          "code": "FLOW_RETURN",
+          "name": "退回"
+        }
+      ]
+    }
+  ]
+}

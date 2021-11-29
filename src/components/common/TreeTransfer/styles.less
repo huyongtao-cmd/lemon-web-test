@@ -1,0 +1,44 @@
+.transfer {
+  display: flex;
+  align-items: center;
+  :global {
+    .ant-input-search {
+      .ant-input {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    .ant-tree {
+      border: 1px solid #ddd;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: white;
+      height: 400px;
+      overflow: auto;
+    }
+    // .ant-tree-node-content-wrapper {
+    //   .anticon {
+    //     visibility: hidden;
+    //     margin-left: 8px;
+    //   }
+    //   &:hover {
+    //     .anticon {
+    //       visibility: visible;
+    //     }
+    //   }
+    // }
+    .ant-spin-nested-loading {
+      background-color: white;
+    }
+    .ant-table-small > .ant-table-content > .ant-table-body {
+      margin: 0;
+    }
+  }
+  .editable {
+    display: flex;
+    flex-direction: column;
+    button:not(:only-child) {
+      margin-bottom: 8px;
+    }
+  }
+}

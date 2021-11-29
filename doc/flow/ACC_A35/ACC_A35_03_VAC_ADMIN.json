@@ -1,0 +1,61 @@
+{
+  "taskKey": "ACC_A35_03_VAC_ADMIN",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary",
+      "branches": [
+        {
+          "id": 1,
+          "code": "APPROVED",
+          "name": "通过"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error",
+      "branches": [
+        {
+          "id": 1,
+          "code": "INIT",
+          "name": "创建人提交"
+        },
+        {
+          "id": 1,
+          "code": "SUPPER",
+          "name": "直属领导审批"
+        }
+      ]
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "applyNo": 1,
+      "resId": 1,
+      "presId": 1,
+      "buId": 1,
+      "ouId": 1,
+      "vacationType": 1,
+      "date": 1,
+      "vacationDate": 1,
+      "vacationDays": 1,
+      "attache": 1,
+      "reason": 1,
+      "workPlan": 1,
+      "apprResId": 1,
+      "apprDate": 1,
+      "addFlag": 0,
+      "addList": 0,
+      "detailEntityList": 1,
+      "resVacationList": 1,
+      "recentResVacationList": 1
+    }
+  }
+}

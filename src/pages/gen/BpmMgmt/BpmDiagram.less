@@ -1,0 +1,153 @@
+@import '~antd/lib/style/themes/default.less';
+
+@btn-info-color: #008fdb;
+@btn-info-color-8: #00538f;
+@success-color-8: #237804;
+
+.bpmnWrapper {
+  left: 30vw !important;
+  width: 70vw;
+}
+
+.bpmn {
+  :global {
+    .bjs-powered-by {
+      display: none;
+    }
+
+    .bjs-container:hover {
+      cursor: move;
+    }
+
+    .applied:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @primary-color !important;
+    }
+
+    .applied:not(.djs-connection) .djs-visual .djs-label {
+      fill: white !important;
+    }
+
+    .aborted:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @disabled-color !important;
+    }
+
+    .aborted:not(.djs-connection) .djs-visual .djs-label {
+      fill: white !important;
+    }
+
+    .approved:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @menu-dark-bg !important;
+    }
+
+    .approved:not(.djs-connection) .djs-visual .djs-label {
+      fill: white !important;
+    }
+
+    .rejected:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @error-color !important;
+    }
+
+    .rejected:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .assign:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @success-color !important;
+    }
+
+    .assign:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .notified:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @btn-info-color !important;
+    }
+
+    .notified:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .reviewed:not(.djs-connection) .djs-visual > :nth-child(1) {
+      // stylelint-disable-next-line
+      fill: @btn-info-color-8 !important;
+    }
+
+    .reviewed:not(.djs-connection) .djs-visual .djs-label {
+      fill: white !important;
+    }
+
+    .continued:not(.djs-connection) .djs-visual > :nth-child(1) {
+      // stylelint-disable-next-line
+      fill: @success-color-8 !important;
+    }
+
+    .continued:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .close:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @warning-color !important;
+    }
+
+    .close:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .revoked:not(.djs-connection) .djs-visual > :nth-child(1) {
+      // stylelint-disable-next-line
+      fill: @text-color !important;
+    }
+
+    .revoked:not(.djs-connection) .djs-visual .djs-label {
+      fill: white !important;
+    }
+
+    .accept:not(.djs-connection) .djs-visual > :nth-child(1) {
+      // stylelint-disable-next-line
+      fill: @success-color-8 !important;
+    }
+
+    .accept:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .countersign:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @menu-dark-bg !important;
+    }
+
+    .countersign:not(.djs-connection) .djs-visual .djs-label {
+      fill: white !important;
+    }
+
+    .default:not(.djs-connection) .djs-visual > :nth-child(1) {
+      fill: @warning-color !important;
+    }
+
+    .default:not(.djs-connection) .djs-visual .djs-label {
+      fill: black !important;
+    }
+
+    .djs-overlay-container {
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+    }
+    // .djs-overlay {
+    //   width: 100px;
+    // }
+  }
+}
+
+// .navigator {
+//   position: absolute;
+//   bottom: 0;
+//   width: 40px;
+//   padding: 5px;
+
+//   button {
+//     height: 40px;
+//     width: 40px;
+//     margin: 1px 0;
+//     font-size: 20px;
+//   }
+// }

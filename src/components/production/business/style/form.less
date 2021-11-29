@@ -1,0 +1,57 @@
+.prod-form {
+  :global {
+    .prod-form-item {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    .ant-form-item-label,
+    .ant-form-item-control-wrapper {
+      padding-left: 16px;
+    }
+
+    .prod-form-item-group .ant-form-item-control-wrapper .ant-form-item-control-wrapper {
+      padding-left: 0;
+    }
+
+    .ant-form-item-label label {
+      color: #999;
+    }
+
+    .prod-form-item-group-require label:before {
+      display: inline-block;
+      margin-right: 4px;
+      content: '*';
+      font-family: SimSun, serif;
+      line-height: 1;
+      font-size: 16px;
+      color: #f5222d;
+    }
+    .tw-input-number {
+      width: 100%;
+    }
+    .prod-select {
+      width: 100%;
+    }
+    textarea {
+      margin-bottom: 5px;
+    }
+  }
+
+  .prod-form-title {
+    color: #284488;
+    margin: 15px 0;
+    text-indent: 8px;
+    font-weight: 500;
+  }
+  .prod-form-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 20px;
+    top: 33%;
+    width: 4px;
+    background-color: #284488;
+  }
+}

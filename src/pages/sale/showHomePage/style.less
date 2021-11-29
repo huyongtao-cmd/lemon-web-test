@@ -1,0 +1,145 @@
+.viewBox {
+  :global {
+    .ant-row {
+      span {
+        width: 100px !important;
+      }
+    }
+  }
+}
+
+.homepPageBox {
+  height: 93%;
+  background-color: white;
+  :global {
+    .ant-tabs-nav-scroll {
+      background-color: white !important;
+    }
+    .ant-tabs,
+    .ant-row {
+      height: 100% !important;
+    }
+  }
+  .menuBox {
+    height: 100%;
+    background-color: #fff;
+    font-size: 16px;
+    .firstMenu {
+      padding-left: 15px;
+      height: 35px;
+      line-height: 35px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      .rightMenu {
+        padding-left: 26px;
+      }
+    }
+    .firstMenu:hover {
+      background-color: #ccc;
+      .rightMenuBox {
+        display: block;
+      }
+    }
+
+    .firstTitle {
+      &:hover {
+        color: red;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      left: 0;
+    }
+
+    .menuWrap {
+      cursor: pointer;
+      margin-bottom: 5px;
+      .rightMenu {
+        padding-left: 26px;
+      }
+      .noHoverFirster {
+        &:hover {
+          color: red;
+        }
+      }
+    }
+    .menuWrap > .menuLi {
+      height: 35px;
+      line-height: 35px;
+      padding-left: 45px;
+    }
+    .menuWrap > .menuLi > span:hover {
+      color: red;
+    }
+
+    .menuWrap > .menuLi:hover {
+      background-color: #ccc;
+      .rightMenuBox {
+        display: block;
+      }
+    }
+
+    .rightMenuBox {
+      cursor: auto;
+      z-index: 100;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      border-left: 6px solid #f0f2f5;
+      background-color: #fff;
+    }
+
+    .rightMenu {
+      min-width: 900px;
+      height: 550px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+
+      :global {
+        .ant-divider-horizontal {
+          margin: 10px 0 !important;
+        }
+      }
+
+      .tagTitle {
+        font-size: 16px !important;
+        font-weight: bolder !important;
+        cursor: pointer !important;
+      }
+      .tagTitle:hover {
+        color: red;
+      }
+
+      .noClickTagTitle {
+        font-size: 16px !important;
+        font-weight: bolder !important;
+      }
+
+      span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 2px 12px;
+      }
+      span:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.homeSearch {
+  .filterTag {
+    margin: 0 10px !important;
+    cursor: pointer !important;
+  }
+  .filterTag:hover {
+    color: red;
+  }
+}

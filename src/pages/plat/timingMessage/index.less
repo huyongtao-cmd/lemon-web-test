@@ -1,0 +1,124 @@
+@black: #000;
+@gray: #999;
+@linkColor: #06f;
+@deepGray: #666;
+@lightGray: #ddd;
+@blue: #009bff;
+@fontSize: 14px;
+@hSpace: 10px;
+@maxHSpace: 20px;
+@wSpace: 10px;
+.feedbackTitle {
+  border-bottom: 1px solid @lightGray;
+  color: @black;
+  font-size: @fontSize;
+  margin-bottom: @hSpace;
+  padding-bottom: @hSpace;
+}
+.feedbackItem {
+  border-bottom: 1px dashed @lightGray;
+  color: @deepGray;
+  font-size: @fontSize;
+  padding: @hSpace 5px;
+  text-align: justify;
+}
+.feedbackItemUser {
+  color: @black;
+  margin-bottom: @hSpace;
+}
+.feedbackItemSolver {
+  color: @blue;
+}
+.feedbackItemSolverStatus {
+  border: 1px solid @blue;
+  border-radius: 4px;
+  color: @blue;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin-left: 20px;
+  padding: 0 @hSpace;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.feedbackItemContent {
+  padding: 0 @wSpace;
+  img {
+    max-width: 80% !important;
+  }
+}
+.minorContent {
+  color: @gray;
+}
+.link {
+  color: @linkColor;
+}
+.btnWrap {
+  margin: 50px auto;
+  text-align: center;
+}
+.feedbackStatusWrap {
+  .noSolving {
+    background: none;
+    box-shadow: none;
+    border: 1px solid @deepGray;
+    color: @deepGray;
+    text-shadow: none;
+  }
+  .resolved {
+    background: #284488;
+    border-color: #284488;
+    color: #fff;
+  }
+  .noSolving:hover,
+  .noSolving:focus {
+    background: none;
+    box-shadow: none;
+    border: 1px solid @deepGray;
+    color: @deepGray;
+    text-shadow: none;
+  }
+
+  .resolved:hover,
+  .resolved:focus {
+    background: #284488;
+    color: #fff;
+  }
+}
+.activeItem {
+  background: #e9fbff;
+}
+
+.paper {
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.27), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  margin: 20px 0 20px 108px;
+  padding: 60px 30px;
+  position: relative;
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+}
+.paper::after,
+.paper::before {
+  bottom: 6px;
+  box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.3);
+  content: '';
+  height: 1px;
+  position: absolute;
+  width: 100px;
+  z-index: -1;
+}
+.paper::after {
+  left: 4px;
+  transform: rotate(-6deg);
+}
+.paper::before {
+  right: 4px;
+  transform: rotate(6deg);
+}

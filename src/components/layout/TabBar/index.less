@@ -1,0 +1,204 @@
+@import '~antd/lib/style/themes/default.less';
+
+@tab-bar-height: 36px;
+@header-top-bg: #1e2c4b;
+
+.tabsBar {
+  position: relative;
+  display: flex;
+  width: 100%;
+  transition: background 0.3s, width 0.2s;
+  height: @tab-bar-height;
+  line-height: @tab-bar-height;
+  // padding: 0 12px 0 0;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  background: @layout-body-background;
+  border-bottom: 1px solid @primary-color;
+
+  .iconPrimary {
+    color: @primary-color;
+  }
+
+  .iconPrimaryHover {
+    color: @text-color-secondary;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .iconLight {
+    color: @text-color-dark;
+  }
+
+  .iconText {
+    color: fade(#000, 25%);
+  }
+
+  .iconDelete {
+    &:hover {
+      color: @error-color !important;
+    }
+  }
+
+  .tabsControl {
+    padding: 0 16px;
+
+    &:last-of-type {
+      border-left: 1px solid #d9d9d9;
+    }
+  }
+
+  .tabsContainer {
+    display: inline-block;
+    flex: 1 0 auto;
+    // text-align: center;
+    width: 0;
+    overflow: hidden;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    // overflow-x: auto;
+
+    .tabsWrapper {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      transition: margin-left 0.3s;
+      // flex-flow: row nowrap;
+      // justify-content: flex-start;
+      // align-items: stretch;
+      // width: 100%;
+    }
+
+    .tag {
+      margin: 0;
+      padding: 0 16px;
+      height: 100%;
+      line-height: @tab-bar-height;
+      border-radius: 0;
+      color: @text-color;
+      // background-color: @background-color-light;
+      background: @layout-body-background;
+      &:hover {
+        color: white;
+        background-color: @header-top-bg;
+        border-color: @header-top-bg;
+        opacity: 1;
+        // 讲道理这里真的不懂为什么， anticon 明明就是 i 标签
+        // i.anticon {
+        i {
+          color: white;
+        }
+      }
+      &Active {
+        color: white;
+        background-color: @primary-color;
+        border-color: @primary-color;
+        i {
+          color: white;
+        }
+        &:hover {
+          color: white;
+          background-color: @primary-color;
+          border-color: @primary-color;
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+
+  .menu {
+    :global(.anticon) {
+      margin-right: 8px;
+    }
+
+    :global(.ant-dropdown-menu-item) {
+      width: 160px;
+    }
+
+    :global(.ant-dropdown-menu-item:hover) {
+      background: @normal-color !important;
+    }
+  }
+}
+
+.tabsBarNew {
+  & > :global(.ant-tabs-bar) {
+    width: 100%;
+    transition: background 0.3s, width 0.2s;
+    height: 41px;
+    line-height: 41px;
+    // padding: 0 12px 0 0;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    background: @layout-body-background;
+    border-bottom: 1px solid @primary-color;
+    font-size: 14px !important;
+
+    & > :global(.ant-tabs-extra-content) {
+      height: 37px;
+      position: fixed;
+      right: 0;
+    }
+
+    :global(.ant-tabs-tab) {
+      margin: 0 !important;
+      padding: 0 16px !important;
+      height: 100% !important;
+      line-height: 41px !important;
+      border-radius: 0 !important;
+      color: @text-color !important;
+      font-size: 14px !important;
+      // background-color: @background-color-light;
+      background: @layout-body-background !important;
+      &:hover {
+        color: white !important;
+        background-color: @header-top-bg !important;
+        border-color: @header-top-bg !important;
+        opacity: 1 !important;
+        // 讲道理这里真的不懂为什么， anticon 明明就是 i 标签
+        // i.anticon {
+        i {
+          color: white !important;
+        }
+      }
+      &-active {
+        color: white !important;
+        background-color: @primary-color !important;
+        border-color: @primary-color !important;
+        i {
+          color: white !important;
+        }
+        &:hover {
+          color: white !important;
+          background-color: @primary-color !important;
+          border-color: @primary-color !important;
+          opacity: 0.85 !important;
+        }
+      }
+    }
+  }
+
+  & > :global(.ant-tabs-content) {
+    padding: 50px 8px 0;
+  }
+
+  .tabsContainer {
+    font-size: 14px;
+  }
+
+  .iconPrimaryHover {
+    color: @text-color-secondary;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .tabsControl {
+    padding: 0 16px;
+
+    &:last-of-type {
+      line-height: 41px;
+      display: block;
+      border-left: 1px solid #d9d9d9;
+    }
+  }
+}

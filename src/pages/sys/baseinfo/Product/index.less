@@ -1,0 +1,68 @@
+@import '~antd/lib/style/themes/default.less';
+// @import '~@/utils/utils.less';
+
+.productGrid {
+  display: flex;
+  width: 100% !important;
+  padding: 16px;
+
+  & > .card-item-left {
+    flex: 0 0 40px;
+
+    &::before {
+      display: inline-block;
+      content: '';
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    :global {
+      .ant-checkbox-wrapper {
+        display: inline-block;
+        vertical-align: center;
+      }
+    }
+  }
+
+  & > .card-item-right {
+    flex: 1 0 auto;
+  }
+
+  .meta {
+    margin-bottom: 8px;
+    :global {
+      .ant-card-meta-title {
+        text-overflow: inherit;
+        overflow: inherit;
+        white-space: inherit;
+      }
+      .ant-card-meta-description {
+        color: @text-color-secondary;
+        line-height: 22px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .gridLine {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    & > div {
+      margin-bottom: 4px;
+    }
+    &-main {
+      color: @primary-color;
+    }
+    &-right {
+      text-align: right;
+      // margin-left: auto;
+    }
+  }
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}

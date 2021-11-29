@@ -1,0 +1,31 @@
+{
+    "taskKey":"ACC_A29_02_SUPERIOR_CONFIREM_b",
+    "buttons":[
+        {
+            "type":"button",
+            "icon":"check-square",
+            "key":"APPROVED",
+            "title":"app.setting.flow.approved",
+            "className":"tw-btn-primary"
+        },{
+            "type":"button",
+            "icon":"close-square",
+            "key":"REJECTED",
+            "title":"app.setting.flow.rejected",
+            "className":"tw-btn-error",
+            "branches":[
+                {
+                    "id":1,
+                    "code":"REJECTED_INITIATOR",
+                    "name":"创建人提交"
+                }
+            ]
+        }
+    ],
+    "panels":[
+        {
+            "id":"details",
+            "disabled":0
+        }
+    ]
+}

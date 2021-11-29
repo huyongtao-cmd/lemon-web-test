@@ -1,0 +1,190 @@
+<style>
+  body {
+    font-family: verdana, "宋体";
+    font-size: 12px;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  .tw-content {
+    width: 100%;
+    margin: 0 auto
+  }
+
+  .tw-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tw-row {
+    width: 100%;
+    padding: 10px;
+    clear: both;
+  }
+
+  .tw-table {
+    width: 99%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    padding: 0;
+  }
+
+  .tw-cl {
+    clear: both;
+  }
+
+  /*表格-表头*/
+  .tw-th {
+    text-align: center;
+    background-color: #d9d9d9;
+    min-height: 35px;
+  }
+
+  .tw-th > td, .tw-th > th {
+    vertical-align: middle;
+    border: 1px #000000 solid;
+    font-size: 10px;
+  }
+
+  /*表格-行*/
+  .tw-tr {
+    vertical-align: middle;
+    height: 35px;
+  }
+
+  .tw-tr td, .tw-tr th {
+    border: 1px #000000 solid;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .tw-tr .tw-td-c {
+    text-align: center !important;
+  }
+
+  /*居左*/
+  .tw-tr .tw-td-l {
+    text-align: left !important;
+  }
+
+  /*居右*/
+  .tw-tr .tw-td-r {
+    text-align: right !important;
+  }
+
+  /*单元格名称*/
+  .tw-w-c1 {
+
+  }
+
+  /*单元格值*/
+  .tw-w-c2 {
+
+  }
+</style>
+
+<div class="tw-content">
+  <div class="tw-title  tw-cl">预付款申请详情</div>
+  <div class="tw-row">
+    <table class="tw-table">
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">单据号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.applyNo}}</td>
+        <td class="tw-w-c1 tw-td-l">单据名称</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.applyName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">相关特殊费用申请</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.feeApplyName}}</td>
+        <td class="tw-w-c1 tw-td-l">申请人</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resNo}} - {{formData.applyResName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">申请人Base BU</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.applyBuName}}</td>
+        <td class="tw-w-c1 tw-td-l">相关采购合同</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.pcontractName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">是否项目</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.applyTypeDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">事由号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.reasonName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">业务类型</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.prepayTypeDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">费用承担BU</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.expenseBuName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">供应商</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.supplierName}}</td>
+        <td class="tw-w-c1 tw-td-l">费用所属公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.feeExtendOuName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">付款户名</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.holderName}}</td>
+        <td class="tw-w-c1 tw-td-l">收款账户</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.accountNo}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">收款银行</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.bankName}}</td>
+        <td class="tw-w-c1 tw-td-l">预付款总额</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.adpayAmt}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">申请日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.applyDate}}</td>
+        <td class="tw-w-c1 tw-td-l">申请状态</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.applyStatusDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">备注说明</td>
+        <td colspan="3" class="tw-w-c2 tw-td-l">{{formData.remark}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="6">流转意见</td>
+      </tr>
+      <tr class="tw-th">
+        <td>日期时间</td>
+        <td>操作者</td>
+        <td>岗位</td>
+        <td>节点</td>
+        <td>操作类型</td>
+        <td>流转意见</td>
+      </tr>
+      {{#each logList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c">{{logTime}}</td>
+          <td class="tw-td-c">{{workerNames}}</td>
+          <td class="tw-td-c">{{workerRoles}}</td>
+          <td class="tw-td-c">{{taskName}}</td>
+          <td class="tw-td-c">{{resultDesc}}</td>
+          <td class="tw-td-l">{{remark}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+
+</div>
+<script>
+  console.error(111)
+</script>

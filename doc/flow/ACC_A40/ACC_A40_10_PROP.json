@@ -1,0 +1,18 @@
+{
+  "taskKey": "ACC_A40_10_PROP",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "chkClass": "PROJ_CLOSURE_CASE_SHOW_CHK",
+  "panels": {
+    "disabledOrHidden": {
+      "remark": 1
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "taskKey": "ACC_A46_05_NOTARIZE_MESSAGE_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "resQuery",
+      "title": "ui.menu.hr.res.resQuery",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "mobile": 1,
+      "resType1": 1,
+      "resType2": 1,
+      "baseBuId": 1,
+      "presId": 1,
+      "coopType": 1,
+      "eqvaRatio": 1,
+      "emailFlag": 1,
+      "elpFlag": 1,
+      "entryType":1,
+      "email": 1,
+      "elpId": 1,
+      "remark": 1,
+      "applyResId": 1,
+      "applyDate": 1
+    }
+  }
+}

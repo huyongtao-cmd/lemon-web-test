@@ -1,0 +1,36 @@
+{
+	"taskKey": "ACC_A25_04_FIN_CASHIER",
+	"buttons": [{
+			"type": "button",
+			"icon": "check-square",
+			"key": "APPROVED",
+			"title": "app.setting.flow.approved",
+			"className": "tw-btn-primary"
+		},
+		{
+			"type": "button",
+			"icon": "close-square",
+			"key": "REJECTED",
+			"title": "app.setting.flow.rejected",
+			"className": "tw-btn-error",
+			"branches": [{
+				"id": 1,
+				"code": "REJECTED",
+				"name": "提交报销"
+			}, {
+				"id": 2,
+				"code": "REJECTED_FINAUDIT",
+				"name": "平台财务稽核专员审核"
+			}, {
+				"id": 3,
+				"code": "REJECTED_ACCOUNT",
+				"name": "财务记账"
+			}]
+		}
+	],
+	"fields": [],
+	"panels": [{
+		"id": "details",
+		"disabled": 0
+	}]
+}

@@ -1,0 +1,39 @@
+{
+  "taskKey": "ACC_A68_06_CASHIER",
+  "version": "1.0",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_PASS",
+      "title": "通过",
+      "className": "tw-btn-primary",
+      "branches": [
+        {
+          "id": 1,
+          "code": "FLOW_PASS",
+          "name": "通过"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_RETURN",
+      "title": "退回",
+      "className": "tw-btn-error",
+      "branches": [
+        {
+          "id": 2,
+          "code": "REJECTED",
+          "name": "退回提交人"
+        },
+        {
+          "id": 3,
+          "code": "REJECTED_UP",
+          "name": "退回上一级"
+        }
+      ]
+    }
+  ]
+}

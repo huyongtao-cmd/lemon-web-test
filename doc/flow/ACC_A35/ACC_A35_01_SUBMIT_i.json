@@ -1,0 +1,31 @@
+{
+  "taskKey": "ACC_A36_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPLIED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "buId": 0,
+      "presId": 0,
+      "ouId": 0,
+      "vacationType": 1,
+      "date": 0,
+      "applyNo": 0,
+      "vacationDate": 1,
+      "vacationDays": 0,
+      "attache": 1,
+      "reason": 1,
+      "workPlan": 1,
+      "detailEntityList": 1,
+      "apprResId": 0,
+      "apprDate": 0
+    }
+  }
+}

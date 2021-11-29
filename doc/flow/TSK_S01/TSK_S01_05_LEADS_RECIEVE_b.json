@@ -1,0 +1,20 @@
+{
+  "taskKey": "TSK_S01_05_LEADS_RECIEVE_b",
+  "buttons": [{
+    "type": "button",
+    "icon": "interation",
+    "key": "ACCEPT_REWARD",
+    "title": "app.setting.flow.approved.acceptReward",
+    "className": "tw-btn-primary",
+    "branches":
+    [
+      {
+        "id": 1,
+        "code": "ACCEPT_REWARD",
+        "name": "报备人领奖"
+      }
+    ]
+  }
+  ],
+  "fields": []
+}

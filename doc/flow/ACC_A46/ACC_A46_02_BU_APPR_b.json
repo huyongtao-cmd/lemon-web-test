@@ -1,0 +1,46 @@
+{
+  "taskKey": "ACC_A46_02_BU_APPR_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "mobile": 1,
+      "resType1": 1,
+      "resType2": 1,
+      "baseBuId": 1,
+      "presId": 0,
+      "presIdRequired": 1,
+      "coopType": 0,
+      "coopTypeRequired": 1,
+      "eqvaRatio": 0,
+      "eqvaRatioRequired": 1,
+      "emailFlag": 0,
+      "elpFlag": 0,
+      "entryType": 1,
+      "periodFlag": 0,
+      "jobClass1": 0,
+      "jobClass2": 0,
+      "remark": 1,
+      "applyResId": 1,
+      "applyDate": 1,
+      "capacity": 1,
+      "jobCapaSetId": 0
+    }
+  }
+}

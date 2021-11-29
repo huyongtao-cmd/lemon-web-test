@@ -1,0 +1,166 @@
+<style>
+  @page {
+    margin: 0;
+  }
+
+  .invSpec-container {
+    font-family: verdana, "宋体";
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 3%;
+  }
+
+  .invSpec-container p {
+    margin-bottom: initial;
+  }
+
+  .invSpec-header {
+    width: 100%;
+    height: 20px;
+  }
+
+  .invSpec-header img {
+    width: 120px;
+    height: 28px;
+    float: right;
+    margin-right: 40px;
+  }
+
+  .invSpec-line {
+    margin: 20px auto;
+    border-bottom: 1px solid #000;
+    clear: both;
+    width: 98%;
+  }
+
+  .invSpec-container h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .invSpec-container p.invSpec-first span {
+    line-height: 24px;
+    padding: 0 5px;
+    margin: 0 5px;
+    border-bottom: 1px solid #000;
+  }
+
+  .invSpec-container s {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    float: left;
+  }
+
+  p.invSpec-keyVal {
+    margin-bottom: 4px;
+  }
+
+  p.invSpec-keyVal b {
+    float: left;
+    width: 73px;
+    font-weight: 400;
+  }
+
+  p.invSpec-keyVal span {
+    display: block;
+    margin-left: 100px;
+    margin-right: 15%;
+    padding-left: 6px;
+    border-bottom: 1px solid #000;
+    height: 28px;
+  }
+
+  .invSpec-position {
+    position: relative;
+  }
+
+  .invSpec-tip {
+    width: 250px;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .invSpec-bottom {
+    padding-top: 20px;
+    line-height: 24px;
+  }
+
+  .invSpec-frame {
+    box-sizing: border-box;
+    float: left;
+    width: 60%;
+    border: 1px solid #000;
+    padding: 6px 4%;
+  }
+
+  .invSpec-frame p {
+    margin-bottom: 5px;
+  }
+
+  .invSpec-inscribe {
+    float: left;
+    width: 36%;
+    margin-left: 4%;
+  }
+
+  .invSpec-tac {
+    text-align: center;
+  }
+
+  .invSpec-tar {
+    text-align: right;
+  }
+</style>
+
+<div class="invSpec-container">
+  <div class="invSpec-header">
+    <img src="/static/images/el-icon.jpg" alt="埃林哲LOGO">
+  </div>
+  <div class="invSpec-line"></div>
+  <h1>发票明细说明</h1>
+  <p>{{formData.custName}}</p>
+  <p class="invSpec-first">
+    <s></s>作为贵司{{#if formData.projName}}<span>{{formData.projName}}</span>{{/if}}的实施服务项，我们一直秉承竭诚服务的宗旨，力求协助贵司顺利且出色的完成{{#if formData.projName}}<span>{{formData.projName}}</span>的{{/if}}实施服务，双方合作多时，一直保持着良好的合作关系，因此非常感谢贵司的支持与信任。
+  </p>
+  <p><s></s>本次开票信息如下，请贵司核对。</p>
+  <p class="invSpec-keyVal"><s></s><b>客户名称：</b><span>{{formData.custName}}</span></p>
+  <p class="invSpec-keyVal"><s></s><b>合同名称：</b><span>{{formData.subContractName}}</span></p>
+  <p class="invSpec-keyVal"><s></s><b>开票类型：</b><span>{{formData.invTypeDesc}}/{{formData.taxRate}}%</span></p>
+  <p class="invSpec-keyVal"><s></s><b>开票节点：</b><span>{{formData.invNode}}</span></p>
+  <p class="invSpec-keyVal"><s></s><b>开票内容：</b><span>{{formData.invContent}}</span></p>
+  <p class="invSpec-keyVal"><s></s><b>开票金额：</b><span>{{formData.invAmt}}</span></p>
+  <p class="invSpec-keyVal"><s></s><b>开票号码：</b><span>{{formData.invNo}}</span></p>
+  <p>
+    <s></s>为保障双方能够继续保持良好的合作关系，持续推进其他相关工作顺利进行，请贵司按合同约定将费用支付我司。（温馨提示：收到发票后请尽快查阅，如需修改，请于当月退回。次月退票，请出具写明拒收理由、错误具体项目及正确内容的书面材料，我司进行红冲退票处理，并开具新的发票。发票自开票日期180天内有效，过期税务局将不再受理。谢谢合作！）
+  </p>
+  <div class="invSpec-position">
+    <p><s></s>若确有支付困难，请贵司书面说明回复我司，双方再行商议。</p>
+    <p><s></s>感谢贵司对我们工作的支持和理解，谢谢！</p>
+    <p><s></s>顺颂商祺！</p>
+    <p class="invSpec-tip">烦请收到发票后，在此明细说明单上签字盖章，并扫描发送至邮箱：<br/>summer.he@elitesland.com<br/>感谢您的配合！！！</p>
+  </div>
+  <div class="invSpec-bottom">
+    <div class="invSpec-frame">
+      <p class="invSpec-tac">开户行信息</p>
+      <p>开户名称：{{formData.ouName}}</p>
+
+      <p>开户行：{{formData.bankBranch}}</p>
+      <p>帐号：{{formData.accountNo}}</p>
+    </div>
+    <div class="invSpec-inscribe">
+      <p>{{formData.ouName}}</p>
+      <p>财务部</p>
+      <p>项目管理部</p>
+      <p class="invSpec-tar">{{formData.batchDate}}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  console.error(111)
+</script>

@@ -1,0 +1,20 @@
+{
+  "taskKey": "TSK_P08_01_FINISH_APPLY_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "app.setting.flow.edit",
+      "className": "tw-btn-primary stand"
+    }
+  ],
+  "fields": []
+}

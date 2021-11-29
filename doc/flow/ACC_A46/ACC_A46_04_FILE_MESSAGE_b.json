@@ -1,0 +1,40 @@
+{
+  "taskKey": "ACC_A46_04_FILE_MESSAGE_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "allResMsg",
+      "title": "ui.menu.hr.res.allResMsg",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 1,
+      "mobile": 1,
+      "resType1": 1,
+      "resType2": 1,
+      "baseBuId": 1,
+      "presId": 1,
+      "coopType": 1,
+      "eqvaRatio": 1,
+      "emailFlag": 1,
+      "elpFlag": 1,
+      "email": 1,
+      "elpId": 1,
+      "entryType":1,
+      "remark": 1,
+      "applyResId": 1,
+      "applyDate": 1
+    }
+  }
+}

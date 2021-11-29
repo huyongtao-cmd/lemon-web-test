@@ -1,0 +1,59 @@
+# before_script:
+#   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+#   - eval $(ssh-agent -s)
+#   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+#   - mkdir -p ~/.ssh
+#   - chmod 700 ~/.ssh
+#   - ssh-keyscan 192.168.0.144 >> ~/.ssh/known_hosts
+#   - chmod 644 ~/.ssh/known_hosts
+
+#   - npm config set registry https://npm.elitescloud.com/
+#   - echo "registry=https://npm.elitescloud.com/" >> ~/.npmrc
+#   - echo "//npm.elitescloud.com/:_authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlciIsImdyb3VwcyI6WyJ1c2VyIiwiJGFsbCIsIiRhdXRoZW50aWNhdGVkIiwiQGFsbCIsIkBhdXRoZW50aWNhdGVkIiwiYWxsIl0sInJlYWxfZ3JvdXBzIjpbInVzZXIiXSwiZ3JvdXAiOlsidXNlciJdLCJpYXQiOjE1NTI1NTkwMzEsIm5iZiI6MTU1MjU1OTAzMiwiZXhwIjoxNTU3NzQzMDMxfQ.VP8G32aLWtSKWFjnaoMIDFGMOxYFasl4GI1sFWbMphY" >> ~/.npmrc
+
+# image: node:latest
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+
+build-env88:
+  # tags:
+  # - docker,node
+  stage: build
+  only:
+    - beta1
+  script:
+    - echo "Installing dependencies..."
+    - yarn install
+    - echo "Building..."
+    - rm -rf dist/ && yarn build
+    - echo "Deploying..."
+    - tar cf tw-web-env88.tar -C dist/ .
+    - du -sh *
+    - ssh administrator@192.168.0.144 'del /s/q c:\_temp\nginx-1.15.6\tw-web-env88.tar'
+    - scp tw-web-env88.tar administrator@192.168.0.144:'c:\_temp\nginx-1.15.6\'
+    - echo "send file success !! and go tu rd /s/q "
+    - ssh administrator@192.168.0.144 'rd /s/q c:\_temp\nginx-1.15.6\telework_8888 && md c:\_temp\nginx-1.15.6\telework_8888'
+    - ssh administrator@192.168.0.144 'cd c:\_temp\nginx-1.15.6\ && tar -xf tw-web-env88.tar -C telework_8888'
+
+build-env99:
+  # tags:
+  # - docker,node
+  only:
+    - master1
+  stage: build
+  script:
+    - echo "Installing dependencies..."
+    - yarn install
+    - echo "Building..."
+    - rm -rf dist/ && yarn build
+    - echo "Deploying..."
+    - tar cf tw-web-env99.tar -C dist/ .
+    - du -sh *
+    - ssh administrator@192.168.0.144 'del /s/q c:\_temp\nginx-1.15.6\tw-web-env99.tar'
+    - scp tw-web-env99.tar administrator@192.168.0.144:'c:\_temp\nginx-1.15.6\'
+    - echo "send file success !! and go tu rd /s/q "
+    - ssh administrator@192.168.0.144 'rd /s/q c:\_temp\nginx-1.15.6\telework_9999 && md c:\_temp\nginx-1.15.6\telework_9999'
+    - ssh administrator@192.168.0.144 'cd c:\_temp\nginx-1.15.6\ && tar -xf tw-web-env99.tar -C telework_9999'

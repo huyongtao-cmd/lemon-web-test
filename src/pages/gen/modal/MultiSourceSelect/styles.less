@@ -1,0 +1,30 @@
+@import '~antd/lib/style/themes/default.less';
+
+.group {
+  :global {
+    .ant-select-selection {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .groupBtn {
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
+    height: @input-height-base;
+  }
+}
+
+.asyncTree {
+  border: 1px solid @shadow-color;
+  border-radius: @border-radius-base;
+  overflow-y: auto;
+}
+
+.selectedStores {
+  padding: 4px 16px;
+  .store {
+    margin-bottom: 4px;
+  }
+}

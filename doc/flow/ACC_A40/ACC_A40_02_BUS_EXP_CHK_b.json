@@ -1,0 +1,18 @@
+{
+  "taskKey": "ACC_A40_02_BUS_EXP_CHK_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "chkClass": "PROJ_CLOSURE_BUS_EXP_CHK",
+  "panels": {
+    "disabledOrHidden": {
+      "remark": 1
+    }
+  }
+}

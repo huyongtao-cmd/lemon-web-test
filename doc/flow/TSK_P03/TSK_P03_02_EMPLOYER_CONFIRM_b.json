@@ -1,0 +1,27 @@
+{
+  "taskKey": "TSK_P03_02_EMPLOYER_CONFIRM_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    },
+    {
+      "type": "button",
+      "icon": "plus-circle",
+      "key": "CREATE_TASK",
+      "title": "app.setting.flow.createTask",
+      "className": "tw-btn-primary stand"
+    }
+  ],
+  "fields": []
+}

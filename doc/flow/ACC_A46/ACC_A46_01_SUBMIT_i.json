@@ -1,0 +1,34 @@
+{
+  "taskKey": "ACC_A46_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPLIED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "gender": 0,
+      "mobile": 1,
+      "resType1": 1,
+      "resType2": 0,
+      "baseBuId": 0,
+      "presId": 0,
+      "presIdRequired": 0,
+      "coopType": 0,
+      "coopTypeRequired": 0,
+      "eqvaRatio": 0,
+      "eqvaRatioRequired": 0,
+      "emailFlag": 0,
+      "elpFlag": 0,
+      "entryType":0,
+      "remark": 0,
+      "applyResId": 1,
+      "applyDate": 1
+    }
+  }
+}

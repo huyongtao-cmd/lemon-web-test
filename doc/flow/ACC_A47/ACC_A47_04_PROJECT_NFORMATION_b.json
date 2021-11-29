@@ -1,0 +1,35 @@
+{
+  "taskKey": "ACC_A47_04_PROJECT_NFORMATION_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "projectMsgComplete",
+      "title": "ui.menu.user.project.projectMsgComplete",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "projName": 1,
+      "workType": 1,
+      "projTempId": 1,
+      "currCode": 1,
+      "startDate": 1,
+      "endDate": 1,
+      "SOWAdjunct": 1,
+      "remark": 1,
+      "expenseBuId": 1,
+      "deliBuId": 1,
+      "deliResId": 1,
+      "pmResId": 1,
+      "totalDays": 1,
+      "totalEqva": 1,
+      "eqvaPrice": 1,
+      "eqvaPriceTotal": 1,
+      "totalReimbursement": 1,
+      "totalCost": 1,
+      "budgetAdjunct": 1
+    }
+  }
+}

@@ -1,0 +1,145 @@
+@choseAbility: #dde4f7;
+@marginBottom: 6px;
+@borderRadius: 6px;
+@padding: 10px;
+
+.myTrain {
+  width: 100%;
+  overflow: auto;
+  & > div {
+    overflow: auto;
+  }
+  .littleTitle {
+    font-size: 18px;
+    margin-bottom: @marginBottom;
+  }
+  .attent {
+    color: #1890ff;
+    position: absolute;
+    left: 850px;
+    top: 0;
+  }
+  .left {
+    float: left;
+    height: 300px;
+    width: 700px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    .cardBlock {
+      background-color: @choseAbility;
+      border-radius: @borderRadius;
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: @marginBottom;
+      padding: @padding;
+      .title {
+        font-size: 18px;
+        font-weight: bolder;
+      }
+      .desc {
+        padding-left: 24px;
+        position: relative;
+        margin-top: 10px;
+        .capa {
+          width: 300px;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .clickLink {
+          position: absolute;
+          cursor: pointer;
+          color: #1890ff;
+          left: 380px;
+          top: 0;
+        }
+        .littleStar {
+          position: absolute;
+          cursor: pointer;
+          color: #1890ff;
+          left: 560px;
+          top: 0;
+        }
+      }
+    }
+    .cardBlock1 {
+      float: left;
+    }
+    .cardBlock2 {
+      float: right;
+    }
+    .cardBlock3 {
+      clear: both;
+      width: 100%;
+    }
+    .empty {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+  .right {
+    float: left;
+    height: 300px;
+    width: 250px;
+    overflow-y: auto;
+    background-color: #fff;
+    margin-right: @marginBottom;
+    .listBox {
+      width: 100%;
+      & > div {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        &:hover {
+          background-color: @choseAbility;
+        }
+      }
+      .listItem {
+        border: 1px solid #eee;
+        border-radius: 6px;
+        margin-bottom: @marginBottom;
+        & > div {
+          display: inline-block;
+          height: 100%;
+        }
+      }
+      .listItemChecked {
+        background-color: @choseAbility;
+        color: #284488;
+      }
+      .trainContent {
+        float: right;
+        height: 100%;
+        width: 100%;
+        & > div {
+          height: 50%;
+          line-height: 40px;
+        }
+        .title {
+          position: relative;
+          font-weight: bolder;
+          .del {
+            font-weight: normal;
+            color: red;
+            position: absolute;
+            right: 10px;
+            display: none;
+            top: 0;
+          }
+        }
+      }
+    }
+    .empty {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "taskKey": "ACC_A40_07_SALE_EVAL_PM_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "evalType": "SALE_TO_PM",
+  "panels": {
+    "disabledOrHidden": {
+      "remark": 1,
+      "getPointList": 0
+    }
+  }
+}

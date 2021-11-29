@@ -1,0 +1,57 @@
+.item {
+  text-align: center;
+  > div {
+    display: inline-block;
+    width: 90%;
+    border-radius: 10px;
+    position: relative;
+    > span {
+      font-size: 18px;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  > div::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+  p {
+    line-height: 24px;
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+// .item:nth-child(5n-1) {
+//   >div {
+//     background-color: rgb(82,171,251);
+//   }
+// }
+// .item:nth-child(5n-2) {
+//   >div {
+//     background-color: rgb(145,199,105);
+//   }
+// }
+// .item:nth-child(5n-3) {
+//   >div {
+//     background-color: rgb(132,202,176);
+//   }
+// }
+// .item:nth-child(5n-4) {
+//   >div {
+//     background-color: rgb(99,180,204);
+//   }
+// }
+// .item:nth-child(5n-5) {
+//   >div {
+//     background-color: rgb(231,136,192);
+//   }
+// }

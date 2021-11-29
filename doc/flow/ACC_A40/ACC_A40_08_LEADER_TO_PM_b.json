@@ -1,0 +1,19 @@
+{
+  "taskKey": "ACC_A40_08_LEADER_TO_PM_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "evalType": "LEADER_TO_PM",
+  "panels": {
+    "disabledOrHidden": {
+      "remark": 1,
+      "getPointList": 0
+    }
+  }
+}

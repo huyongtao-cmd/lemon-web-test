@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="234px" height="440px" viewBox="0 0 234 440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>01</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="214" height="420" rx="8"></rect>
+        <filter x="-7.0%" y="-3.6%" width="114.0%" height="107.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.631372549   0 0 0 0 0.784313725   0 0 0 0 0.941176471  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="TW主题介绍" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.0首页" transform="translate(-226.000000, -130.000000)">
+            <g id="首页" transform="translate(220.000000, 80.000000)">
+                <g id="01" transform="translate(16.000000, 60.000000)">
+                    <g id="矩形备份-11">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="矩形" stroke="#D9D9D9" fill="#FFFFFF" x="63.5" y="356.5" width="87" height="23" rx="11.5"></rect>
+                    <g id="icon_geti" transform="translate(47.000000, 130.000000)">
+                        <circle id="椭圆形" fill="#4271EB" cx="60" cy="60" r="60"></circle>
+                        <path d="M59.9998708,62 C67.167752,62 73.000517,56.1696377 73,49.0000984 C73,41.8308869 67.1680105,36 59.9998708,36 C52.8319895,36 47,41.8329201 47,49.0000984 C47,56.1673423 52.8319895,62 59.9998708,62 Z M64.8044175,62 L55.1943074,62 C46.2638482,62 39,69.3218674 39,78.3244693 L39,79.2935515 C39,84 46.1474915,84 55.1943074,84 L64.8044175,84 C73.4950861,84 81,84 81,79.2935515 L81,78.3244693 C81,69.3238908 73.7349404,62 64.8044175,62 Z" id="touxiang2" fill="#FFFFFF"></path>
+                    </g>
+                    <text id="个体赋能" font-family="PingFangSC-Semibold, PingFang SC" font-size="16" font-weight="500" line-spacing="24" fill="#000000" fill-opacity="0.8">
+                        <tspan x="75" y="287">个体赋能</tspan>
+                    </text>
+                    <text id="查看更多" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" line-spacing="22" fill="#000000" fill-opacity="0.6">
+                        <tspan x="79" y="372">查看更多</tspan>
+                    </text>
+                    <g id="icon_01" transform="translate(81.000000, 40.000000)" fill="#000000" fill-opacity="0.25">
+                        <path d="M21.104,36.36 C24.776,36.36 27.224,33.732 27.224,29.808 L27.224,17.028 C27.224,13.068 24.776,10.44 21.104,10.44 C17.432,10.44 14.984,13.068 14.984,17.028 L14.984,29.808 C14.984,33.732 17.432,36.36 21.104,36.36 Z M21.104,34.272 C18.584,34.272 17.108,32.616 17.108,29.808 L17.108,17.028 C17.108,14.184 18.584,12.528 21.104,12.528 C23.624,12.528 25.1,14.184 25.1,17.028 L25.1,29.808 C25.1,32.616 23.624,34.272 21.104,34.272 Z M36.332,36 L36.332,10.8 L34.172,10.8 L30.032,14.364 L30.032,17.1 L34.172,13.644 L34.172,36 L36.332,36 Z" id="01" fill-rule="nonzero"></path>
+                        <rect id="矩形" transform="translate(47.000000, 5.500000) rotate(-45.000000) translate(-47.000000, -5.500000) " x="41" y="5" width="12" height="1"></rect>
+                        <rect id="矩形备份" transform="translate(5.000000, 40.500000) rotate(-45.000000) translate(-5.000000, -40.500000) " x="-1" y="40" width="12" height="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

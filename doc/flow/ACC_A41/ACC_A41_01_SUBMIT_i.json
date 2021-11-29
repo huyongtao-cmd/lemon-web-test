@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A41_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPLIED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {}
+}

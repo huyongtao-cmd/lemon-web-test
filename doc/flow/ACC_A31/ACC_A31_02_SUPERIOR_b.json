@@ -1,0 +1,39 @@
+{
+  "taskKey": "ACC_A31_02_SUPERIOR_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close",
+      "key": "CLOSE",
+      "title": "app.setting.flow.close",
+      "className": "tw-btn-error"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "enrollDate": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "ouId": 1,
+      "presId": 1,
+      "leaveDesc": 1,
+      "applyResId": 1,
+      "applyDate": 1,
+      "jobHandOverFlag": 0,
+      "jobHandOver": 0,
+      "emailSet": 0,
+      "emailReceiver": 0,
+      "lastJobDate": 0,
+      "myVacationList": 0,
+      "vacationFlag": 0
+    }
+  }
+}

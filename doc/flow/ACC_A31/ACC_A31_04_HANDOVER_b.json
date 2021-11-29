@@ -1,0 +1,23 @@
+{
+  "taskKey": "ACC_A31_04_HANDOVER_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "presId": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "jobHandOver": 1,
+      "lastJobDate": 1,
+      "jobContent": 0
+    }
+  }
+}

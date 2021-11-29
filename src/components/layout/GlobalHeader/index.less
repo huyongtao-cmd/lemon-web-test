@@ -1,0 +1,311 @@
+@import '~antd/lib/style/themes/default.less';
+
+@pro-header-hover-bg: rgba(0, 0, 0, 0.025);
+@header-top-height: 50px;
+
+@header-top-bg: #2b395d;
+@header-top-hover-bg: #1e2c4b;
+@header-top-active-bg: @header-top-hover-bg;
+
+.header {
+  position: relative;
+  height: @header-top-height;
+  line-height: @header-top-height;
+  padding: 0 12px 0 0;
+  color: #fff;
+  background-color: @header-top-bg;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.logo {
+  height: @header-top-height;
+  line-height: @header-top-height - 6px;
+  vertical-align: top;
+  display: inline-block;
+  padding: 0 0 0 24px;
+  cursor: pointer;
+  font-size: 20px;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.menu {
+  :global(.anticon) {
+    margin-right: 8px;
+  }
+
+  :global(.ant-dropdown-menu-item) {
+    width: 160px;
+  }
+
+  :global(.ant-dropdown-menu-item:hover) {
+    background: @normal-color;
+  }
+}
+
+.topMenus {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  vertical-align: top;
+  height: @header-top-height;
+  background-color: @header-top-bg;
+
+  .link {
+    position: relative;
+    flex: 1 0 auto;
+    padding: 0 20px;
+    height: @header-top-height;
+    line-height: 17px;
+    color: @text-color-secondary-dark;
+    text-align: center;
+
+    // 讲道理这里真的不懂为什么， anticon 明明就是 i 标签
+    // i,
+    // .anticon {
+    i {
+      position: relative;
+      display: block;
+      // width: 100%;
+      font-size: @font-size-base;
+      margin-top: 7px;
+    }
+
+    span {
+      position: relative;
+      display: block;
+      font-size: @font-size-sm;
+      margin-top: 4px;
+    }
+
+    &::before {
+      // &:not(:first-child)::before {
+      content: '';
+      width: 1px;
+      height: 16px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -8px;
+      background-color: black; // @header-top-active-bg;
+    }
+
+    &:last-child::after {
+      content: '';
+      width: 1px;
+      height: 16px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+      background-color: black; // @header-top-active-bg;
+    }
+  }
+
+  .link:hover,
+  .activeLink {
+    // background: linear-gradient(to right, @primary-8, @primary-color, @primary-8);
+    color: white;
+    background-color: @header-top-active-bg;
+    &::before,
+    &:last-child::after,
+    & + .link::before {
+      display: none;
+    }
+  }
+
+  .icon {
+    padding: 4px;
+  }
+}
+
+i.trigger {
+  font-size: 20px;
+  // line-height: @header-top-height;
+  // height: @header-top-height;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+  padding: 14px 24px;
+
+  &:hover {
+    background: @header-top-hover-bg;
+  }
+}
+
+.right {
+  float: right;
+  height: 100%;
+  overflow: hidden;
+
+  .learning {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 4px;
+    padding: 0 12px;
+    height: @header-top-height;
+    &:hover {
+      background-color: @header-top-active-bg;
+    }
+  }
+
+  .action {
+    cursor: pointer;
+    padding: 0 12px;
+    display: inline-block;
+    transition: all 0.3s;
+    height: 100%;
+    height: @header-top-height;
+    color: @text-color-secondary-dark;
+
+    > i {
+      vertical-align: middle;
+      // color: @text-color;
+    }
+
+    &:hover {
+      color: white;
+      background-color: @header-top-active-bg;
+    }
+
+    :global(&.ant-popover-open) {
+      background: @pro-header-hover-bg;
+    }
+  }
+
+  .search {
+    padding: 0 12px;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .account {
+    .avatar {
+      margin: 10px 8px 10px 0;
+      color: @primary-color;
+      background: rgba(255, 255, 255, 0.85);
+      vertical-align: middle;
+    }
+  }
+}
+
+.dark {
+  height: @header-top-height;
+
+  .action {
+    color: rgba(255, 255, 255, 0.85);
+
+    > i {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    &:hover,
+    &:global(.ant-popover-open) {
+      background: @primary-color;
+    }
+
+    :global(.ant-badge) {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .header {
+    :global(.ant-divider-vertical) {
+      vertical-align: unset;
+    }
+
+    .name {
+      display: none;
+    }
+
+    i.trigger {
+      padding: 16px 12px;
+    }
+
+    .logo {
+      padding-left: 12px;
+      padding-right: 12px;
+      position: relative;
+    }
+
+    .right {
+      position: absolute;
+      right: 12px;
+      top: 0;
+
+      .account {
+        .avatar {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.extensionWrap {
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 4px;
+  line-height: 50px;
+  height: 50px;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  padding: 0 12px;
+  &:hover {
+    background: #1e2c4b;
+  }
+}
+.iconStyle {
+  height: 16px;
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  width: 16px;
+}
+.dropMenu {
+  background: #2b395d !important;
+  color: #fff;
+  :global {
+    .ant-dropdown-menu-submenu-title {
+      color: #fff;
+    }
+    .ant-dropdown-menu-item {
+      color: #fff;
+      &:hover {
+        background: #1e2c4b;
+      }
+    }
+    .ant-dropdown-menu-submenu-arrow-icon {
+      color: #fff;
+    }
+  }
+}
+.blueBg {
+  background: #2b395d;
+  border-radius: 4px;
+  color: #fff;
+  :global {
+    .ant-dropdown-menu {
+      background: #2b395d;
+      color: #fff;
+    }
+    .ant-dropdown-menu-item {
+      color: #fff;
+      &:hover {
+        background: #1e2c4b;
+      }
+    }
+    .ant-dropdown-menu-submenu-title {
+      &:hover {
+        background: #1e2c4b;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "taskKey": "TSK_S01_03_LEADS_DISPOSE_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check",
+      "key": "ACCEPT",
+      "title": "app.setting.flow.accept",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": [
+
+  ]
+}

@@ -1,0 +1,68 @@
+:global {
+  .modal-page {
+    .basic {
+      display: flex;
+      align-items: center;
+
+      .basic-title {
+        margin: 0 10px 10px 0;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+
+    .allColumns {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      flex-wrap: wrap;
+
+      .column {
+        width: 16%;
+        margin-right: 10px;
+        display: -webkit-box;
+      }
+    }
+
+    .template-title {
+      margin-top: 24px;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .templates {
+      display: flex;
+
+      .inner {
+        text-align: center;
+        margin-right: 30px;
+
+        img {
+          position: relative;
+          cursor: pointer;
+          left: 50%;
+          top: 20%;
+        }
+      }
+
+      .template {
+        background-color: darkgray;
+        cursor: default;
+      }
+
+      .active-template {
+        background-color: darkgray;
+        color: #0a1ce0;
+        cursor: default;
+      }
+
+      //.template:focus {
+      //  background-color: #0a1ce0
+      //}
+
+      //.template:hover {
+      //  #0a1ce0
+      //}
+    }
+  }
+}

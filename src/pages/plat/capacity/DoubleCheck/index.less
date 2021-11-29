@@ -1,0 +1,63 @@
+.title {
+  position: relative;
+  font-size: 16px;
+  color: @primary-color;
+  text-indent: 8px;
+  font-weight: 500;
+  margin-bottom: 4px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 80%;
+    top: 10%;
+    width: 4px;
+    background-color: @primary-color;
+  }
+}
+.detail-point-style {
+  border-bottom: 1px solid #e8e8e8;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 0 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &:last-child {
+    border-bottom: none;
+  }
+  .courseName {
+    color: #1890ff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.table-clear-padding {
+  :global {
+    .ant-table {
+      .ant-table-tbody > tr:hover > td {
+        background: none !important;
+      }
+      td {
+        padding: 0 !important;
+      }
+    }
+    .ant-table-tbody td {
+      background: none !important;
+    }
+  }
+}
+
+.capa-name {
+  font-weight: bold;
+}
+.capa-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.capa-table-wrap {
+  width: 800px;
+}

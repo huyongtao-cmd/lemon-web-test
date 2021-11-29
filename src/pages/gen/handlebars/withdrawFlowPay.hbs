@@ -1,0 +1,532 @@
+<style>
+  body {
+    font-family: verdana, "宋体";
+    font-size: 12px;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  .tw-content {
+    width: 100%;
+    margin: 0 auto
+  }
+
+  .tw-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tw-row {
+    width: 100%;
+    padding: 10px;
+    clear: both;
+  }
+
+  .tw-table {
+    width: 99%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    padding: 0;
+  }
+
+  .tw-cl {
+    clear: both;
+  }
+
+  /*表格-表头*/
+  .tw-th {
+    text-align: center;
+    background-color: #d9d9d9;
+    min-height: 35px;
+  }
+
+  .tw-th > td, .tw-th > th {
+    vertical-align: middle;
+    border: 1px #000000 solid;
+    font-size: 10px;
+  }
+
+  /*表格-行*/
+  .tw-tr {
+    vertical-align: middle;
+    height: 35px;
+  }
+
+  .tw-tr td, .tw-tr th {
+    border: 1px #000000 solid;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .tw-tr .tw-td-c {
+    text-align: center !important;
+  }
+
+  /*居左*/
+  .tw-tr .tw-td-l {
+    text-align: left !important;
+  }
+
+  /*居右*/
+  .tw-tr .tw-td-r {
+    text-align: right !important;
+  }
+
+  /*单元格名称*/
+  .tw-w-c1 {
+
+  }
+
+  /*单元格值*/
+  .tw-w-c2 {
+  }
+  .table1 td{
+    width:50%;
+  }
+  .table2 td{
+    width:25%;
+  }
+  .table3 td{
+    width:11.1%;
+  }
+  .table4 td{
+    width:16.6%;
+  }
+</style>
+<div class="tw-content">
+  <div class="tw-title  tw-cl">提现付款报销单</div>
+  <div class="tw-row">
+    <table class="tw-table table1">
+      <tr>
+        <td colspan="4">报销单号：{{formData.reimNo}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td colspan="2">流程编号：{{formData.docNo}}</td>
+        <td colspan="2">流程名称：{{formData.docName}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table table2">
+      <tr>
+        <td colspan="4">报销人信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">申请人</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resNo}} - {{formData.reimResName}}</td>
+        <td class="tw-w-c1 tw-td-l">报销人BASE BU</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resOuName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销人BASE地</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.baseCityDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">创建日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.createTime}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table table2">
+      <tr>
+        <td colspan="4">财务相关信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销人所属公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resOuName}}</td><!-- 报销人所属公司取T_RES.OU_ID 2020-01-02 by jim的建议 -->
+        <td class="tw-w-c1 tw-td-l">费用承担公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.expenseOuName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销类型</td>
+        <td
+          class="tw-w-c2 tw-td-l">{{formData.reimType1Name}} {{formData.reimType2Name}} {{formData.reimType3Name}}</td>
+        <td class="tw-w-c1 tw-td-l">事由类型/事由号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.reasonTypeName}} / {{formData.reasonName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">相关项目/参考合同号</td>
+        <td class="tw-w-c2 tw-td-l">
+          {{formData.projName}} {{formData.purProjName}} /
+          {{formData.userdefinedNo}}
+        </td>
+        <td class="tw-w-c1 tw-td-l">项目签约公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.projCompany}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">费用承担BU</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.expenseBuName}}</td>
+        <td class="tw-w-c1 tw-td-l">支付方式</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.payMethodName}}</td>
+      </tr><style>
+  body {
+    font-family: verdana, "宋体";
+    font-size: 12px;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  .tw-content {
+    width: 100%;
+    margin: 0 auto
+  }
+
+  .tw-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tw-row {
+    width: 100%;
+    padding: 10px;
+    clear: both;
+  }
+
+  .tw-table {
+    width: 99%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    padding: 0;
+  }
+
+  .tw-cl {
+    clear: both;
+  }
+
+  /*表格-表头*/
+  .tw-th {
+    text-align: center;
+    background-color: #d9d9d9;
+    min-height: 35px;
+  }
+
+  .tw-th > td, .tw-th > th {
+    vertical-align: middle;
+    border: 1px #000000 solid;
+    font-size: 10px;
+  }
+
+  /*表格-行*/
+  .tw-tr {
+    vertical-align: middle;
+    height: 35px;
+  }
+
+  .tw-tr td, .tw-tr th {
+    border: 1px #000000 solid;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .tw-tr .tw-td-c {
+    text-align: center !important;
+  }
+
+  /*居左*/
+  .tw-tr .tw-td-l {
+    text-align: left !important;
+  }
+
+  /*居右*/
+  .tw-tr .tw-td-r {
+    text-align: right !important;
+  }
+
+  /*单元格名称*/
+  .tw-w-c1 {
+
+  }
+
+  /*单元格值*/
+  .tw-w-c2 {
+  }
+</style>
+<div class="tw-content">
+  <div class="tw-title  tw-cl">提现付款报销单</div>
+  <div class="tw-row">
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">报销单号：{{formData.reimNo}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td colspan="2">流程编号：{{formData.docNo}}</td>
+        <td colspan="2">流程名称：{{formData.docName}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">报销人信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">申请人</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resNo}} - {{formData.reimResName}}</td>
+        <td class="tw-w-c1 tw-td-l">报销人BASE BU</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resOuName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销人BASE地</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.baseCityDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">创建日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.createTime}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">财务相关信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销人所属公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.resOuName}}</td><!-- 报销人所属公司取T_RES.OU_ID 2020-01-02 by jim的建议 -->
+        <td class="tw-w-c1 tw-td-l">费用承担公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.expenseOuName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销类型</td>
+        <td
+          class="tw-w-c2 tw-td-l">{{formData.reimType1Name}} {{formData.reimType2Name}} {{formData.reimType3Name}}</td>
+        <td class="tw-w-c1 tw-td-l">事由类型/事由号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.reasonTypeName}} / {{formData.reasonName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">相关项目/参考合同号</td>
+        <td class="tw-w-c2 tw-td-l">
+          {{formData.projName}} {{formData.purProjName}} /
+          {{formData.userdefinedNo}}
+        </td>
+        <td class="tw-w-c1 tw-td-l">项目签约公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.projCompany}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">费用承担BU</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.expenseBuName}}</td>
+        <td class="tw-w-c1 tw-td-l">支付方式</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.payMethodName}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">是否分摊</td>
+        <td class="tw-w-c2 tw-td-l">
+          {{#if formData.allocationFlag}}是{{else}}否{{/if}}
+        </td>
+        <td class="tw-w-c1 tw-td-l">报销金额</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.taxedReimAmt}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销说明</td>
+        <td class="tw-w-c2 tw-td-l" colspan="3">{{formData.remark}}</td>
+      </tr>
+    </table>
+
+    {{!-- <table class="tw-table">
+      <tr>
+        <td colspan="4">相关前置流程</td>
+      </tr>
+      <tr class="tw-th">
+        <td>序号</td>
+        <td>前置流程类型</td>
+        <td>前置单据号</td>
+      </tr>
+      <tr class="tw-tr">
+        <td colspan="3" class="tw-td-c">- 无前置流程 -</td>
+      </tr>
+    </table> --}}
+
+    <table class="tw-table" id="exspense-item">
+      <tr>
+        <td colspan="4">费用报销明细</td>
+      </tr>
+      <tr class="tw-th">
+        <td>费用发生日期</td>
+        <td>记账关联</td>
+        <td>科目</td>
+        <td>调整后金额</td>
+        <td>增值税税率</td>
+        <td>税额</td>
+        <td>报销金额（不含税）</td>
+        <td>发票张数</td>
+        <td>报销说明</td>
+      </tr>
+      {{#each formData.reimdList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c">{{feeDate}}</td>
+          <td class="tw-td-c">{{relateName}}</td>
+          <td class="tw-td-l">{{accName}}</td>
+          <td class="tw-td-c">{{adjustedAmt}}</td>
+          <td class="tw-td-c">{{taxRate}}</td>
+          <td class="tw-td-c">{{taxAmt}}</td>
+          <td class="tw-td-c">{{reimAmt}}</td>
+          <td class="tw-td-c"> {{invCnt}}</td>
+          <td class="tw-td-l">{{reimDesc}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">支付账号信息</td>
+      </tr>
+      <tr class="tw-th">
+        <td>收款银行账户</td>
+        <td>户名</td>
+        <td>收款银行</td>
+        <td>收款银行网点名称</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-td-c">{{formData.accountNo}}</td>
+        <td class="tw-td-c">{{formData.holderName}}</td>
+        <td class="tw-td-c">{{formData.bankName}}</td>
+        <td class="tw-td-c">{{formData.bankBranch}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="6">流转意见</td>
+      </tr>
+      <tr class="tw-th">
+        <td>日期时间</td>
+        <td>操作者</td>
+        <td>岗位</td>
+        <td>节点</td>
+        <td>操作类型</td>
+        <td>流转意见</td>
+      </tr>
+      {{#each logList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c">{{logTime}}</td>
+          <td class="tw-td-c">{{workerNames}}</td>
+          <td class="tw-td-c">{{workerRoles}}</td>
+          <td class="tw-td-c">{{taskName}}</td>
+          <td class="tw-td-c">{{resultDesc}}</td>
+          <td class="tw-td-l">{{remark}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+
+</div>
+
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">是否分摊</td>
+        <td class="tw-w-c2 tw-td-l">
+          {{#if formData.allocationFlag}}是{{else}}否{{/if}}
+        </td>
+        <td class="tw-w-c1 tw-td-l">报销金额</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.taxedReimAmt}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">报销说明</td>
+        <td class="tw-w-c2 tw-td-l" colspan="3">{{formData.remark}}</td>
+      </tr>
+    </table>
+
+    {{!-- <table class="tw-table">
+      <tr>
+        <td colspan="4">相关前置流程</td>
+      </tr>
+      <tr class="tw-th">
+        <td>序号</td>
+        <td>前置流程类型</td>
+        <td>前置单据号</td>
+      </tr>
+      <tr class="tw-tr">
+        <td colspan="3" class="tw-td-c">- 无前置流程 -</td>
+      </tr>
+    </table> --}}
+
+    <table class="tw-table table3" id="exspense-item">
+      <tr>
+        <td colspan="4">费用报销明细</td>
+      </tr>
+      <tr class="tw-th">
+        <td>费用发生日期</td>
+        <td>记账关联</td>
+        <td>科目</td>
+        <td>调整后金额</td>
+        <td>增值税税率</td>
+        <td>税额</td>
+        <td>报销金额（不含税）</td>
+        <td>发票张数</td>
+        <td>报销说明</td>
+      </tr>
+      {{#each formData.reimdList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c">{{feeDate}}</td>
+          <td class="tw-td-c">{{relateName}}</td>
+          <td class="tw-td-l">{{accName}}</td>
+          <td class="tw-td-c">{{adjustedAmt}}</td>
+          <td class="tw-td-c">{{taxRate}}</td>
+          <td class="tw-td-c">{{taxAmt}}</td>
+          <td class="tw-td-c">{{reimAmt}}</td>
+          <td class="tw-td-c"> {{invCnt}}</td>
+          <td class="tw-td-l">{{reimDesc}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+    <table class="tw-table table2">
+      <tr>
+        <td colspan="4">支付账号信息</td>
+      </tr>
+      <tr class="tw-th">
+        <td>收款银行账户</td>
+        <td>户名</td>
+        <td>收款银行</td>
+        <td>收款银行网点名称</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-td-c">{{formData.accountNo}}</td>
+        <td class="tw-td-c">{{formData.holderName}}</td>
+        <td class="tw-td-c">{{formData.bankName}}</td>
+        <td class="tw-td-c">{{formData.bankBranch}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table table4">
+      <tr>
+        <td colspan="6">流转意见</td>
+      </tr>
+      <tr class="tw-th">
+        <td>日期时间</td>
+        <td>操作者</td>
+        <td>岗位</td>
+        <td>节点</td>
+        <td>操作类型</td>
+        <td>流转意见</td>
+      </tr>
+      {{#each logList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c">{{logTime}}</td>
+          <td class="tw-td-c">{{workerNames}}</td>
+          <td class="tw-td-c">{{workerRoles}}</td>
+          <td class="tw-td-c">{{taskName}}</td>
+          <td class="tw-td-c">{{resultDesc}}</td>
+          <td class="tw-td-l">{{remark}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+
+</div>

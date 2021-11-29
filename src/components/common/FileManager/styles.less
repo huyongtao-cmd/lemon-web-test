@@ -1,0 +1,57 @@
+.list {
+  max-height: 300px;
+  overflow-y: auto;
+  .line {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  .icon {
+    flex: 0 0 auto;
+    margin-left: 8px;
+    font-size: @btn-font-size-lg + 2;
+    cursor: pointer;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+  .uploadList {
+    :global {
+      .ant-list-item-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+  .uploadedList {
+    :global {
+      .ant-list-item-content {
+        align-items: center;
+        .delete-style {
+          visibility: hidden;
+          &:hover {
+            color: @error-color;
+          }
+        }
+        &:hover {
+          .delete-style {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rightBtn {
+  display: inline-block;
+  margin-left: 20px;
+  width: 100%;
+  height: 100%;
+  line-height: 36px;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  border-radius: 3px;
+}

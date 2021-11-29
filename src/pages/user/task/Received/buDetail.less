@@ -1,0 +1,96 @@
+@borderColor: #e8e8e8;
+
+.buDetail {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .taskInfo {
+    min-width: 30%;
+    height: 470px;
+    border: 1px solid @borderColor;
+    border-radius: 20px;
+    .taskTitle {
+      width: 100%;
+      height: 48px;
+      font-size: 18px;
+      border-bottom: 1px solid @borderColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .taskMoney {
+      height: 150px;
+      border-bottom: 1px solid @borderColor;
+    }
+    .lastField {
+      margin-top: 24px;
+    }
+    .leftField {
+      text-align: right;
+    }
+  }
+  .subcontractInfo {
+    min-width: 33%;
+    height: 470px;
+    border: 1px solid @borderColor;
+    border-radius: 20px;
+    .taskTitle {
+      width: 100%;
+      height: 48px;
+      font-size: 18px;
+      border-bottom: 1px solid @borderColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .taskMoney {
+      height: 150px;
+      border-bottom: 1px solid @borderColor;
+    }
+    .lastField {
+      margin-top: 24px;
+    }
+    .leftField {
+      text-align: right;
+    }
+  }
+
+  .balanceInfo {
+    min-width: 28%;
+    height: 470px;
+    border: 1px solid @borderColor;
+    border-radius: 20px;
+    .taskTitle {
+      width: 100%;
+      height: 48px;
+      font-size: 18px;
+      border-bottom: 1px solid @borderColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .taskMoney {
+      height: 150px;
+      border-bottom: 1px solid @borderColor;
+    }
+    .lastField {
+      margin-top: 24px;
+    }
+    .leftField {
+      text-align: right;
+    }
+    // 当量或金额为负数时颜色为红色
+  }
+  .negNumberColor {
+    color: #f00;
+  }
+}
+.subContractModal {
+  :global {
+    .ant-modal-footer {
+      text-align: center !important;
+    }
+  }
+}

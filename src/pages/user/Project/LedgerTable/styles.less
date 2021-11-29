@@ -1,0 +1,62 @@
+.table {
+  :global {
+    .ant-table-pagination.ant-pagination {
+      float: none;
+      text-align: center;
+    }
+
+    .ant-form-item {
+      margin-bottom: 6px;
+    }
+
+    .ant-table-small > .ant-table-content > .ant-table-body {
+      margin: 0;
+    }
+  }
+}
+
+.rightButtons {
+  text-align: right;
+
+  :global {
+    i {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.searchBar {
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  background: white;
+  overflow: hidden;
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 8px;
+    }
+  }
+  .formFlex {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 10px 24px;
+    &Content {
+      flex: 1;
+    }
+    &Tail {
+      flex: 0;
+      margin-left: 16px;
+      padding: 0 8px;
+    }
+  }
+}
+
+.indicator {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+}

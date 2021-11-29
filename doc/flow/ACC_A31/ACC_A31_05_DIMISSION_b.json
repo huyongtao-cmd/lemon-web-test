@@ -1,0 +1,28 @@
+{
+  "taskKey": "ACC_A31_05_DIMISSION_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 1,
+      "enrollDate": 1,
+      "baseBuId": 1,
+      "baseCity": 1,
+      "ouId": 1,
+      "presId": 1,
+      "jobHandOverFlag": 1,
+      "jobHandOver": 1,
+      "lastJobDate": 1,
+      "leaveAttach": 0,
+      "leaveItemList": 0,
+      "resChkData": 0
+    }
+  }
+}

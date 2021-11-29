@@ -1,0 +1,20 @@
+{
+  "taskKey": "ACC_A68_01_SUBMIT_i",
+  "version": "1.0",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_COMMIT",
+      "title": "编辑",
+      "className": "tw-btn-primary",
+      "branches": [
+        {
+          "id": 1,
+          "code": "FLOW_COMMIT",
+          "name": "编辑"
+        }
+      ]
+    }
+  ]
+}

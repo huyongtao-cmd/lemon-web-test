@@ -1,0 +1,1294 @@
+@import '~antd/lib/style/themes/default.less';
+
+// 全局样式共用文件
+// 警告: 禁止随意修改，除非你真的知道自己在干什么！！！
+
+// variables
+// ------------------------------------------------
+@darken-primary-color: #27395f;
+@lighten-primary-color: #395397;
+
+// browser normalize settings
+// ------------------------------------------------
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+  margin-bottom: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: @font-family;
+  // font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type='search'] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: 700;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+// project global settings
+// ------------------------------------------------
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Source Han Sans CN, Helvetica Neue, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+// :disabled blame eyes
+.deepColor {
+  &:disabled {
+    color: rgba(0, 0, 0, 0.85) !important;
+  }
+}
+.deepColorDecorator {
+  :global {
+    .ant-input-disabled,
+    .ant-input-number-disabled,
+    .ant-select-disabled .ant-select-selection--multiple .ant-select-selection__choice,
+    .ant-select-disabled,
+    .ant-cascader-picker-disabled {
+      color: rgba(0, 0, 0, 0.85) !important;
+    }
+  }
+}
+// normal mode also need deepColor now
+.deeperColor {
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+// umi/link
+a.tw-link {
+  color: @btn-info-color;
+
+  &:hover {
+    // stylelint-disable-next-line
+    color: color(~`colorPalette('@{btn-info-color}', 8) `);
+  }
+}
+
+a.tw-link-primary {
+  color: @primary-color;
+
+  &:hover {
+    // stylelint-disable-next-line
+    color: color(~`colorPalette('@{primary-color}', 8) `);
+  }
+}
+
+// antd default overwrite settings
+// ------------------------------------------------
+
+// divider
+.ant-divider-horizontal {
+  margin: 12px 0 24px !important;
+}
+
+.ant-tag {
+  cursor: default !important;
+}
+
+.ant-modal {
+  .ant-modal-header {
+    background-color: @primary-color;
+
+    .ant-modal-title {
+      color: white;
+    }
+  }
+
+  .ant-modal-close-icon {
+    color: white;
+  }
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.globalSpin {
+  width: 100%;
+  margin: 40px 0;
+}
+
+// .ant-modal-mask,
+// .ant-modal-wrap {
+//   z-index: 1061;
+// }
+
+.ant-layout-header {
+  background: @darken-primary-color;
+  box-shadow: none;
+}
+
+// .ant-dropdown {
+//   z-index: 1062;
+// }
+
+// .ant-notification {
+//   z-index: 1071;
+// }
+
+.ant-card-head {
+  min-height: 40px !important;
+}
+
+.ant-card.ant-card-wider-padding {
+  & > .ant-card-head {
+    padding: 0 24px;
+  }
+
+  & > .ant-card-body {
+    padding: 24px;
+  }
+}
+
+.ant-card.tw-card-adjust {
+  .ant-card-head-title {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    i,
+    .anticon-profile {
+      color: @heading-color !important;
+    }
+  }
+}
+
+.ant-card.tw-card-multiTab {
+  .ant-card-head {
+    padding: 0;
+    // height: 37px;
+    min-height: 32px;
+    // line-height: 37px;
+    background-color: #f0f2f5;
+
+    .ant-tabs {
+      margin-bottom: -1px;
+    }
+  }
+
+  .ant-card-head-wrapper {
+    margin-bottom: 8px;
+    padding: 0 24px;
+  }
+
+  .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+
+  .ant-tabs-nav-wrap {
+    margin-bottom: 0;
+  }
+
+  // ## 正常情况下左右有虚线
+  // .ant-tabs-nav-wrap,
+  // .ant-tabs-nav {
+  //   border-left: 1px solid #ddd;
+  //   border-right: 1px solid #ddd;
+  // }
+  .ant-tabs-tab {
+    margin-left: -16px;
+    color: rgb(132, 132, 132);
+    padding: 4px 24px 4px 40px !important;
+    border-top: 1px solid #ddd;
+    background: linear-gradient(to bottom, white, rgb(230, 230, 230));
+    border-left: 1px solid #ddd;
+    border-top-left-radius: 3px;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      top: -1px;
+      right: -16px;
+      bottom: -1px;
+      width: 32px;
+      background: linear-gradient(to bottom, white, rgb(230, 230, 230));
+      transform: skew(30deg);
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      border-top-right-radius: 3px;
+      box-shadow: darkgrey 4px 0 4px 0;
+      z-index: 1;
+    }
+
+    // &:last-child {
+    //   // &::after {
+    //   //   right: -32px;
+    //   //   transform: skew(0deg);
+    //   // }
+    //   &::after {
+    //     // 最后一个是斜角，如果不要斜脚，打开下面注释即可
+    //     // display: none;
+    //   }
+    // }
+  }
+
+  .tw-card-multiTab-disabled {
+    color: #d4d4d4;
+  }
+
+  .ant-tabs-tab-active {
+    margin-left: -8px;
+    color: @lighten-primary-color;
+    padding-left: 24px !important;
+    border-bottom-color: white;
+    background: linear-gradient(to bottom, white, white);
+    font-weight: bold;
+    z-index: 1;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: -1px;
+      left: -16px;
+      bottom: -1px;
+      width: 32px;
+      background: linear-gradient(to bottom, white, white);
+      transform: skew(-30deg);
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      border-top-left-radius: 3px;
+      box-shadow: darkgrey -4px 3px 4px 0;
+      z-index: -1;
+    }
+
+    &::before,
+    &::after {
+      z-index: 1;
+      border-bottom-color: white;
+      background: linear-gradient(to bottom, white, white);
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    height: 0;
+  }
+}
+
+.ant-card.tw-card-rightLine {
+  margin-bottom: 4px;
+
+  .ant-card-body {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 6px 12px;
+
+    button {
+      flex: 0;
+
+      & + button {
+        margin-left: 8px;
+      }
+
+      &.separate {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.ant-card.tw-card-rightLine-more {
+  .ant-card-head-title {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 6px 12px;
+
+    button {
+      flex: 0;
+      margin-bottom: 8px;
+      &:first-of-type {
+        margin-right: 8px;
+      }
+
+      & + button {
+        // margin-left: 8px;
+        margin-right: 8px;
+      }
+    }
+  }
+  .ant-card-body {
+    padding: 0;
+  }
+}
+
+// 项目定制 message，原有 message 会因此被干掉，统一使用 gen 里面的 AlertMessage
+.ant-message-notice-content {
+  padding: 0;
+
+  .ant-message-custom-content {
+    & > i.anticon {
+      display: none;
+    }
+  }
+}
+
+// tree remove show line, BTW: we do not use showLine anymore~
+.ant-tree.tw-tree-line {
+  li {
+    &::before {
+      border-left-color: transparent !important;
+    }
+  }
+}
+
+// tree selected
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  &::before,
+  &:hover::before {
+    background-color: @primary-color !important;
+  }
+}
+
+// tree :hover
+.ant-tree li {
+  position: relative;
+}
+
+.ant-tree li span.ant-tree-checkbox,
+.ant-tree-switcher {
+  z-index: 1;
+}
+
+// overwrite tree selected style when checkable
+.ant-tree li span.ant-tree-checkbox + .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  &::before,
+  &:hover::before {
+    background-color: #e7edfa !important;
+  }
+}
+
+.ant-tree-title {
+  position: absolute;
+}
+
+.ant-tree.ant-tree-show-line li span.ant-tree-switcher,
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected,
+.ant-tree li .ant-tree-node-content-wrapper:hover {
+  background-color: transparent;
+}
+
+.ant-tree-node-content-wrapper {
+  &::before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 24px;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    background-color: #e7edfa !important;
+  }
+
+  & > .ant-tree-title {
+    display: inline-block;
+    z-index: 1;
+  }
+}
+
+// -------------------------- button
+.ant-btn.ant-btn-primary.christmas:before {
+  display: none !important;
+}
+
+.ant-btn {
+  box-shadow: 0 2px 5px @text-color-secondary;
+
+  &.ant-btn-sm {
+    font-size: @font-size-sm - 2px;
+  }
+
+  &.ant-btn-lg {
+    font-size: @font-size-lg;
+  }
+
+  & > .anticon + span,
+  & > span + .anticon {
+    margin-left: 4px;
+  }
+}
+
+.ant-btn:not([disabled]) {
+  &.tw-btn-default {
+    color: @text-color;
+    background-color: white;
+
+    &:hover {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+
+  &.tw-btn-primary {
+    color: white;
+    background-color: @primary-color;
+    // border-bottom: solid 2px @primary-8;
+    border-color: @primary-color;
+
+    &:hover {
+      // stylelint-disable-next-line
+      background-color: color(~`colorPalette('@{primary-color}', 8) `);
+      // stylelint-disable-next-line
+      border-color: color(~`colorPalette('@{primary-color}', 8) `);
+    }
+  }
+
+  &.tw-btn-info {
+    color: white;
+    background-color: @btn-info-color;
+    // border-bottom: solid 2px color(~`colorPalette('@{btn-info-color}', 8) `);
+    border-color: @btn-info-color;
+
+    &:hover {
+      // stylelint-disable-next-line
+      background-color: color(~`colorPalette('@{btn-info-color}', 8) `);
+      // stylelint-disable-next-line
+      border-color: color(~`colorPalette('@{btn-info-color}', 8) `);
+    }
+  }
+
+  &.tw-btn-success {
+    color: white;
+    background-color: @success-color;
+    // border-bottom: solid 2px color(~`colorPalette('@{success-color}', 8) `);
+    border-color: @success-color;
+
+    &:hover {
+      // stylelint-disable-next-line
+      background-color: color(~`colorPalette('@{success-color}', 8) `);
+      // stylelint-disable-next-line
+      border-color: color(~`colorPalette('@{success-color}', 8) `);
+    }
+  }
+
+  &.tw-btn-error {
+    color: white;
+    background-color: @error-color;
+    // border-bottom: solid 2px color(~`colorPalette('@{error-color}', 8) `);
+    border-color: @error-color;
+
+    &:hover {
+      // stylelint-disable-next-line
+      background-color: color(~`colorPalette('@{error-color}', 8) `);
+      // stylelint-disable-next-line
+      border-color: color(~`colorPalette('@{error-color}', 8) `);
+    }
+  }
+
+  &.tw-btn-warning {
+    color: white;
+    background-color: @warning-color;
+    // border-bottom: solid 2px color(~`colorPalette('@{warning-color}', 8) `);
+    border-color: @warning-color;
+
+    &:hover {
+      // stylelint-disable-next-line
+      background-color: color(~`colorPalette('@{warning-color}', 8) `);
+      // stylelint-disable-next-line
+      border-color: color(~`colorPalette('@{warning-color}', 8) `);
+    }
+  }
+}
+
+// --------------------------  table
+.ant-table {
+  &.ant-table-small > .ant-table-content > .ant-table-body {
+    margin: 0;
+  }
+
+  &.ant-table-fixed tr > th,
+  &.ant-table-fixed tr > td,
+  & tr > th,
+  & tr > td {
+    padding: 8px 8px;
+  }
+
+  .ant-table-thead tr > th {
+    white-space: nowrap;
+  }
+
+  .ant-table-tbody > tr > td.ant-table-column-sort {
+    background: transparent;
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    // 加 important， 修复排序时 hover 背景色被排序列截断的问题 ==.
+    background: #bbc0c7 !important;
+  }
+
+  .ant-table-thead > tr > th {
+    background: #f0f4fc !important;
+    color: #333 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: center;
+  }
+
+  .ant-table-thead > tr > th.ant-table-selection-column,
+  .ant-table-tbody > tr > td.ant-table-selection-column {
+    min-width: 30px;
+    width: 30px;
+  }
+  .ant-table-fixed-left {
+    z-index: 1;
+  }
+}
+
+//-------------------------- ant-table-pagination
+.ant-table-pagination.ant-pagination {
+  text-align: center;
+  float: inherit;
+
+  .ant-pagination-item {
+    min-width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border: none;
+    border-radius: 2px;
+    margin-right: 10px;
+    background: #f4f4f6;
+    color: #999;
+    // font-size: 12px;
+  }
+
+  .ant-pagination-item-active {
+    background: @primary-color;
+
+    a {
+      color: white;
+    }
+  }
+
+  .ant-pagination-next,
+  .ant-pagination-prev {
+    min-width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 2px;
+    // font-size: 12px;
+    .ant-pagination-item-link {
+      border: none;
+      color: #cdcdcd;
+      background: #f4f4f6;
+    }
+  }
+
+  .ant-pagination-options {
+    // font-size: 12px;
+    .ant-select-selection--single {
+      height: 22px;
+      border: solid 1px #dcdfe6;
+      border-radius: 2px;
+    }
+
+    .ant-pagination-options-size-changer.ant-select {
+      top: 5px;
+      height: 22px;
+    }
+
+    .ant-select-arrow {
+      right: 5px;
+    }
+
+    .ant-select-selection-selected-value {
+      line-height: 20px;
+    }
+
+    .ant-select-selection__rendered {
+      line-height: 20px;
+      // font-size: 12px;
+      width: 100%;
+    }
+
+    .ant-pagination-options-quick-jumper input {
+      height: 20px;
+      width: 40px;
+      border-radius: 2px;
+    }
+  }
+
+  .ant-select-dropdown-menu-item {
+    padding: 0 12px;
+    // font-size: 12px;
+  }
+}
+
+.ant-calendar-range .ant-calendar-footer-extra {
+  float: right;
+}
+
+.ant-form-explain {
+  position: absolute;
+  padding: 2px 8px;
+  // color: rgba(0,0,0,.65) !important;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 4px;
+  // border: 1px solid #f5222d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 22px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border: 1px solid transparent;
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+  }
+}
+
+// project class overwrite
+// ------------------------------------------------
+.tw-btn-list > .ant-btn {
+  margin-right: 5px;
+}
+
+.tw-has-popover > span,
+.tw-has-popover label > span {
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+.tw-card-title {
+  position: relative;
+  font-size: 16px;
+  color: @heading-color;
+  text-indent: 8px;
+  font-weight: 500;
+  // margin-bottom: 16px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 80%;
+    top: 10%;
+    width: 4px;
+    background-color: @primary-color;
+  }
+}
+
+.tw-styled-list {
+  li:not(.tw-card-title) {
+    list-style-type: circle;
+  }
+}
+
+.tw-field-group {
+  display: inline-flex !important;
+  flex-flow: row nowrap;
+
+  .tw-field-group-filter > label {
+    padding: 0 10px;
+    font-size: 22px;
+    height: 100%;
+
+    &:last-of-type {
+      border-radius: 0;
+      border-right: 0 none;
+    }
+  }
+
+  .tw-field-group-field {
+    flex: 1 0 auto;
+  }
+}
+
+// input-number 按钮左对齐，数字右对齐方案
+.number-left {
+  :global {
+    .ant-input-number-handler-wrap {
+      left: 0;
+    }
+
+    .ant-input-number-input {
+      text-align: right;
+    }
+  }
+}
+
+// 财务部要求：禁用的字段文本颜色调深至75%
+.ant-input-disabled,
+.ant-input-number-disabled,
+.ant-select-disabled .ant-select-selection--multiple .ant-select-selection__choice,
+.ant-select-disabled,
+.ant-cascader-picker-disabled {
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+
+// atomic settings - TODO: 暂时写死，以后可使用less函数生成。
+// ------------------------------------------------
+.hidden {
+  display: none;
+}
+
+.noPadding {
+  padding: 0 !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.sr-only {
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  white-space: normal;
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+.cursor-help {
+  cursor: help !important;
+
+  & > button {
+    cursor: help !important;
+  }
+}
+
+.blk-flt-left {
+  float: left;
+}
+
+.blk-flt-right {
+  float: right;
+}
+
+.border-t-0 {
+  border-top-width: 0 !important;
+}
+
+.border-r-0 {
+  border-right-width: 0 !important;
+}
+
+.border-b-0 {
+  border-bottom-width: 0 !important;
+}
+
+.border-l-0 {
+  border-left-width: 0 !important;
+}
+
+.border-x-0 {
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+}
+
+.border-y-0 {
+  border-top-width: 0 !important;
+  border-bottom-width: 0 !important;
+}
+
+.border-a-0 {
+  border-width: 0 !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// re-hack-table header align....
+// stylelint-disable-next-line
+.ant-table-thead > tr > th {
+  text-align: center !important;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-primary {
+  color: @primary-color;
+}
+
+.text-info {
+  color: @info-color;
+}
+
+.text-success {
+  color: @success-color;
+}
+
+.text-processing {
+  color: @processing-color;
+}
+
+.text-error {
+  color: @error-color;
+}
+
+.text-highlight {
+  color: @highlight-color;
+}
+
+.text-disable {
+  color: fade(#000, 25%);
+}
+
+.text-warning {
+  color: @warning-color;
+}
+
+.text-normal {
+  color: @normal-color;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-primary {
+  background-color: @primary-color;
+}
+
+.bg-info {
+  background-color: @info-color;
+}
+
+.bg-success {
+  background-color: @success-color;
+}
+
+.bg-processing {
+  background-color: @processing-color;
+}
+
+.bg-error {
+  background-color: @error-color;
+}
+
+.bg-highlight {
+  background-color: @highlight-color;
+}
+
+.bg-warning {
+  background-color: @warning-color;
+}
+
+.bg-normal {
+  background-color: @normal-color;
+}
+
+.x-fill-100 {
+  width: 100% !important;
+}
+
+.y-fill-100 {
+  height: 100% !important;
+}
+
+// mixins --------
+.generateScales(@index, @value) {
+  // -------- width --------
+
+  .w-@{index} {
+    width: @value;
+  }
+
+  .w-@{index}-min {
+    min-width: @value;
+  }
+
+  .w-@{index}-max {
+    max-width: @value;
+  }
+
+  // -------- height --------
+
+  .h-@{index} {
+    height: @value;
+  }
+
+  .h-@{index}-min {
+    min-height: @value;
+  }
+
+  .h-@{index}-max {
+    max-height: @value;
+  }
+
+  // -------- margin --------
+
+  .m-t-@{index} {
+    margin-top: @value !important;
+  }
+
+  .m-r-@{index} {
+    margin-right: @value !important;
+  }
+
+  .m-b-@{index} {
+    margin-bottom: @value !important;
+  }
+
+  .m-l-@{index} {
+    margin-left: @value !important;
+  }
+
+  .m-x-@{index} {
+    margin-left: @value !important;
+    margin-right: @value !important;
+  }
+
+  .m-y-@{index} {
+    margin-top: @value !important;
+    margin-bottom: @value !important;
+  }
+
+  .m-a-@{index} {
+    margin: @value !important;
+  }
+
+  // -------- padding --------
+
+  .p-t-@{index} {
+    padding-top: @value !important;
+  }
+
+  .p-r-@{index} {
+    padding-right: @value !important;
+  }
+
+  .p-b-@{index} {
+    padding-bottom: @value !important;
+  }
+
+  .p-l-@{index} {
+    padding-left: @value !important;
+  }
+
+  .p-x-@{index} {
+    padding-left: @value !important;
+    padding-right: @value !important;
+  }
+
+  .p-y-@{index} {
+    padding-top: @value !important;
+    padding-bottom: @value !important;
+  }
+
+  .p-a-@{index} {
+    padding: @value !important;
+  }
+}
+
+// Basic looping in LESS
+// 吐槽: 这玩意太弱了。不能理解为什么antd不用scss或者stylus，或者纯js。。。
+// 即使可以在webpack里面可以配置，依然非常反感在一个项目中使用多种语法。。所以就这样凑合一下了。
+@min-stride: 5px;
+.loop-scale(@index) when (@index >= 0) {
+  .generateScales(@index, @index * @min-stride);
+  // -------- next iteration --------
+  .loop-scale(@index - 1);
+}
+
+.loop-scale(20);
+.generateScales(auto, auto);
+
+// media control
+// ------------------------------------------------
+@media print {
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+  }
+
+  a,
+  a:visited {
+    page-break-inside: avoid;
+    text-decoration: underline;
+  }
+
+  a[href^='http']:after {
+    content: ' < ' attr(href) '> ';
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  blockquote,
+  pre {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+}
+:global {
+  .prod-number-description {
+    text-align: right;
+  }
+}

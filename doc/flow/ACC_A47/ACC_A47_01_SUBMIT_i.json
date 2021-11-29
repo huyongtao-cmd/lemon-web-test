@@ -1,0 +1,35 @@
+{
+  "taskKey": "ACC_A47_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPLIED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "projName": 0,
+      "workType": 0,
+      "projTempId": 0,
+      "currCode": 0,
+      "startDate": 0,
+      "endDate": 0,
+      "SOWAdjunct": 0,
+      "remark": 0,
+      "expenseBuId": 0,
+      "deliBuId": 0,
+      "deliResId": 0,
+      "pmResId": 0,
+      "totalDays": 0,
+      "totalEqva": 0,
+      "eqvaPrice": 0,
+      "eqvaPriceTotal": 0,
+      "totalReimbursement": 0,
+      "totalCost": 0,
+      "budgetAdjunct": 0
+    }
+  }
+}

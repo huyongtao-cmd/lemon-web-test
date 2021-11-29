@@ -1,0 +1,41 @@
+.leftTitle {
+  font-size: 20px;
+}
+.leftContent {
+  width: 380px;
+  .list {
+    display: inline-block;
+    min-width: 280px;
+    min-height: 200px;
+    border: 1px solid #e8e8e8;
+    margin-top: 10px;
+    border-radius: 4px;
+    .item {
+      font-size: 18px;
+      text-align: left;
+      margin-top: 10px;
+      color: rgb(42, 182, 246);
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+      .itemContent {
+        display: inline-block;
+        text-align: center;
+      }
+      .itemFocused {
+        font-weight: bold;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+}
+.rightContent {
+  float: left;
+  width: 65%;
+  margin-left: 20px;
+  .config {
+    margin-top: 20px;
+  }
+}

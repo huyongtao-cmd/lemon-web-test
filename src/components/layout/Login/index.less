@@ -1,0 +1,97 @@
+@import '~antd/lib/style/themes/default.less';
+
+.login {
+  // margin: 24px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 360px;
+  height: 100%;
+  // border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background-color: #fff;
+
+  .form {
+    flex: 0 1 auto;
+    // border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 0 50px;
+    // width: 360px;
+    // height: 400px;
+    :global {
+      .ant-tabs-tab {
+        padding: 8px 0;
+        font-size: 20px !important;
+      }
+    }
+  }
+
+  .tabs {
+    padding: 0 2px;
+    margin: 0 -2px;
+    :global {
+      .ant-tabs-tab {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .ant-input-affix-wrapper .ant-input:not(:first-child) {
+        padding-left: 34px;
+      }
+    }
+  }
+
+  :global {
+    .ant-tabs .ant-tabs-bar {
+      border-bottom: 0;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab-active {
+      color: @primary-color;
+    }
+
+    .ant-form-item {
+      margin-bottom: 32px;
+
+      .ant-input {
+        border-radius: 0;
+        border-width: 0;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+          border-right-width: 0 !important;
+          border-bottom-width: 1px;
+        }
+      }
+    }
+  }
+
+  .prefixIcon {
+    font-size: @font-size-base;
+    color: @disabled-color;
+  }
+
+  .getSmsCode {
+    display: block;
+    width: 100%;
+  }
+
+  .getCaptcha {
+    display: block;
+    margin: 0 auto;
+    height: 40px; // 可以extend .ant-input-lg这个样式。不过less的extend咋玩的来着。。。懒得查了，就这样先凑合一下。
+    cursor: pointer;
+  }
+
+  .submit {
+    width: 100%;
+    margin-top: 24px;
+    border-radius: 24px;
+  }
+}

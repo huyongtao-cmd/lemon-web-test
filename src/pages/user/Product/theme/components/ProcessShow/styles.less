@@ -1,0 +1,163 @@
+// .shape_contain {}
+
+.shape_contain_in {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.shape_title {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  color: #fff;
+  padding: 0 10px;
+  width: 140px;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  background: #626d89;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+// .shape_main {
+//   display: flex;
+//   flex-direction: row;
+// }
+.shape_item {
+  flex: 0 0 auto;
+  max-width: 180px;
+  text-align: center;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.common {
+  font-size: 14px;
+  position: relative;
+  padding-left: 7px;
+  width: 130px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  overflow: visible;
+  color: #000;
+}
+
+.shape_item div {
+  .common;
+  background: #e5f5d7;
+}
+
+.bg_1 div {
+  .common;
+  background: #faf4dc !important;
+}
+
+.bg_2 div {
+  .common;
+  background: #fae7dc !important;
+}
+
+.bg_3 div {
+  background: #faefdc !important;
+}
+
+.bg_4 div {
+  background: #e0eaff !important;
+}
+
+.bg_5 div {
+  background: #f1e6fa !important;
+}
+
+.shape_item div:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 17px 0 33px 11px;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  left: -1px;
+  top: 0;
+}
+
+.commonAfter {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 26px 17px;
+  position: absolute;
+  right: -17px;
+  top: 0;
+}
+
+.shape_item div:after {
+  .commonAfter;
+  border-color: transparent transparent transparent #e5f5d7;
+}
+
+.bg_1 div:after {
+  border-color: transparent transparent transparent #faf4dc !important;
+}
+
+.bg_2 div:after {
+  border-color: transparent transparent transparent #fae7dc !important;
+}
+
+.bg_3 div:after {
+  border-color: transparent transparent transparent #faefdc !important;
+}
+
+.bg_4 div:after {
+  border-color: transparent transparent transparent #e0eaff !important;
+}
+
+.bg_5 div:after {
+  border-color: transparent transparent transparent #f1e6fa !important;
+}
+
+// .shape_in {
+//   // position: relative;
+// }
+
+// .shape_up {
+//   // position: absolute;
+//   // top: 0;
+//   // left: 0;
+//   color: white;
+//   background-color: #51bfff;
+//   width: 84px;
+//   height: 15px;
+//   line-height: 20px;
+//   text-align: center;
+//   transform: skewX(45deg);
+//   z-index: 1;
+// }
+
+// .shape_down {
+//   position: absolute;
+//   top: 15px;
+//   left: 0;
+//   color: white;
+//   background-color: #51bfff;
+//   width: 84px;
+//   height: 15px;
+//   line-height: 20px;
+//   text-align: center;
+//   transform: skewX(-45deg);
+//   z-index: 1;
+// }
+
+// .text {
+//   z-index: 2;
+//   position: absolute;
+//   width: 84px;
+//   top: 7px;
+//   left: 0;
+// }

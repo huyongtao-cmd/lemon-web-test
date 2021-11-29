@@ -1,0 +1,50 @@
+@import '~antd/lib/style/themes/default.less';
+@btn-info-color: #008fdb;
+
+/* stylelint-disable */
+.prod-btn-default {
+}
+
+.prod-btn-primary {
+  color: white;
+  background-color: @primary-color;
+  // border-bottom: solid 2px @primary-8;
+  border-color: @primary-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: color(~`colorPalette('@{primary-color}', 8) `);
+    border-color: color(~`colorPalette('@{primary-color}', 8) `);
+  }
+}
+
+.prod-btn-info {
+  color: white;
+  background-color: @btn-info-color;
+  border-color: @btn-info-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: color(~`colorPalette('@{btn-info-color}', 8) `);
+    border-color: color(~`colorPalette('@{btn-info-color}', 8) `);
+  }
+}
+
+.prod-btn-danger {
+  color: white;
+  background-color: @error-color;
+  border-color: @error-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: color(~`colorPalette('@{error-color}', 8) `);
+    border-color: color(~`colorPalette('@{error-color}', 8) `);
+  }
+}
+/* stylelint-enable */

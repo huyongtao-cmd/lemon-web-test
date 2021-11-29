@@ -1,0 +1,39 @@
+{
+	"taskKey": "ACC_A26_03_FINAL_CHECK",
+	"buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary",
+      "branches": [
+        {
+          "id": 1,
+          "code": "APPROVED",
+          "name": "通过"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error",
+      "branches" : [
+        {
+          "id":1,
+          "code":"REJECTED_APPLICANT",
+          "name":"发起节点"
+        },
+        {
+          "id":2,
+          "code":"REJECTED_SUPERIOR",
+          "name":"上一节点"
+        }
+      ]
+    }
+  ],
+	"fields": []
+}

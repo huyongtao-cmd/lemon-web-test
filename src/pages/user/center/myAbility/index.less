@@ -1,0 +1,286 @@
+@getAbilityBg: #e6fffb;
+@getAbilityBorder: #87e8de;
+@getAbility: #13c2c2;
+@nextAbilityBg: #fff1f0;
+@nextAbilityBorder: #ffa39e;
+@nextAbility: #f5222d;
+@approvalAbilityBg: #fff7e6;
+@approvalAbilityBorder: #ffd591;
+@approvalAbility: #fa8c16;
+@checkAbility: #1890ff;
+@checkAbilityBg: #def0fa;
+@checkAbilityBorder: #91b5ff;
+@choseAbility: #d4dffb;
+
+.text-select-box {
+  min-height: 80vh;
+  background-color: #fff;
+  :global {
+    .ant-card.ant-card-wider-padding > .ant-card-body {
+      padding: 5px 24px;
+    }
+  }
+}
+
+.text-select-button-group {
+  margin-top: 15px;
+  :global {
+    .ant-select {
+      margin: 0 15px;
+      width: 200px !important;
+    }
+  }
+  .attendance-button {
+    height: 32px;
+    line-height: 30px;
+    width: 100px;
+  }
+}
+.growth-path {
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  padding: 10px 15px;
+  .growth-path-example {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    margin-bottom: 5px;
+    span {
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 14px;
+      margin-right: 30px;
+      &::before {
+        border-radius: 10px;
+        content: '';
+        display: inline-block;
+        height: 12px;
+        margin-right: 8px;
+        width: 24px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .growth-path-handle-info {
+    color: #294791;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .growth-path-handle-info-icon {
+    margin-right: 5px;
+  }
+  .get-abilityNow {
+    &::before {
+      margin-bottom: 4px;
+      background: #e6f7ff;
+      border: 1px solid #1890ff;
+    }
+  }
+  .get-ability {
+    &::before {
+      margin-bottom: 4px;
+      background: @getAbilityBg;
+      border: 1px solid @getAbilityBorder;
+    }
+  }
+  .next-ability {
+    &::before {
+      margin-bottom: 4px;
+      background: @nextAbilityBg;
+      border: 1px solid @nextAbilityBorder;
+    }
+  }
+  .approval-ability {
+    &::before {
+      margin-bottom: 4px;
+      background: @approvalAbilityBg;
+      border: 1px solid @approvalAbilityBorder;
+    }
+  }
+}
+.growth-path-info {
+  overflow-x: auto;
+  padding: 20px 0;
+  white-space: nowrap;
+}
+.ability-wrap {
+  border: 1px solid #e3e9f6;
+  display: inline-block;
+  margin-right: 40px;
+  min-width: 160px;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: top;
+}
+.ability-title {
+  background: #f4f7ff;
+  border-bottom: 1px solid #e3e9f6;
+  color: #294791;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  position: relative;
+  img {
+    cursor: pointer;
+    height: 16px;
+    position: absolute;
+    top: -9px;
+    right: -6px;
+    width: 16px;
+    &:hover {
+      opacity: 0.65;
+    }
+  }
+}
+.ability-content {
+  padding: 10px 0;
+  height: 400px;
+  overflow-y: auto;
+  .level-tag {
+    background: #f5f5f5;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    width: 96px;
+    z-index: 2;
+    img {
+      display: inline-block;
+      height: 16px;
+      margin-right: 8px;
+      position: relative;
+      top: -1px;
+      width: 16px;
+      vertical-align: middle;
+    }
+  }
+  .level-tag-wrap {
+    cursor: pointer;
+    position: relative;
+  }
+  .level-tag-get {
+    color: @getAbility;
+    background: @getAbilityBg;
+    border-color: @getAbilityBorder;
+  }
+  .level-tag-next {
+    color: @nextAbility;
+    background: @nextAbilityBg;
+    border-color: @nextAbilityBorder;
+  }
+  .level-tag-approval {
+    color: @approvalAbility;
+    background: @approvalAbilityBg;
+    border-color: @approvalAbilityBorder;
+  }
+
+  .level-tag-check {
+    color: @checkAbility;
+    background: @checkAbilityBg;
+    border-color: @checkAbilityBorder;
+  }
+
+  .level-tag-select {
+    &::before {
+      background: @choseAbility;
+      content: '';
+      left: 0;
+      height: 60px;
+      position: absolute;
+      top: -10px;
+      width: 100%;
+    }
+  }
+  // /*整体部分*/
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  // /*滑动轨道*/
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: none;
+  }
+  // /*滑块*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  // /*滑块效果*/
+  ::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    background-color: rgba(85, 85, 85, 0.4);
+  }
+}
+
+.ability-arrow {
+  display: inline-block;
+  height: 20px;
+  margin: 10px 0;
+  width: 8px;
+}
+.growth-intro {
+  margin-bottom: 20px;
+}
+.tag-name {
+  color: #294791;
+  font-size: 16px;
+  font-weight: bold;
+}
+.table-wrap {
+  margin-left: -24px;
+  width: calc(100% + 48px);
+  :global {
+    .ant-table {
+      .ant-table-tbody > tr:hover > td {
+        background: none !important;
+      }
+    }
+  }
+}
+.field-table {
+  padding-left: 50px;
+}
+
+.table-cell-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-break: normal;
+  white-space: normal;
+}
+.table-cell-border {
+  border-bottom: 1px solid #e8e8e8;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.table-clear-padding {
+  td {
+    padding: 0 !important;
+  }
+}
+.table-padding {
+  padding: 8px;
+}
+.exam-point {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myAbilityGrowthBox {
+  padding-left: 15px;
+  background-color: #fff;
+  :global {
+    .ant-menu-horizontal > .ant-menu-item,
+    .ant-menu-horizontal > .ant-menu-submenu {
+      margin-right: 35px;
+    }
+  }
+}

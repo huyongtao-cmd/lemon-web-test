@@ -1,0 +1,18 @@
+{
+  "taskKey": "TSK_P07_04_CREATE_TASK_b",
+  "buttons": [{
+    "type": "button",
+    "icon": "check-square",
+    "key": "APPROVED",
+    "title": "app.setting.flow.approved",
+    "className": "tw-btn-primary"
+  },
+  {
+    "type": "button",
+    "icon": "plus-circle",
+    "key": "CREATE_SUB_TASK",
+    "title": "app.setting.flow.createSubPageTask",
+    "className": "tw-btn-primary stand"
+  }],
+  "fields": []
+}

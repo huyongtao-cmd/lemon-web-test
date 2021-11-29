@@ -1,0 +1,28 @@
+@import '~antd/lib/style/themes/default.less';
+
+.procLink {
+  color: @btn-info-color !important;
+
+  &:hover {
+    // stylelint-disable-next-line
+    color: color(~`colorPalette('@{btn-info-color}', 8) `) !important;
+  }
+}
+
+.wrapperHeader {
+  // 抵消原来页面上面的那个 PageHeaderWrapper 的 margin-top -8px
+  margin-top: 8px;
+}
+
+.topBtns {
+  button + button {
+    margin-left: @padding-xs;
+  }
+  .marginRight {
+    margin-right: @padding-xs;
+  }
+}
+
+.topPadding {
+  padding-top: @padding-md;
+}

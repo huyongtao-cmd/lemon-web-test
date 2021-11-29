@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A57_03_ASSESSOR_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

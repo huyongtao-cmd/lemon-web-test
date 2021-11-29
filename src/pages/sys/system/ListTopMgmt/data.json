@@ -1,0 +1,35 @@
+[
+  {
+    "name": "资源当量排行",
+    "dataSource": "EQVA_PRE_MONTH",
+    "layoutType": "VERTICAL_CHART",
+    "udcList": [
+      { "key": "SORT_NO", "value": "排名" },
+      { "key": "LABLE", "value": "标签" },
+      { "key": "REMARK", "value": "备注" }
+    ],
+    "dataList": [
+      {
+        "name": "张三",
+        "BaseBu": "TW",
+        "no": 1,
+        "value": 185,
+        "sortNo": 1,
+        "label": 196,
+        "remark": 34,
+        "sortVal": 1234123
+      }
+    ]
+  },
+  {
+    "name": "资源当量排行",
+    "dataSource": "EQVA_PRE_MONTH",
+    "layoutType": "VERTICAL_CHART",
+    "dataList": [
+      {
+        "name": "张三",
+        "value": 185
+      }
+    ]
+  }
+]

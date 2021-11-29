@@ -1,0 +1,52 @@
+{
+  "taskKey": "ACC_A70_02_EMPLOYER_CONFIRM_b",
+  "version": "1.0",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "nextStep",
+      "filter": "1",
+      "title": "app.setting.flow.nextStep",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_PASS",
+      "filter": "2",
+      "title": "通过",
+      "className": "tw-btn-primary",
+      "branches": [
+        {
+          "id": 1,
+          "code": "FLOW_PASS",
+          "name": "通过"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_RETURN",
+      "filter": "1",
+      "title": "拒绝",
+      "className": "tw-btn-error",
+      "branches": [
+        {
+          "id": 2,
+          "code": "FLOW_RETURN",
+          "name": "拒绝"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "upStep",
+      "filter": "2",
+      "title": "app.setting.flow.upStep",
+      "className": "tw-btn-primary"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "taskKey": "ACC_A23_03_BU_CONFIRM_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "close-square",
+      "key": "REJECTED",
+      "title": "app.setting.flow.rejected",
+      "className": "tw-btn-error"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "BOOKINGVIEW",
+      "title": "app.setting.flow.bookingView",
+      "className": "tw-btn-primary"
+    }
+  ]
+}

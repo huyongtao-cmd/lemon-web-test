@@ -1,0 +1,125 @@
+.link {
+  color: #008fdb;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.okrTitle {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  img {
+    margin-right: 5px;
+    height: 20px;
+    vertical-align: text-top;
+    width: 20px;
+  }
+}
+.okrTitleSmall {
+  color: #333;
+  font-size: 16px;
+  padding-left: 22px;
+  :global {
+    .anticon-home {
+      color: #aaa;
+      margin-right: 5px;
+    }
+  }
+  p {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+  span {
+    background: #f8c55b;
+    color: #fff;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 18px;
+    padding: 0 6px;
+    position: relative;
+    vertical-align: middle;
+    &::after {
+      content: '';
+      position: absolute;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid #f8c55b;
+      border-top: 6px solid transparent;
+      left: -12px;
+      height: 0;
+      -ms-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      top: 50%;
+      width: 0;
+    }
+  }
+}
+.okrContent {
+  color: #333;
+  font-size: 16px;
+  padding-left: 22px;
+  :global {
+    .anticon-user {
+      color: #aaa;
+      margin-right: 5px;
+    }
+    span {
+      color: #999;
+      font-size: 14px;
+      margin-left: 20px;
+      vertical-align: middle;
+    }
+  }
+}
+.okrProgressWrap {
+  color: #999;
+  font-size: 14px;
+  padding-left: 22px;
+}
+.progressWrap {
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.krWrap {
+  box-sizing: border-box;
+  padding: 0 0 24px;
+  :global {
+    .ant-divider-horizontal {
+      margin: 12px 0 12px !important;
+    }
+  }
+}
+.krTitle {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  img {
+    margin-right: 5px;
+    height: 20px;
+    vertical-align: text-top;
+    width: 20px;
+  }
+}
+.krContent {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 22px;
+  :global {
+    .ant-progress-line {
+      width: 50%;
+    }
+  }
+}

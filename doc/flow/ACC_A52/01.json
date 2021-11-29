@@ -1,0 +1,20 @@
+{
+  "taskKey": "ACC_A52_01_APPROPRIATION_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "app.setting.flow.edit",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

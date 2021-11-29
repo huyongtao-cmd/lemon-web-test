@@ -1,0 +1,265 @@
+<style>
+  body {
+    font-family: verdana, "宋体";
+    font-size: 12px;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  .tw-content {
+    width: 100%;
+    margin: 0 auto
+  }
+
+  .tw-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tw-row {
+    width: 100%;
+    padding: 10px;
+    clear: both;
+  }
+
+  .tw-table {
+    width: 99%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    padding: 0;
+  }
+
+  .tw-cl {
+    clear: both;
+  }
+
+  /*表格-表头*/
+  .tw-th {
+    text-align: center;
+    background-color: #d9d9d9;
+    min-height: 35px;
+  }
+
+  .tw-th>td,
+  .tw-th>th {
+    vertical-align: middle;
+    border: 1px #000000 solid;
+    font-size: 10px;
+  }
+
+  /*表格-行*/
+  .tw-tr {
+    vertical-align: middle;
+    height: 35px;
+  }
+
+  .tw-tr td,
+  .tw-tr th {
+    border: 1px #000000 solid;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .tw-tr .tw-td-c {
+    text-align: center !important;
+  }
+
+  /*居左*/
+  .tw-tr .tw-td-l {
+    text-align: left !important;
+  }
+
+  /*居右*/
+  .tw-tr .tw-td-r {
+    text-align: right !important;
+  }
+
+  /*单元格名称*/
+  .tw-w-c1 {
+    width: 15%;
+  }
+
+  /*单元格值*/
+  .tw-w-c2 {
+    width: 35%;
+  }
+
+  .tw-w-c3 {
+    width: 15%;
+  }
+
+  .tw-w-c4 {
+    width: 20%;
+  }
+
+  .tw-w-2 {
+    width: 50%;
+  }
+</style>
+<div class="tw-content">
+  <div class="tw-title tw-cl">法务合同</div>
+  <div class="tw-row">
+    <table class="tw-table">
+      <tr class="tw-tr">
+        <td colspan="2" class="tw-w-2">流程编号：{{formData.docNo}}</td>
+        <td colspan="2" class="tw-w-2">流程名称：{{formData.docName}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">基本信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">合同名称</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.contractName}}</td>
+        <td class="tw-w-c1 tw-td-l">参考合同号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.refContractNo}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">合同编号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.contractNo}}</td>
+        <td class="tw-w-c1 tw-td-l">合同分类</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.contractClass1Desc}}/{{formData.contractClass2Desc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">签约公司</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.signingCompanyDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">相关合同</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.relatedContractDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">相关项目</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.relatedProjectDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">相关产品</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.relatedProductDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">签订日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.signingDate}}</td>
+        <td class="tw-w-c1 tw-td-l">生效日期</td>
+        {{#if formData.effectiveStartDate}}
+        <td class="tw-w-c2 tw-td-l">{{formData.effectiveStartDate}}~{{formData.effectiveEndDate}}</td>
+        {{else}}
+        <td class="tw-w-c2 tw-td-l"></td>{{/if}}
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">币种</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.currCodeDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">金额</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.amt}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">合同负责人</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.inchargeResIdDesc}}</td>
+        <td class="tw-w-c1 tw-td-l">所属部门</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.inchargeBuIdDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">相关单据</td>
+        {{#if formData.twPItemsViews}}
+        {{#each formData.twPItemsViews}}
+        <td class="tw-w-c2 tw-td-l">{{type}}-{{no}}-{{name}}</td>
+        {{/each}}
+        {{else}}<td class="tw-w-c2 tw-td-l"></td>{{/if}}
+        <td class="tw-w-c1 tw-td-l">创建人</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.createUserIdDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">创建时间</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.createTime}}</td>
+        <td class="tw-w-c1 tw-td-l">合同状态</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.contractStatusDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">关闭原因</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.closeReason}}</td>
+        <td class="tw-w-c1 tw-td-l">关闭备注</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.closeRemark}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">关闭时间</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.closeTime}}</td>
+        <td class="tw-w-c1 tw-td-l">备注</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.remark}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">签约方信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">甲方</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.partyA}}</td>
+        <td class="tw-w-c1 tw-td-l">乙方</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.partyB}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">丙方</td>{{!--todo --}}
+        <td class="tw-w-c2 tw-td-l">{{formData.partyC}}</td>
+        <td class="tw-w-c1 tw-td-l">丁方</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.partyD}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">戊方</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.partyE}}</td>
+        <td class="tw-w-c1 tw-td-l">备注</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.partiesRemark}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table" id="exspense-item">
+      <tr>
+        <td colspan="4">合同规则</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>编号</td>
+        <td class='tw-w-c4'>描述</td>
+      </tr>
+      {{#each formData.contractRules}}
+      <tr class="tw-tr">
+        <td class="tw-td-c tw-w-c1">{{rulesLineNo}}</td>
+        <td class="tw-td-c tw-w-c4">{{rulesDescription}}</td>
+      </tr>
+      {{/each}}
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="6">流转意见</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>日期时间</td>
+        <td class='tw-w-c3'>操作者</td>
+        <td class='tw-w-c4'>岗位</td>
+        <td class='tw-w-c1'>节点</td>
+        <td class='tw-w-c3'>操作类型</td>
+        <td class='tw-w-c4'>流转意见</td>
+      </tr>
+      {{#each logList}}
+      <tr class="tw-tr">
+        <td class="tw-td-c tw-w-c1">{{logTime}}</td>
+        <td class="tw-td-c tw-w-c3">{{workerNames}}</td>
+        <td class="tw-td-c tw-w-c4">{{workerRoles}}</td>
+        <td class="tw-td-c tw-w-c1">{{taskName}}</td>
+        <td class="tw-td-c tw-w-c3">{{resultDesc}}</td>
+        <td class="tw-td-l tw-w-c4">{{remark}}</td>
+      </tr>
+      {{/each}}
+    </table>
+
+  </div>
+
+</div>

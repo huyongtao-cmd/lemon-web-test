@@ -1,0 +1,30 @@
+{
+  "taskKey": "ACC_A49_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "nextStep",
+      "filter": "1",
+      "title": "app.setting.flow.nextStep",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "upStep",
+      "filter": "2",
+      "title": "app.setting.flow.upStep",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPLIED",
+      "filter": "2",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {}
+}

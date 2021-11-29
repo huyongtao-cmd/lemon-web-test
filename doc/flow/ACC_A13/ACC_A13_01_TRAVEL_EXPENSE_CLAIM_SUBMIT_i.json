@@ -1,0 +1,12 @@
+{
+  "taskKey": "ACC_A13_01_TRAVEL_EXPENSE_CLAIM_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "misc.update",
+      "className": "tw-btn-primary"
+    }
+  ]
+}

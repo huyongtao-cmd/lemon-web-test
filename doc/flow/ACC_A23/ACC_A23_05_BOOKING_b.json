@@ -1,0 +1,46 @@
+{
+	"taskKey": "ACC_A23_05_BOOKING_b",
+	"buttons": [{
+			"type": "button",
+			"icon": "check-square",
+			"key": "APPROVED",
+			"title": "app.setting.flow.approved",
+			"className": "tw-btn-primary",
+			"branches": [{
+				"id": 1,
+				"code": "APPROVED",
+				"name": "通过"
+			}]
+		},
+		{
+			"type": "button",
+			"icon": "close-square",
+			"key": "REJECTED",
+			"title": "app.setting.flow.rejected",
+			"className": "tw-btn-error",
+			"branches": [{
+					"id": 1,
+					"code": "REJECT_INITIATOR",
+					"name": "创建人提交"
+				},
+				{
+					"id": 2,
+					"code": "REJECT_BU",
+					"name": "费用承担bu负责人/上级领导"
+				},
+				{
+					"id": 3,
+					"code": "REJECT_PM",
+					"name": "项目经理审批"
+				}
+			]
+		},
+		{
+			"type": "button",
+			"icon": "check-square",
+			"key": "BOOKING",
+			"title": "app.setting.flow.bookingUpdate",
+			"className": "tw-btn-primary"
+		}
+	]
+}

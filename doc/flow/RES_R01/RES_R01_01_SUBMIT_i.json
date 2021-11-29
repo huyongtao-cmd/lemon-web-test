@@ -1,0 +1,27 @@
+{
+  "taskKey": "RES_R01_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "FLOW_COMMIT",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "applyResId": 0,
+      "ename": 0,
+      "baseBuName": 1,
+      "ouId": 0,
+      "mobile": 0,
+      "email": 0,     
+      "ctitle": 0,
+      "etitle": 0,
+      "mailFlag": 0,
+      "mailAddr": 0,
+      "remark": 0
+    }
+  }
+}

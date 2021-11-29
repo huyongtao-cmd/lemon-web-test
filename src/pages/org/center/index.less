@@ -1,0 +1,286 @@
+@centerColor: #284488;
+@centerGray: #666;
+@space: 10px;
+@linkColor: #008fdb;
+@placeholderColor: #f2f2f2;
+// .centerWrap {
+// }
+.horizeBox {
+  font-size: 0;
+  margin-bottom: @space;
+}
+.buCenterIntro {
+  box-sizing: border-box;
+  height: 120px;
+  padding-top: 6px;
+}
+.leftPart {
+  background: #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-right: @space;
+  padding: 10px;
+  vertical-align: middle;
+  width: 30%;
+}
+.rightPart {
+  background: #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 10px;
+  vertical-align: middle;
+  width: ~'calc(70% - 10px)';
+}
+.centerLoading {
+  // background: #fff;
+  :global {
+    .ant-spin-blur {
+      // filter: none;
+      // opacity: 0;
+    }
+  }
+}
+.shortcutMenuWrap {
+  height: 120px;
+}
+.buType {
+  color: @centerColor;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 25%;
+  i {
+    display: block;
+    font-size: 35px;
+    margin: 0 auto 10px;
+    position: relative;
+    top: -1px;
+  }
+  span {
+    background: @centerColor;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+    &:empty {
+      background: @placeholderColor;
+      min-width: 40px;
+    }
+  }
+}
+.buInfo {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: middle;
+  width: 75%;
+}
+.buName {
+  color: @centerColor;
+  font-size: 20px;
+}
+.buCompany {
+  color: @centerGray;
+  font-size: 12px;
+  white-space: nowrap;
+  &:empty {
+    background: @placeholderColor;
+    margin-bottom: 10px;
+    min-height: 20px;
+    width: 80%;
+  }
+}
+.buNum {
+  color: @centerGray;
+  font-size: 14px;
+  i {
+    margin-right: 2px;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+  }
+}
+.buNumPlaceholder {
+  background: @placeholderColor;
+  height: 20px;
+  width: 80%;
+}
+.buSelect {
+  display: block;
+  margin-bottom: 6px;
+  :global {
+    .ant-cascader-input {
+      border: none;
+    }
+    .ant-cascader-picker-label {
+      color: @centerColor;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+}
+.buSelectPlaceholder {
+  background: @placeholderColor;
+  height: 25px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.okrBox {
+  background: #fff;
+  font-size: 0;
+}
+.okrWrap {
+  border-right: 1px solid @placeholderColor;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0;
+  height: 230px;
+  padding: 40px 10px 0 25px;
+  vertical-align: middle;
+  width: 44%;
+}
+.okrReportWrap {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 10px;
+  vertical-align: middle;
+  width: 56%;
+}
+.okrSelect {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 48%;
+}
+.okrprogressWrap {
+  display: inline-block;
+  min-width: 110px;
+  text-align: center;
+  vertical-align: middle;
+  width: 26%;
+  :global {
+    .ant-progress {
+      display: block;
+      margin: 0 auto 12px;
+    }
+  }
+  span {
+    color: #333;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
+.okrStatus {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  width: 52%;
+}
+.okrData {
+  display: inline-block;
+  max-height: 230px;
+  overflow: auto;
+  vertical-align: middle;
+  width: 48%;
+}
+.rankBox {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.rankBoxItem {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 14px;
+  padding: 15px 15px;
+  text-align: center;
+  vertical-align: top;
+  width: ~'calc(50% - 1px)';
+  &:nth-child(1) {
+    border-right: 1px solid #efefef;
+  }
+}
+.rankLine {
+  background: #f0f2f5;
+  display: inline-block;
+  height: 200px;
+  vertical-align: middle;
+  width: 2px;
+}
+.rankBoxTitle {
+  font-size: 20px;
+  font-weight: bold;
+  img {
+    height: 45px;
+    margin-right: 10px;
+    position: relative;
+    top: -12px;
+    vertical-align: middle;
+    width: 45px;
+  }
+}
+.rankBoxData {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.rankListMore {
+  color: #666;
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 20px;
+  text-align: right;
+  span {
+    color: @linkColor;
+    cursor: pointer;
+  }
+}
+.workBox {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.tabName {
+  color: @centerColor;
+  font-size: 18px;
+  font-weight: bold;
+  img {
+    height: 32px;
+    margin-right: 8px;
+    top: -2px;
+    vertical-align: middle;
+    width: 32px;
+  }
+}
+.calendarBox {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.calendarTitle {
+  box-sizing: border-box;
+  color: @centerColor;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 10px;
+  img {
+    height: 36px;
+    margin-right: 8px;
+    position: relative;
+    top: -3px;
+    vertical-align: middle;
+    width: 36px;
+  }
+}
+.choseResBox {
+  font-size: 16px;
+  padding: 10px 30px;
+}
+.choseResSelect {
+  width: 300px;
+}

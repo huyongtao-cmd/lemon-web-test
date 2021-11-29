@@ -1,0 +1,35 @@
+{
+	"taskKey": "ACC_A24_03_FIN_ACCOUNT",
+	"buttons": [{
+		"type": "button",
+		"icon": "check-square",
+		"key": "APPROVED",
+		"title": "app.setting.flow.approved",
+		"className": "tw-btn-primary",
+		"branches": [{
+				"id": 1,
+				"code": "APPROVED",
+				"name": "通过"
+			},
+			{
+				"type": "button",
+				"icon": "close-square",
+				"key": "REJECTED",
+				"title": "app.setting.flow.rejected",
+				"className": "tw-btn-error",
+				"branches": [{
+						"id": 1,
+						"code": "REJECTED_INITIATOR",
+						"name": "提交报销"
+					},
+					{
+						"id": 2,
+						"code": "REJECTED_FINAUDIT",
+						"name": "平台财务稽核专员审核"
+					}
+				]
+			}
+		]
+	}],
+	"fields": []
+}

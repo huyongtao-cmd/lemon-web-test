@@ -1,0 +1,69 @@
+@borderColor: #e8e8e8;
+
+p {
+  margin: 0;
+}
+
+.settlementModal {
+  :global {
+    .ant-modal-title {
+      text-align: center;
+    }
+    .ant-modal-footer {
+      text-align: center !important;
+    }
+    .ant-modal {
+      top: 152px;
+    }
+  }
+}
+
+.detail {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  .info {
+    min-width: 30%;
+    // height: 380px;
+    border: 1px solid @borderColor;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .title {
+    width: 100%;
+    height: 48px;
+    font-size: 18px;
+    border-bottom: 1px solid @borderColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spendingInfo {
+    width: 100%;
+    padding: 94px 0 180px 0;
+    .text {
+      text-align: left;
+      padding-left: 40px;
+      // text-overflow: ellipsis;
+      // overflow: hidden;
+      // white-space: nowrap;
+    }
+  }
+  .wrapper {
+    width: 25%;
+    height: 260px;
+    background: url(@/assets/img/arrow.svg) no-repeat;
+    background-position: 94px 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

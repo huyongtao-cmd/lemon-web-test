@@ -1,0 +1,297 @@
+@media screen and (min-width: 600px) {
+  .download {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url(/static/images/download_bg.png);
+
+    :global {
+      .download-container {
+        position: relative;
+        box-sizing: border-box;
+        top: 50%;
+        -webkit-transform: translateY(-60%);
+        transform: translateY(-60%);
+        max-width: 1260px;
+        margin: 0 auto;
+        padding-right: 290px;
+        color: #fff;
+
+        > h1 {
+          font-weight: 700;
+          margin-bottom: 20px;
+          font-size: 80px;
+          color: #fff;
+        }
+
+        > h2 {
+          font-size: 40px;
+          color: #fff;
+        }
+
+        .download-qrCode {
+          display: flex;
+        }
+        .qrCodeBox {
+          display: flex;
+          flex-direction: column;
+          margin: 50px 30px 0;
+          padding: 40px 20px;
+          border: 1px solid #fff;
+          border-radius: 34px;
+          text-align: center;
+          font-size: 16px;
+          img {
+            margin-top: 15px;
+          }
+        }
+
+        .ios,
+        .android {
+          display: inline-block;
+          height: 68px;
+          line-height: 68px;
+          margin: 50px 10px 0;
+          border: 1px solid #fff;
+          border-radius: 34px;
+          text-align: center;
+          font-size: 16px;
+          text-decoration: none;
+          color: #fff;
+          padding-left: 40px;
+        }
+
+        .ios {
+          width: 250px;
+          background: url(/static/images/download_ios.png) no-repeat;
+          background-position: 20px center;
+          background-size: 40px;
+          position: relative;
+          > span {
+            width: 200px;
+            position: absolute;
+            bottom: -35px;
+            left: 30px;
+            color: #02a2d6;
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+
+        .android {
+          width: 280px;
+          background: url(/static/images/download_android.png) no-repeat;
+          background-position: 20px center;
+          background-size: 40px;
+        }
+
+        .qrcode {
+          position: absolute;
+          right: 0;
+          top: 0;
+
+          > img {
+            width: 262px;
+            height: 262px;
+            // background: url(/static/images/download_qrcode.png) center;
+            // background-size: contain;
+            // background-repeat: no-repeat;
+          }
+
+          > p {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    :global {
+      .mask-container {
+        width: 840px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        > img {
+          width: 400px;
+          margin: 0 10px 10px;
+        }
+
+        > p {
+          color: #fff;
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .download {
+    position: fixed;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url(/static/images/download_bg.png);
+    height: 100%;
+    width: 100%;
+
+    :global {
+      .download-container {
+        position: relative;
+        box-sizing: border-box;
+        // top: 50%;
+        // -webkit-transform: translateY(-50%);
+        // transform: translateY(-50%);
+        // max-width: 1260px;
+        margin: 0 auto;
+        // padding-right: 290px;
+        color: #fff;
+
+        > h1 {
+          font-weight: 700;
+          margin-bottom: 20px;
+          font-size: 40px;
+          color: #fff;
+          text-align: center;
+        }
+
+        > h2 {
+          font-size: 18px;
+          color: #fff;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .download-qrCode {
+          display: flex;
+        }
+        .qrCodeBox {
+          display: flex;
+          flex-direction: column;
+          margin: 50px 30px 0;
+          padding: 40px 20px;
+          border: 1px solid #fff;
+          border-radius: 34px;
+          text-align: center;
+          font-size: 16px;
+          flex: 1;
+          img {
+            // margin-top: 15px;
+            margin: 15px auto 0;
+          }
+        }
+
+        .ios,
+        .android {
+          display: inline-block;
+          height: 60px;
+          line-height: 60px;
+          margin: 50px 10px 0;
+          border: 1px solid #fff;
+          border-radius: 34px;
+          text-align: center;
+          font-size: 16px;
+          text-decoration: none;
+          color: #fff;
+          padding-left: 40px;
+        }
+
+        .ios {
+          width: 250px;
+          background: url(/static/images/download_ios.png) no-repeat;
+          background-position: 20px center;
+          background-size: 40px;
+          // margin-bottom: 50px ;
+          display: block;
+          justify-content: center;
+          margin: 0 auto 45px;
+          position: relative;
+          > span {
+            width: 180px;
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            color: #02a2d6;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+
+        .android {
+          width: 250px;
+          background: url(/static/images/download_android.png) no-repeat;
+          background-position: 20px center;
+          background-size: 40px;
+          display: block;
+          justify-content: center;
+          margin: 0 auto;
+          margin-bottom: 40px;
+        }
+
+        .qrcode {
+          text-align: center;
+
+          > div {
+            position: relative;
+            width: 262px;
+            height: 262px;
+            // background: url(/static/images/download_qrcode.png) center;
+            margin: 0 auto;
+
+            > img {
+              width: 100%;
+            }
+          }
+
+          > p {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .mask {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: scroll;
+
+    :global {
+      .mask-container {
+        width: 100%;
+        padding: 10px;
+
+        > img {
+          width: 100%;
+          padding: 10px 10%;
+        }
+
+        > p {
+          color: #fff;
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

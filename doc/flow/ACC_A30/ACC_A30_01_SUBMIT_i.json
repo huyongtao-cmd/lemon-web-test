@@ -1,0 +1,33 @@
+{
+  "taskKey": "ACC_A30_01_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.applied",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "panels": {
+    "disabledOrHidden": {
+      "resId": 0,
+      "gender": 0,
+      "resType": 0,
+      "baseBuId": 0,
+      "baseCity": 0,
+      "preEnrollDate": 0,
+      "job": 0,
+      "jobGrade": 0,
+      "coopType": 0,
+      "presId": 0,
+      "artThumb": 0,
+      "remark": 0,
+      "applyResId": 1,
+      "applyDate": 1,
+      "entryType":0,
+      "buFlag":0,
+      "oldSaleBu":0
+    }
+  }
+}

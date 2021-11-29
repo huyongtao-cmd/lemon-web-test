@@ -1,0 +1,36 @@
+.table {
+  :global {
+    .ant-table-pagination.ant-pagination {
+      float: none;
+      text-align: center;
+    }
+
+    .ant-form-item {
+      margin-bottom: 6px;
+    }
+
+    .ant-form-explain {
+      top: -24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: auto;
+        bottom: -4px;
+        left: 22px;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        border: 1px solid transparent;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        transform: translateX(-50%) rotate(45deg);
+        z-index: -1;
+      }
+    }
+
+    .ant-table-small > .ant-table-content > .ant-table-body {
+      margin: 0;
+    }
+  }
+}

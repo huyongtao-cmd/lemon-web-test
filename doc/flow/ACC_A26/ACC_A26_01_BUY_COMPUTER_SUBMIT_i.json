@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A26_01_BUY_COMPUTER_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "misc.update",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

@@ -1,0 +1,19 @@
+{
+  "taskKey": "ACC_A23_02_QUERY_b",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    },
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "BOOKING",
+      "title": "app.setting.flow.bookingQuery",
+      "className": "tw-btn-primary"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A66_01_MONEY_TRANSFER_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "app.setting.flow.edit",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

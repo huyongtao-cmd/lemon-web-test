@@ -1,0 +1,20 @@
+@import '~antd/lib/style/themes/default.less';
+
+@nav-header-height: 80px;
+
+.wrapper {
+  // height: @nav-header-height;
+  padding: 0;
+  height: auto;
+  z-index: @zindex-modal-mask - 10;
+}
+
+.fixedHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: width 0.2s;
+  // > @zindex-tooltip
+  // z-index: 1061;
+  z-index: @zindex-modal-mask - 10;
+}

@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A05_01_CONTRACT_INV_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "form",
+      "key": "EDIT",
+      "title": "misc.update",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}

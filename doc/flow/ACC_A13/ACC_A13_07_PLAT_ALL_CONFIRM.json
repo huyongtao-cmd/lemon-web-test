@@ -1,0 +1,34 @@
+{
+    "taskKey": "ACC_A13_07_PLAT_ALL_CONFIRM",
+    "buttons": [
+      {
+        "type": "button",
+        "icon": "check-square",
+        "key": "APPROVED",
+        "title": "app.setting.flow.approved",
+        "className": "tw-btn-primary",
+        "branches": [
+          {
+            "id": 1,
+            "code": "APPROVED",
+            "name": "通过"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "icon": "close-square",
+        "key": "REJECTED",
+        "title": "app.setting.flow.rejected",
+        "className": "tw-btn-error",
+        "branches": [
+          {
+            "id": 1,
+            "code": "REJECTED_INITIATOR",
+            "name": "创建人提交"
+          }
+        ]
+      }
+    ]
+  }
+  

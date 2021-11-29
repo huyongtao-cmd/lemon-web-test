@@ -1,0 +1,13 @@
+{
+  "taskKey": "ACC_A32_01_UNFREEZE_APPLY_SUBMIT_i",
+  "buttons": [
+    {
+      "type": "button",
+      "icon": "check-square",
+      "key": "APPROVED",
+      "title": "app.setting.flow.approved",
+      "className": "tw-btn-primary"
+    }
+  ],
+  "fields": []
+}
