@@ -506,7 +506,6 @@ class OtherPaymentDisplay extends React.PureComponent {
               }),
             },
           });
-          console.log(details);
         } else {
           createMessage({
             type: 'error',

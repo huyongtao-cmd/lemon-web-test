@@ -136,7 +136,6 @@ export default {
     *pushFlowTask({ payload }, { call, put }) {
       const { taskId, offerFrom, remark } = fromQs();
       const { status: apprSts, response } = yield call(pushFlowTask, taskId, payload);
-      console.log('taskId==========', taskId);
       if (apprSts === 200 && response.ok) {
         createMessage({ type: 'success', description: '提交成功' });
         const url = offerFrom.replace('edit', 'view');

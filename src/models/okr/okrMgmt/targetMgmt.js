@@ -23,6 +23,7 @@ import {
   targetPathMapRq,
   isPreRq,
   updateObjectiveCat,
+  queryTreeData,
 } from '@/services/okr/okrMgmt';
 import { businessPageDetailByNo } from '@/services/sys/system/pageConfig';
 import { queryUserPrincipal } from '@/services/gen/user';
@@ -98,6 +99,7 @@ export default {
     targetPathList: [],
     visible: false,
     pageConfig: {},
+    treeData: [],
   },
 
   effects: {
@@ -707,6 +709,20 @@ export default {
         return response;
       }
       return {};
+    },
+    // 获取架构图数据
+    *getTreeData({ payload }, { call, put, select }) {
+      const { status, response } = yield call(queryTreeData, payload);
+      if (status === 200) {
+        // yield put({
+        //   type: 'updateState',
+        //   payload: {
+        //     treeData: response.datum,
+        //   },
+        // });
+        return response.datum;
+      }
+      return [];
     },
   },
 

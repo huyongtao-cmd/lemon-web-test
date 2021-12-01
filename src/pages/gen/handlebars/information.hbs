@@ -1,0 +1,375 @@
+<style>
+  body {
+    font-family: verdana, "宋体";
+    font-size: 12px;
+  }
+
+  @media print {
+    .page-break {
+      page-break-after: always;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  .tw-content {
+    width: 100%;
+    margin: 0 auto
+  }
+
+  .tw-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tw-row {
+    width: 100%;
+    padding: 10px;
+    clear: both;
+  }
+
+  .tw-table {
+    width: 99%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    padding: 0;
+  }
+
+  .tw-cl {
+    clear: both;
+  }
+
+  /*表格-表头*/
+  .tw-th {
+    text-align: center;
+    background-color: #d9d9d9;
+    min-height: 35px;
+  }
+
+  .tw-th > td,
+  .tw-th > th {
+    vertical-align: middle;
+    border: 1px #000000 solid;
+    font-size: 10px;
+  }
+
+  /*表格-行*/
+  .tw-tr {
+    vertical-align: middle;
+    height: 35px;
+  }
+
+  .tw-tr td,
+  .tw-tr th {
+    border: 1px #000000 solid;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .tw-tr .tw-td-c {
+    text-align: center !important;
+  }
+
+  /*居左*/
+  .tw-tr .tw-td-l {
+    text-align: left !important;
+  }
+
+  /*居右*/
+  .tw-tr .tw-td-r {
+    text-align: right !important;
+  }
+
+  /*单元格名称*/
+  .tw-w-c1 {
+    width: 15%;
+  }
+
+  /*单元格值*/
+  .tw-w-c2 {
+    width: 35%;
+  }
+
+  .tw-w-c3 {
+    width: 15%;
+  }
+
+  .tw-w-c4 {
+    width: 20%;
+  }
+
+  .tw-w-2 {
+    width: 50%;
+  }
+</style>
+<div class="tw-content">
+  <div class="tw-row">
+    <div class="tw-title tw-cl">入职信息</div>
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">基本信息</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">中文名</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.name}}</td>
+        <td class="tw-w-c1 tw-td-l">汉语拼音</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.pinyin}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">昵称</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.nickName}}</td>
+        <td class="tw-w-c1 tw-td-l">性别</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.genderDesc}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">出生日期</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.birthday}}</td>
+        <td class="tw-w-c1 tw-td-l">婚姻状况</td>
+        <td class="tw-w-c2 tw-td-l">
+          {{#if formData.personExpand.maritalDesc}}已婚{{else}}未婚{{/if}}
+        </td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">联系电话</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.phone}}</td>
+        <td class="tw-w-c1 tw-td-l">最高学历</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.qualification}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">是否为党员</td>
+        <td class="tw-w-c2 tw-td-l">
+          {{#if formData.personExpand.partyMember}}是{{else}}否{{/if}}
+        </td>
+        <td class="tw-w-c1 tw-td-l">身份证号码</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.idNo}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">户籍所在地</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.censusRegistration}}</td>
+        <td class="tw-w-c1 tw-td-l">档案所在地</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.documentPlace}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">个人邮箱</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.email}}</td>
+        <td class="tw-w-c1 tw-td-l">银行账号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.accountNo}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">银行卡开户行</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.bankName}}</td>
+        <td class="tw-w-c1 tw-td-l">首次工作时间</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.firstWorkTime}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">公积金账号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.surplusAccount}}</td>
+        <td class="tw-w-c1 tw-td-l">补充公积金账号</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.surplusAccountReplenish}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c2 tw-td-l" colspan="3">是否有身体残缺或残疾(如有，请告知情况)</td>
+        <td class="tw-w-c1 tw-td-l">
+          {{#if formData.personExpand.physicalCondition}}是{{else}}否{{/if}}
+        </td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">兴趣爱好</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.hobby}}</td>
+        <td class="tw-w-c1 tw-td-l">偶像（如有）</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.idol}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">喜欢的食物</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.foods}}</td>
+        <td class="tw-w-c1 tw-td-l">血型</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.bloodType}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">上升星座</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.constellation}}</td>
+        <td class="tw-w-c1 tw-td-l">幸运数字、颜色</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.luckyNumbers}}、{{formData.personExpand.luckyColor}}</td>
+      </tr>
+    </table>
+
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">地址</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">永久地址</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.addressPermanent}}</td>
+        <td class="tw-w-c1 tw-td-l">永久电话</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.phonePermanent}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">临时地址</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.addressTemp}}</td>
+        <td class="tw-w-c1 tw-td-l">临时电话</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.phoneTemp}}</td>
+      </tr>
+    </table>
+
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">紧急联系人</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">姓名</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.emergentName}}</td>
+        <td class="tw-w-c1 tw-td-l">关系</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.emergentRelation}}</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">电话</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.emergentPhone}}</td>
+        <td class="tw-w-c1 tw-td-l">地址</td>
+        <td class="tw-w-c2 tw-td-l">{{formData.personExpand.emergentAddress}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">工作经历（从最近的单位开始）</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>开始时间</td>
+        <td class='tw-w-c3'>结束时间</td>
+        <td class='tw-w-c4'>单位</td>
+        <td class='tw-w-c1'>部门及服务</td>
+        <td class='tw-w-c3'>城市</td>
+      </tr>
+      {{#each formData.personExpand.personWorkList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c tw-w-c1">{{workStartDate}}</td>
+          <td class="tw-td-c tw-w-c3">{{workEndDate}}</td>
+          <td class="tw-td-c tw-w-c4">{{workCompany}}</td>
+          <td class="tw-td-c tw-w-c1">{{workBuOrPosition}}</td>
+          <td class="tw-td-c tw-w-c3">{{workAddress}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">教育背景（从本科/专科写起）</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c3'>开始时间</td>
+        <td class='tw-w-c4'>结束时间</td>
+        <td class='tw-w-c1'>学校名称(全日制)</td>
+        <td class='tw-w-c3'>专业</td>
+        <td class='tw-w-c3'>文凭</td>
+      </tr>
+      {{#each formData.personExpand.personEduList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c tw-w-c1">{{eduStartDate}}</td>
+          <td class="tw-td-c tw-w-c3">{{eduEndDate}}</td>
+          <td class="tw-td-c tw-w-c3">{{eduName}}</td>
+          <td class="tw-td-c tw-w-c4">{{major}}</td>
+          <td class="tw-td-c tw-w-c1">{{diploma}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">专业技能资质</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1">名称</td>
+        <td class="tw-w-c1">{{formData.personExpand.skillName}}</td>
+        <td class="tw-w-c1">获证日期</td>
+        <td class="tw-w-c1">{{formData.personExpand.skillDate}}</td>
+        <td class="tw-w-c1">等级</td>
+        <td class="tw-w-c1">{{formData.personExpand.skillLevel}}</td>
+      </tr>
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">家庭成员简介</td>
+      </tr>
+      <tr class="tw-th">
+        <td class='tw-w-c1'>姓名</td>
+        <td class='tw-w-c3'>关系</td>
+        <td class='tw-w-c4'>出生年月</td>
+        <td class='tw-w-c1'>工作单位</td>
+        <td class='tw-w-c3'>职务</td>
+      </tr>
+      {{#each formData.personExpand.personFamilyList}}
+        <tr class="tw-tr">
+          <td class="tw-td-c tw-w-c1">{{familyName}}</td>
+          <td class="tw-td-c tw-w-c3">{{familyRelation}}</td>
+          <td class="tw-td-c tw-w-c4">{{familyBirthday}}</td>
+          <td class="tw-td-c tw-w-c1">{{familyCompany}}</td>
+          <td class="tw-td-c tw-w-c3">{{familyPosition}}</td>
+        </tr>
+      {{/each}}
+
+    </table>
+
+    <table class="tw-table">
+      <tr>
+        <td colspan="4">其他</td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c2 tw-td-l" colspan="5">你是否有亲属在/曾经在柠萌影业工作？</td>
+        <td class="tw-w-c1 tw-td-l">
+          {{#if formData.personExpand.kinsfolkWorked}}是{{else}}否{{/if}}
+        </td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1">姓名</td>
+        <td class="tw-w-c1">{{formData.personExpand.kwName}}</td>
+        <td class="tw-w-c1">关系</td>
+        <td class="tw-w-c1">{{formData.personExpand.kwRelation}}</td>
+        <td class="tw-w-c1">部门及职务</td>
+        <td class="tw-w-c1">{{formData.personExpand.kwBuOrPosition}}</td>
+      </tr>
+
+      <tr class="tw-tr">
+        <td class="tw-w-c2 tw-td-l" colspan="5">
+          你是否有亲属在竞争对手公司（包括但不限于正午阳光、华策影视、慈文传媒、耀客传媒、新丽传媒、优酷系、腾讯系、爱奇艺系、芒果系、头条系、哔哩哔哩、抖音、快手、欢喜首映等）工作？
+        </td>
+        <td class="tw-w-c1 tw-td-l">
+          {{#if formData.personExpand.kinsfolkWorkedOpponent}}是{{else}}否{{/if}}
+        </td>
+      </tr>
+      <tr class="tw-tr">
+        <td class="tw-w-c1">姓名</td>
+        <td class="tw-w-c1">{{formData.personExpand.kwoName}}</td>
+        <td class="tw-w-c1">关系</td>
+        <td class="tw-w-c1">{{formData.personExpand.kwoRelation}}</td>
+        <td class="tw-w-c1">部门及职务</td>
+        <td class="tw-w-c1">{{formData.personExpand.kwoBuOrPosition}}</td>
+      </tr>
+
+      <tr class="tw-tr">
+        <td class="tw-w-c2 tw-td-l" colspan="5">是否和柠萌存在其他利益关系？</td>
+        <td class="tw-w-c1 tw-td-l">
+          {{#if formData.personExpand.otherInterest}}是{{else}}否{{/if}}
+        </td>
+      </tr>
+
+      <tr class="tw-tr">
+        <td class="tw-w-c1 tw-td-l">如果有请详述：</td>
+        <td class="tw-w-c2 tw-td-l" colspan="5">
+          {{formData.personExpand.otherInterestRemark}}
+        </td>
+      </tr>
+
+    </table>
+
+
+  </div>
+
+</div>

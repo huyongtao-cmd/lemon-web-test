@@ -8,6 +8,8 @@ import ButtonCard from '@/components/production/layout/ButtonCard';
 import BusinessForm from '@/components/production/business/BusinessForm';
 import FormItem from '@/components/production/business/FormItem';
 import { outputHandle } from '@/utils/production/outputUtil';
+import { userInduction } from '@/services/production/user';
+import { closeThenGoto } from '@/layouts/routerControl';
 
 /***
  * 新增入职
@@ -25,14 +27,19 @@ class InformationAdd extends Component {
   componentDidMount() {}
 
   // 保存
-  handleSave = async params => {
+  handleSave = async (params, cb) => {
     const { form } = this.props;
     const basic = await form.validateFields(); // 基本信息
     // 往后端传的参数
     const data = {
       ...params,
-      basic,
+      ...basic,
     };
+
+    const resSub = await outputHandle(userInduction, data, 'string', false);
+    if (resSub.ok) {
+      cb(resSub);
+    }
   };
 
   render() {
@@ -51,7 +58,7 @@ class InformationAdd extends Component {
                     submit: false,
                   },
                   () => {
-                    // closeThenGoto(`/hr/resource/information?refresh=` + new Date().valueOf());
+                    closeThenGoto(`/hr/resource/information?refresh=` + new Date().valueOf());
                   }
                 );
               }}
@@ -74,20 +81,18 @@ class InformationAdd extends Component {
           <FormItem
             fieldType="BaseCustomSelect"
             label="职级"
-            required
             fieldKey="jobGrade"
             parentKey="CUS:JOB_GRADE"
             // descriptionRender={formData.jobGrade}
           />
-          <FormItem required fieldType="BaseInput" label="职位" fieldKey="position" />
+          <FormItem fieldType="BaseInput" label="职位" fieldKey="position" />
           <FormItem
-            required
             fieldType="ResSimpleSelect"
             label="直属上级"
             fieldKey="parentResId"
             // descriptionRender={formData.presName}
           />
-          <FormItem required fieldType="BaseInput" label="薪资（单位：元）" fieldKey="salary" />
+          <FormItem fieldType="BaseInputNumber" label="薪资（单位：元）" fieldKey="salary" />
           <FormItem
             required
             fieldType="BaseCustomSelect"
@@ -95,19 +100,9 @@ class InformationAdd extends Component {
             fieldKey="baseCity"
             parentKey="CUS:CITY"
           />
-          <FormItem required fieldType="BaseDatePicker" label="入职日期" fieldKey="enrollDate" />
-          <FormItem
-            required
-            fieldType="BaseDatePicker"
-            label="合同开始日期"
-            fieldKey="enrollDate"
-          />
-          <FormItem
-            required
-            fieldType="BaseDatePicker"
-            label="合同结束日期"
-            fieldKey="enrollDate"
-          />
+          <FormItem fieldType="BaseDatePicker" label="入职日期" fieldKey="enrollDate" />
+          <FormItem fieldType="BaseDatePicker" label="合同开始日期" fieldKey="contractSignDate" />
+          <FormItem fieldType="BaseDatePicker" label="合同结束日期" fieldKey="contractExpireDate" />
         </BusinessForm>
       </PageWrapper>
     );

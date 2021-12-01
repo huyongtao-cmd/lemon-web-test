@@ -93,7 +93,7 @@ export default {
           const { status: apprSts, response: res } = yield call(pushFlowTask, taskId, {
             taskId,
             result,
-            remark: remarkUrl !== 'undefined' ? remarkUrl : null,
+            remark: remarkUrl !== 'undefined'? remarkUrl : null
           });
           if (apprSts === 100) {
             // 主动取消请求

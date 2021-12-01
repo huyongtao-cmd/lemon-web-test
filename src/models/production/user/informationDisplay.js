@@ -17,6 +17,7 @@ const defaultState = {
   formMode: 'EDIT',
   copy: false,
   id: undefined,
+  infoForm: {},
 };
 
 export default {
@@ -125,18 +126,18 @@ export default {
       const { formData, modifyFormData } = state;
       const name = Object.keys(payload)[0];
       const element = payload[name];
-      let newFormData;
-      let modifyData;
-      if (Array.isArray(element)) {
-        element.forEach((ele, index) => {
-          if (!isNil(ele)) {
-            newFormData = update(formData, { [name]: { [index]: { $merge: ele } } });
-          }
-        });
-      } else {
-        newFormData = { ...formData, ...payload };
-        modifyData = { ...modifyFormData, ...payload };
-      }
+      // let newFormData;
+      // let modifyData;
+      // if (Array.isArray(element)) {
+      //   element.forEach((ele, index) => {
+      //     if (!isNil(ele)) {
+      //       newFormData = update(formData, { [name]: { [index]: { $merge: ele } } });
+      //     }
+      //   });
+      // } else {
+      const newFormData = { ...formData, ...payload };
+      const modifyData = { ...modifyFormData, ...payload };
+      // }
 
       return {
         ...state,

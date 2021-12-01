@@ -54,6 +54,10 @@ const flowToRouterMap = {
   ACC_A42: '/user/probation/probationMid?id=:docId', // 实习期中期考核流程
   ACC_A43: '/user/probation/probationLast?id=:docId', // 实习期末期考核流程
   ACC_A45: '/user/center/prefCheckFlow/index?id=:docId', // 绩效考核流程
+  KPI_K01: '/user/performance/performanceTarget/targetEdit?id=:docId', // KPI目标设定流程
+  KPI_K02: '/user/performance/performanceFeedback/feedbackEdit?id=:docId', // 年中反馈流程
+  KPI_K03: '/user/performance/performanceReport/reportEdit?id=:docId', // 年末报告流程
+  KPI_K04: '/user/performance/performanceReport/reportEdit?id=:docId', // 评分公布流程
 
   ACC_A46: '/hr/res/profile/list/extrApplyflowCreate?id=:docId', // 外部资源引入
   ACC_A47: '/user/Project/noContractProj/flow?id=:docId', // 无合同项目流程

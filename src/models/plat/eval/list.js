@@ -23,7 +23,7 @@ export default {
       };
       delete parm.evalDate;
       delete parm.averageScore;
-
+      
       const { response } = yield call(evalList, parm);
       if (response) {
         const { rows, total } = response;

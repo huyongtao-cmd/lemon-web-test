@@ -77,7 +77,6 @@ export default {
         return defaultState.formData;
       }
       const { data } = yield outputHandle(otherPaymentDetail, { id });
-      console.log(data);
       if (isNil(data.details)) {
         data.details = [];
       }

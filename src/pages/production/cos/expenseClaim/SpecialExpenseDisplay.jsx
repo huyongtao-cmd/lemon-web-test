@@ -425,7 +425,7 @@ class SpecialExpenseDisplay extends React.PureComponent {
       form,
       dispatch,
       formData,
-      formMode,
+      // formMode,
       currentNode,
       budgetTypeList,
       internalOuList,
@@ -443,7 +443,7 @@ class SpecialExpenseDisplay extends React.PureComponent {
       user: { extInfo = {} }, // 取当前登陆人的resId
       attachments,
     } = this.props;
-
+    const formMode = 'EDIT';
     const { userId, resName } = extInfo;
     const { visible, selectedInvos = [], detailsId } = this.state;
     const { taskKey } = fieldsConfig;

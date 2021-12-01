@@ -21,7 +21,7 @@ class ResLeaveModal extends React.Component {
     const {
       dispatch,
       domain,
-      modalData: { id },
+      modalData: { id, },
     } = this.props;
     if (dateString) {
       this.setState({
@@ -47,33 +47,31 @@ class ResLeaveModal extends React.Component {
         isDisabled: true,
       });
     }
-  };
+
+  }
 
   // 继续
   handleOk = () => {
-    const {
-      handleOk,
-      modalData: { id },
-    } = this.props;
-    const { leaveDate } = this.state;
+    const { handleOk, modalData: { id, }, } = this.props;
+    const { leaveDate, } = this.state;
     handleOk && handleOk(id, leaveDate);
     this.setState({
       dataSource: [],
       leaveDate: undefined,
       isDisabled: true,
     });
-  };
+  }
 
   // 取消
   handleCancel = () => {
-    const { handleCancel } = this.props;
+    const { handleCancel, } = this.props;
     this.setState({
       dataSource: [],
       leaveDate: undefined,
       isDisabled: true,
     });
     handleCancel && handleCancel();
-  };
+  }
 
   render() {
     const {
@@ -123,14 +121,20 @@ class ResLeaveModal extends React.Component {
         destroyOnClose
         visible={visible}
         onCancel={this.handleCancel}
-        footer={[
-          <Button type="primary" key="save" disabled={isDisabled} onClick={this.handleOk}>
-            继续
-          </Button>,
-          <Button type="ghost" key="cancel" onClick={this.handleCancel}>
-            取消
-          </Button>,
-        ]}
+        footer={
+          [
+            <Button
+              type="primary"
+              key="save"
+              disabled={isDisabled}
+              onClick={this.handleOk}
+            >
+              继续
+            </Button>,
+            <Button type="ghost" key="cancel" onClick={this.handleCancel}>
+              取消
+            </Button>,
+          ]}
       >
         <Card className="tw-card-adjust" bordered={false}>
           <FieldList layout="horizontal" legend="" getFieldDecorator={getFieldDecorator} col={2}>
@@ -150,9 +154,7 @@ class ResLeaveModal extends React.Component {
             </Field>
           </FieldList>
           <Divider dashed style={{ marginBottom: 32 }} />
-          <div>
-            <b>离职资源有以下事项未处理</b>
-          </div>
+          <div><b>离职资源有以下事项未处理</b></div>
           <Table {...tableProps} />
         </Card>
       </Modal>

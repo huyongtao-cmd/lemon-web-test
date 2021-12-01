@@ -1,39 +1,38 @@
-import React, {ReactElement} from 'react';
-import {omit, clone} from 'ramda';
-import {Form, Icon, Row, Col, Dropdown, Menu, Radio, Checkbox} from 'antd';
-import {WrappedFormUtils} from "antd/lib/form/Form";
+import React, { ReactElement } from 'react';
+import { omit, clone } from 'ramda';
+import { Form, Icon, Row, Col, Dropdown, Menu, Radio, Checkbox } from 'antd';
+import { WrappedFormUtils } from 'antd/lib/form/Form';
 
-import Link from "@/components/production/basic/Link";
-import FormItem from "@/components/production/business/FormItem";
-import Card from "@/components/production/layout/Card";
-import {localeString} from '@/components/production/basic/Locale';
+import Link from '@/components/production/basic/Link';
+import FormItem from '@/components/production/business/FormItem';
+import Card from '@/components/production/layout/Card';
+import { localeString } from '@/components/production/basic/Locale';
 
 import styles from './style/form.less';
 
 interface Props {
   form?: WrappedFormUtils;
   title?: string;
-  formMode?: 'EDIT' | 'DESCRIPTION' | 'DISABLED' | string | undefined,
-  formData?: any,
-  defaultLayoutStyle?: "vertical" | "inline";
+  formMode?: 'EDIT' | 'DESCRIPTION' | 'DISABLED' | string | undefined;
+  formData?: any;
+  defaultLayoutStyle?: 'vertical' | 'inline';
   defaultColumnStyle?: 8 | 12 | 24;
   extra?: React.ReactNode;
 
-  [propName: string]: any, // 其它属性
+  [propName: string]: any; // 其它属性
 }
 
 interface States {
-  layoutStyle: LayoutStyleEnum | string,
-  columnStyle: ColumnStyleEnum | number,
+  layoutStyle: LayoutStyleEnum | string;
+  columnStyle: ColumnStyleEnum | number;
 
-  [propName: string]: any, // 其它属性
+  [propName: string]: any; // 其它属性
 }
-
 
 enum LayoutStyleEnum {
   // noLabel, // 无标签
-  upAndLower = "vertical", // 上下
-  leftAndRight = "inline", // 左右
+  upAndLower = 'vertical', // 上下
+  leftAndRight = 'inline', // 左右
 }
 
 enum ColumnStyleEnum {
@@ -43,18 +42,16 @@ enum ColumnStyleEnum {
 }
 
 const formItemLayout = {
-  labelCol: {span: 6},
-  wrapperCol: {span: 18},
+  labelCol: { span: 6 },
+  wrapperCol: { span: 18 },
 };
 
 const formItemRemarkLayout = {
-  labelCol: {span: 3},
-  wrapperCol: {span: 21},
+  labelCol: { span: 3 },
+  wrapperCol: { span: 21 },
 };
 
-
 class BusinessForm extends React.PureComponent<Props, any> {
-
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -64,88 +61,87 @@ class BusinessForm extends React.PureComponent<Props, any> {
   }
 
   renderFormElement = (children: any, index: number) => {
-    const {form, formMode, formData} = this.props;
+    const { form, formMode, formData } = this.props;
     let element;
 
-    if (children && children.type.displayName === "FormItem") {
-      const {fieldMode, fieldKey, form: itemForm, ...rest} = children.props;
+    if (children && children.type.displayName === 'FormItem') {
+      const { fieldMode, fieldKey, form: itemForm, ...rest } = children.props;
       const mode = fieldMode || formMode;
       let selectionListJson: any = {};
       // 如果FormItem 上没有定义form，则使用BusinessForm的Form属性
       const wrappedForm = itemForm === undefined ? form : itemForm;
       let initialValue = formData && formData[fieldKey];
       const fieldType = children.props.fieldType;
-      if(!fieldType){
+      if (!fieldType) {
         element = (
           <Col span={this.state.columnStyle} key={index}>
-            {React.cloneElement(children,
-              {
-                form: wrappedForm,
-                className: "prod-form-item",
-                fieldMode: mode,
-                formData,
-                initialValue,
-                ...selectionListJson,
-                ...this.state.layoutStyle === 'vertical' ? {} : formItemLayout,
-                ...rest
-              })}
-          </Col>)
+            {React.cloneElement(children, {
+              form: wrappedForm,
+              className: 'prod-form-item',
+              fieldMode: mode,
+              formData,
+              initialValue,
+              ...selectionListJson,
+              ...(this.state.layoutStyle === 'vertical' ? {} : formItemLayout),
+              ...rest,
+            })}
+          </Col>
+        );
         return element;
       }
-      if (fieldType.toLowerCase().indexOf("select") > -1) {
-        selectionListJson.descList = formData && formData[fieldKey + "DescList"];
-
+      if (fieldType.toLowerCase().indexOf('select') > -1) {
+        selectionListJson.descList = formData && formData[fieldKey + 'DescList'];
       }
-      if (fieldType === "BaseInputTextArea") {
+      if (fieldType === 'BaseInputTextArea') {
         const labelTemp = this.state.columnStyle / 4;
         element = (
           <Col span={24} key={index}>
-            {React.cloneElement(children,
-              {
-                form: wrappedForm,
-                className: "prod-form-item",
-                fieldMode: mode,
-                formData,
-                initialValue,
-                ...this.state.layoutStyle === 'vertical' ? {} : {
-                  labelCol: {span: labelTemp},
-                  wrapperCol: {span: 24 - labelTemp}
-                },
-                ...rest,
-
-              })}
-          </Col>);
-      } else if (fieldType === "BaseInputHidden") {
+            {React.cloneElement(children, {
+              form: wrappedForm,
+              className: 'prod-form-item',
+              fieldMode: mode,
+              formData,
+              initialValue,
+              ...(this.state.layoutStyle === 'vertical'
+                ? {}
+                : {
+                    labelCol: { span: labelTemp },
+                    wrapperCol: { span: 24 - labelTemp },
+                  }),
+              ...rest,
+            })}
+          </Col>
+        );
+      } else if (fieldType === 'BaseInputHidden') {
         element = (
           <Col span={0} key={index}>
-            {React.cloneElement(children,
-              {
-                form: wrappedForm,
-                className: "prod-form-item",
-                fieldMode: mode,
-                formData,
-                initialValue,
-                ...rest,
-
-              })}
-          </Col>);
+            {React.cloneElement(children, {
+              form: wrappedForm,
+              className: 'prod-form-item',
+              fieldMode: mode,
+              formData,
+              initialValue,
+              ...rest,
+            })}
+          </Col>
+        );
       } else {
         element = (
           <Col span={this.state.columnStyle} key={index}>
-            {React.cloneElement(children,
-              {
-                form: wrappedForm,
-                className: "prod-form-item",
-                fieldMode: mode,
-                formData,
-                initialValue,
-                ...selectionListJson,
-                ...this.state.layoutStyle === 'vertical' ? {} : formItemLayout,
-                ...rest
-              })}
-          </Col>);
+            {React.cloneElement(children, {
+              form: wrappedForm,
+              className: 'prod-form-item',
+              fieldMode: mode,
+              formData,
+              initialValue,
+              ...selectionListJson,
+              ...(this.state.layoutStyle === 'vertical' ? {} : formItemLayout),
+              ...rest,
+            })}
+          </Col>
+        );
       }
-    } else if(children && children.type.displayName === "BusinessFormTitle"){
+    } else if (children && children.type.displayName === 'BusinessFormTitle') {
       element = (
         <Col span={24} key={index}>
           {children}
@@ -155,15 +151,14 @@ class BusinessForm extends React.PureComponent<Props, any> {
       element = (
         <Col span={this.state.columnStyle} key={index}>
           {children}
-        </Col>);
+        </Col>
+      );
     }
     return element;
   };
 
   getFields = () => {
-    const {
-      children,
-    } = this.props;
+    const { children } = this.props;
     if (!children) {
       return undefined;
     }
@@ -195,26 +190,41 @@ class BusinessForm extends React.PureComponent<Props, any> {
   renderFormSetting = () => {
     const layoutStyleOptions = [
       {
-        label: localeString({localeNo: 'portal:component:businessForm:layout:leftAndRight', defaultMessage: '左右布局'}),
-        value: 'inline'
+        label: localeString({
+          localeNo: 'portal:component:businessForm:layout:leftAndRight',
+          defaultMessage: '左右布局',
+        }),
+        value: 'inline',
       },
       {
-        label: localeString({localeNo: 'portal:component:businessForm:layout:upAndDown', defaultMessage: '上下布局'}),
-        value: 'vertical'
+        label: localeString({
+          localeNo: 'portal:component:businessForm:layout:upAndDown',
+          defaultMessage: '上下布局',
+        }),
+        value: 'vertical',
       },
     ];
     const columnStyleOptions = [
       {
-        label: localeString({localeNo: 'portal:component:businessForm:layout:oneColumn', defaultMessage: '1列'}),
-        value: 24
+        label: localeString({
+          localeNo: 'portal:component:businessForm:layout:oneColumn',
+          defaultMessage: '1列',
+        }),
+        value: 24,
       },
       {
-        label: localeString({localeNo: 'portal:component:businessForm:layout:twoColumn', defaultMessage: '2列'}),
-        value: 12
+        label: localeString({
+          localeNo: 'portal:component:businessForm:layout:twoColumn',
+          defaultMessage: '2列',
+        }),
+        value: 12,
       },
       {
-        label: localeString({localeNo: 'portal:component:businessForm:layout:threeColumn', defaultMessage: '3列'}),
-        value: 8
+        label: localeString({
+          localeNo: 'portal:component:businessForm:layout:threeColumn',
+          defaultMessage: '3列',
+        }),
+        value: 8,
       },
     ];
     const menu = (
@@ -223,8 +233,8 @@ class BusinessForm extends React.PureComponent<Props, any> {
           <Radio.Group
             options={layoutStyleOptions}
             value={this.state.layoutStyle}
-            onChange={(radio) => {
-              this.setState({layoutStyle: radio.target.value})
+            onChange={radio => {
+              this.setState({ layoutStyle: radio.target.value });
             }}
           />
         </Menu.Item>
@@ -232,8 +242,8 @@ class BusinessForm extends React.PureComponent<Props, any> {
           <Radio.Group
             options={columnStyleOptions}
             value={this.state.columnStyle}
-            onChange={(radio) => {
-              this.setState({columnStyle: radio.target.value})
+            onChange={radio => {
+              this.setState({ columnStyle: radio.target.value });
             }}
           />
         </Menu.Item>
@@ -242,14 +252,8 @@ class BusinessForm extends React.PureComponent<Props, any> {
     return menu;
   };
 
-
   render() {
-    const {
-      form,
-      extra = [],
-      defaultColumnStyle,
-      ...rest
-    } = this.props;
+    const { form, extra = [], defaultColumnStyle, ...rest } = this.props;
 
     const formProps = omit(['formData', 'formMode', 'title'], rest);
 
@@ -261,25 +265,19 @@ class BusinessForm extends React.PureComponent<Props, any> {
           <>
             {extra}
             <Dropdown overlay={this.renderFormSetting()}>
-              <Link style={{marginLeft: "5px"}}><Icon type="setting"/></Link>
+              <Link style={{ marginLeft: '5px' }}>
+                <Icon type="setting" />
+              </Link>
             </Dropdown>
           </>
         }
       >
-        <Form
-          className={`${styles['prod-form']}`}
-          layout={this.state.layoutStyle}
-          {...formProps}
-        >
-
-          <Row gutter={0}>
-            {this.getFields()}
-          </Row>
+        <Form className={`${styles['prod-form']}`} layout={this.state.layoutStyle} {...formProps}>
+          <Row gutter={0}>{this.getFields()}</Row>
         </Form>
       </Card>
     );
   }
-
 }
 
 export default BusinessForm;

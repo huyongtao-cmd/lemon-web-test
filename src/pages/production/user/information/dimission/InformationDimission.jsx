@@ -12,7 +12,7 @@ import BpmConnection from '@/pages/gen/BpmMgmt/BpmConnection';
 import BpmWrapper from '@/pages/gen/BpmMgmt/BpmWrapper';
 import { fromQs } from '@/utils/production/stringUtil';
 import { getUrl } from '@/utils/flowToRouter';
-import { pushFlowTask } from '@/services/gen/flow';
+import { pushFlowTask, submitOrApprRq } from '@/services/gen/flow';
 import { createConfirm } from '@/components/core/Confirm';
 import createMessage from '@/components/core/AlertMessage';
 
@@ -25,7 +25,6 @@ import {
 } from '@/services/production/user';
 
 import { closeThenGoto } from '@/layouts/routerControl';
-import { isEmpty } from 'ramda';
 import { connect } from 'dva';
 import moment from 'moment';
 
@@ -94,10 +93,14 @@ class InformationDimission extends Component {
 
   loadData = async () => {
     const { userId } = fromQs();
+    const {
+      user: { extInfo = {} },
+    } = this.props;
+    const tempId = userId === 'null' ? extInfo.userId : userId;
     const { formData, loading } = this.state;
     this.setState({ loading: true });
-    const { data } = await outputHandle(informationDetail, { id: userId });
-    this.setState({ formData: { ...data, userId }, loading: false });
+    const { data } = await outputHandle(informationDetail, { id: tempId });
+    this.setState({ formData: { ...data, userId: tempId }, loading: false });
   };
 
   // 查看流程详情
@@ -199,23 +202,47 @@ class InformationDimission extends Component {
             }
             // 退回
             if (key === 'FLOW_RETURN') {
-              createConfirm({
-                content: '确定要拒绝该流程吗？',
-                onOk: () => {
-                  pushFlowTask(taskId, {
-                    remark,
-                    result: 'REJECTED',
-                    branch,
-                  }).then(({ status, response }) => {
-                    if (status === 200) {
-                      createMessage({ type: 'success', description: '操作成功' });
-                      const url = getUrl().replace('edit', 'view');
-                      closeThenGoto(url);
-                    }
-                    return Promise.resolve(false);
-                  });
-                },
-              });
+              if (taskKey === 'USER03_02_BU_LEADERS') {
+                createConfirm({
+                  content: '确定要拒绝该流程吗？',
+                  onOk: () => {
+                    submitOrApprRq({
+                      id: formData.id,
+                      procIden: 'USER03',
+                      procTaskId: taskId,
+                      result: 'REJECTED',
+                      branch,
+                      submit: true,
+                      procRemark: remark,
+                    }).then(({ status, response }) => {
+                      if (status === 200) {
+                        createMessage({ type: 'success', description: '操作成功' });
+                        const url = getUrl().replace('edit', 'view');
+                        closeThenGoto(url);
+                      }
+                      return Promise.resolve(false);
+                    });
+                  },
+                });
+              } else {
+                createConfirm({
+                  content: '确定要拒绝该流程吗？',
+                  onOk: () => {
+                    pushFlowTask(taskId, {
+                      remark,
+                      result: 'REJECTED',
+                      branch,
+                    }).then(({ status, response }) => {
+                      if (status === 200) {
+                        createMessage({ type: 'success', description: '操作成功' });
+                        const url = getUrl().replace('edit', 'view');
+                        closeThenGoto(url);
+                      }
+                      return Promise.resolve(false);
+                    });
+                  },
+                });
+              }
             }
             // 通过
             if (key === 'FLOW_PASS') {
@@ -381,7 +408,7 @@ class InformationDimission extends Component {
                 label="是否完成工作交接"
                 fieldType="BaseRadioSelect"
                 key="workHandover"
-                required
+                // required
                 fieldKey="workHandover"
                 disabled={
                   taskKey !== 'USER03_02_BU_LEADERS' || mode === 'view' || formData.workHandover
@@ -394,7 +421,7 @@ class InformationDimission extends Component {
                 fieldType="BaseRadioSelect"
                 key="financeHandover"
                 fieldKey="financeHandover"
-                required
+                // required
                 disabled={
                   taskKey !== 'USER03_02_BU_LEADERS' || mode === 'view' || formData.financeHandover
                 }
@@ -406,7 +433,7 @@ class InformationDimission extends Component {
                 fieldType="BaseRadioSelect"
                 key="admHandover"
                 fieldKey="admHandover"
-                required
+                // required
                 options={[{ label: '是', value: '1' }, { label: '否', value: '0' }]}
                 disabled={
                   taskKey !== 'USER03_02_BU_LEADERS' || mode === 'view' || formData.admHandover
@@ -418,7 +445,7 @@ class InformationDimission extends Component {
                 fieldType="BaseRadioSelect"
                 key="hrHandover"
                 fieldKey="hrHandover"
-                required
+                // required
                 options={[{ label: '是', value: '1' }, { label: '否', value: '0' }]}
                 disabled={
                   taskKey !== 'USER03_02_BU_LEADERS' || mode === 'view' || formData.admHandover

@@ -132,7 +132,6 @@ class EditTable<T> extends React.PureComponent<Props<T>, any> {
               type="danger"
               onClick={() => {
                 if (selectedRowKeys && selectedRowKeys.length > 0) {
-                  console.log(selectedRowKeys);
                   confirm({
                     onOk: () => {
                       onDeleteConfirm(selectedRowKeys);

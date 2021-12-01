@@ -280,6 +280,17 @@ export default {
   'ui.menu.user.center.invoice': '我的发票',
   'ui.menu.user.center.invoiceDetail': '发票详情',
 
+  // 我的绩效
+  'ui.menu.user.performance.performanceTarget': '我的绩效管理',
+  'ui.menu.user.performance.performanceTargetEdit': '绩效目标维护',
+  'ui.menu.user.performance.performanceTargetDetail': '绩效目标详情',
+  'ui.menu.user.performance.performanceFeedback': '年中KPI回顾',
+  'ui.menu.user.performance.performanceFeedbackEdit': '年中KPI回顾维护',
+  'ui.menu.user.performance.performanceFeedbackDetail': '年中KPI回顾详情',
+  'ui.menu.user.performance.performanceReport': '年终述职报告',
+  'ui.menu.user.performance.performanceReportEdit': '年终述职报告维护',
+  'ui.menu.user.performance.performanceReportDetail': '年终述职报告详情',
+
   'ui.menu.user.littleVideo': '小视频',
   'ui.menu.user.littleVideo.videoMgmt': '视频管理',
   'ui.menu.user.littleVideo.videoMgmtEdit': '视频维护',
@@ -308,6 +319,7 @@ export default {
 
   'ui.menu.org': '组织工作台',
   'ui.menu.org.bu': 'BU管理',
+  'ui.menu.org.bu.orgChart': '组织架构图',
   'ui.menu.org.bu.query': '组织架构',
   'ui.menu.org.bu.detail': 'BU编辑页',
   'ui.menu.org.bu.create': 'BU新增页',
@@ -447,6 +459,12 @@ export default {
   'ui.menu.hr.salary.payroll': '工资单管理',
 
   'ui.menu.hr.prefMgmt': '绩效管理',
+  'ui.menu.hr.prefMgmt.targetCycleList': 'KPI周期管理',
+  'ui.menu.hr.prefMgmt.performanceTarget': '绩效目标管理',
+  'ui.menu.hr.prefMgmt.performanceTargetEdit': '绩效目标维护 ',
+  'ui.menu.hr.prefMgmt.performanceFeedback': '年中KPI回顾管理  ',
+  'ui.menu.hr.prefMgmt.performanceReport': '年终述职管理',
+  'ui.menu.hr.prefMgmt.performanceReportEdit': '年终述职报告维护',
   'ui.menu.hr.prefMgmt.prefCheckTemp': '绩效考核模板',
   'ui.menu.hr.prefMgmt.prefCheckTempEdit': '绩效考核模板维护',
   'ui.menu.hr.prefMgmt.prefCheckTempView': '绩效考核模板详情',

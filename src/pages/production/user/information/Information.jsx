@@ -4,7 +4,10 @@ import { connect } from 'dva';
 import router from 'umi/router';
 import { isEmpty, isNil, omit } from 'ramda';
 import { toQs } from '@/utils/stringUtils';
+import QRCode from 'qrcode.react';
+import { Modal, Button } from 'antd';
 import Link from '@/components/production/basic/Link.tsx';
+
 // 产品化组件
 import SearchFormItem from '@/components/production/business/SearchFormItem.tsx';
 import PageWrapper from '@/components/production/layout/PageWrapper.tsx';
@@ -16,20 +19,18 @@ import ExcelImportExport from '@/components/common/ExcelImportExport';
 import ExportModal from './ExportModal';
 
 // 接口
-import {
-  informationListPaging,
-  openAccount,
-  exportEmployeeInformation,
-} from '@/services/production/user';
+import { informationListPaging, openAccount } from '@/services/production/user';
 import { outputHandle } from '@/utils/production/outputUtil.ts';
 import { handleEmptyProps } from '@/utils/production/objectUtils.ts';
 import createMessage from '@/components/core/AlertMessage';
 import { createConfirm } from '@/components/core/Confirm';
 import { remindString } from '@/components/production/basic/Remind.tsx';
-import { templateList } from '../../../../services/production/user';
 
 const DOMAIN = 'information';
 
+/***
+ * 员工信息列表
+ */
 @connect(({ loading, dispatch, information }) => ({
   // treeLoading: loading.effects[`${DOMAIN}/init`],
   loading,
@@ -44,6 +45,8 @@ class Information extends React.PureComponent {
     dataList: [],
     wParam: {},
     templates: [],
+    qrCodeFlag: false,
+    qrcodeUrl: undefined,
   };
 
   componentDidMount() {}
@@ -285,7 +288,7 @@ class Information extends React.PureComponent {
       ...wParam,
       ...basicParam,
       saveTemplate: btnType === 'saveAndExport',
-      templateId: !template ? -1 : template.id,
+      templateId: !Object.keys(template).length ? -1 : template.id,
     };
     const url = toQs(`${SERVER_URL}/api/production/user/information/payExport`, o);
     window.open(url);
@@ -303,6 +306,27 @@ class Information extends React.PureComponent {
     });
   };
 
+  downLoadQrCode = () => {
+    // console.log('下载二维码');
+    const canvasImg = document.getElementById('qrCode'); // 获取canvas类型的二维码
+    const img = new Image();
+    img.src = canvasImg.toDataURL('image/png'); // 将canvas对象转换为图片的data url
+    const downLink = document.getElementById('down_link');
+    downLink.href = img.src;
+    downLink.download = '二维码'; // 图片name
+  };
+
+  copyUrl = () => {
+    const activeCodeSpan = document.getElementById('url_text');
+    const range = document.createRange();
+    range.selectNodeContents(activeCodeSpan);
+    window.getSelection().addRange(range);
+    const tag = document.execCommand('copy');
+    // if (tag) {
+    //   console.log('复制链接chenggong');
+    // }
+  };
+
   render() {
     const { form, formData, loading, ...rest } = this.props;
     const {
@@ -312,6 +336,8 @@ class Information extends React.PureComponent {
       exportVisible,
       dataList,
       templates,
+      qrCodeFlag,
+      qrcodeUrl,
     } = this.state;
 
     const columns = [
@@ -319,11 +345,11 @@ class Information extends React.PureComponent {
         title: '用户名',
         dataIndex: 'login',
         ellipsis: true,
+        width: 80,
         render: (value, row) => (
           <Link
             onClick={() =>
-              // router.push(`/hr/resource/informationDetail?mode=DESCRIPTION&id=` + row.id)
-              router.push(`/hr/resource/informationDetail?id=${row.id}`)
+              router.push(`/hr/resource/informationDetail?id=${row.id}&resId=${row.resId}`)
             }
           >
             {value}
@@ -334,66 +360,176 @@ class Information extends React.PureComponent {
         title: '姓名',
         dataIndex: 'name',
         ellipsis: true,
+        width: 80,
+        render: (value, row) => (
+          <Link
+            onClick={() =>
+              router.push(`/hr/resource/informationDetail?id=${row.id}&resId=${row.resId}`)
+            }
+          >
+            {value}
+          </Link>
+        ),
+      },
+      {
+        title: '汉语拼音',
+        dataIndex: 'pinyin',
+        ellipsis: true,
+        width: 100,
       },
       {
         title: '员工编号',
         dataIndex: 'resNo',
         ellipsis: true,
         sorter: true,
+        width: 100,
       },
       {
         title: '所属公司',
         dataIndex: 'ouName',
         ellipsis: true,
+        width: 180,
       },
       {
         title: '所属BU',
         dataIndex: 'buName',
         ellipsis: true,
+        width: 80,
       },
       {
         title: 'Base地',
         dataIndex: 'baseCityDesc',
         ellipsis: true,
+        width: 100,
       },
       {
         title: '职级',
         dataIndex: 'jobGrade',
+        width: 80,
       },
       {
         title: '职位',
         dataIndex: 'position',
         ellipsis: true,
+        width: 80,
       },
       {
         title: '直属上级',
         dataIndex: 'presName',
         ellipsis: true,
+        width: 80,
       },
       {
         title: '入职日期',
         dataIndex: 'enrollDate',
         ellipsis: true,
+        width: 150,
       },
       {
         title: '手机号',
         dataIndex: 'phone',
         ellipsis: true,
+        width: 180,
       },
       {
-        title: '邮箱',
+        title: '工作邮箱',
         dataIndex: 'email',
         ellipsis: true,
+        width: 180,
+      },
+      {
+        title: '合同开始时间',
+        dataIndex: 'contractSignDate',
+        ellipsis: true,
+        width: 150,
+      },
+      {
+        title: '合同结束时间',
+        dataIndex: 'contractExpireDate',
+        ellipsis: true,
+        width: 150,
       },
       {
         title: '生日',
         dataIndex: 'birthday',
         ellipsis: true,
+        width: 150,
+      },
+      {
+        title: '婚姻状况',
+        dataIndex: 'maritalDesc',
+        ellipsis: true,
+        width: 80,
+      },
+
+      {
+        title: '最高学历',
+        dataIndex: 'qualification',
+        ellipsis: true,
+        width: 80,
+      },
+      {
+        title: '是否为党员',
+        dataIndex: 'partyMemberDesc',
+        ellipsis: true,
+      },
+      {
+        title: '户籍所在地',
+        dataIndex: 'censusRegistration',
+        ellipsis: true,
+        width: 100,
+      },
+      {
+        title: '身份证号码',
+        dataIndex: 'idNo',
+        ellipsis: true,
+        width: 150,
+      },
+      {
+        title: '个人邮箱',
+        dataIndex: 'personalEmail',
+        ellipsis: true,
+        width: 150,
+      },
+      {
+        title: '首次工作时间',
+        dataIndex: 'firstWorkTime',
+        ellipsis: true,
+        width: 150,
+      },
+      {
+        title: '公积金账号',
+        dataIndex: 'surplusAccount',
+        ellipsis: true,
+        width: 100,
+      },
+      {
+        title: '补充公积金账号',
+        dataIndex: 'surplusAccountReplenish',
+        ellipsis: true,
+        width: 100,
+      },
+      {
+        title: '血型',
+        dataIndex: 'bloodType',
+        ellipsis: true,
+      },
+      {
+        title: '星座',
+        dataIndex: 'constellation',
+        ellipsis: true,
+      },
+      {
+        title: '永久地址',
+        dataIndex: 'addressPermanent',
+        ellipsis: true,
+        width: 100,
       },
       {
         title: '资源类型一',
         dataIndex: 'resType1Desc',
         ellipsis: true,
+        width: 100,
       },
       {
         title: '性别',
@@ -409,16 +545,19 @@ class Information extends React.PureComponent {
         title: '银行',
         dataIndex: 'bankName',
         ellipsis: true,
+        width: 80,
       },
       {
         title: '户名',
         dataIndex: 'holderName',
         ellipsis: true,
+        width: 100,
       },
       {
         title: '账号',
         dataIndex: 'accountNo',
         ellipsis: true,
+        width: 150,
       },
       {
         title: '同步状态',
@@ -430,6 +569,7 @@ class Information extends React.PureComponent {
         title: '上次同步时间',
         dataIndex: 'syncTime',
         ellipsis: true,
+        width: 150,
       },
     ];
 
@@ -511,7 +651,7 @@ class Information extends React.PureComponent {
           defaultAdvancedSearch={false}
           showSearchCardTitle={false}
           defaultSortBy="id"
-          rowKey="resNo"
+          // rowKey="resNo"
           defaultSortDirection="DESC"
           searchForm={this.renderSearchForm()}
           defaultSearchForm={{}}
@@ -565,6 +705,35 @@ class Information extends React.PureComponent {
               },
             },
             {
+              key: 'informationAdd',
+              title: '入职',
+              type: 'primary',
+              size: 'large',
+              loading: false,
+              cb: internalState => {
+                const { selectedRows } = internalState;
+                router.push(`/hr/resource/informationAdd`);
+              },
+            },
+            {
+              key: 'infoEntry',
+              title: '员工信息录入',
+              type: 'primary',
+              size: 'large',
+              loading: false,
+              cb: internalState => {
+                const { selectedRows } = internalState;
+                // router.push(`/hr/resource/informationMove?mode=EDIT&id=` + selectedRows[0].id);
+                // router.push(`/infoEntry?id=${selectedRows[0].resNo}`);
+                const url = `http://${window.location.host}/infoEntry?id=${selectedRows[0].resId}`;
+                this.setState({ qrCodeFlag: true, qrcodeUrl: url });
+              },
+              disabled: internalState => {
+                const { selectedRowKeys } = internalState;
+                return selectedRowKeys.length !== 1;
+              },
+            },
+            {
               key: 'modifyInformation',
               title: '修改',
               type: 'primary',
@@ -572,7 +741,11 @@ class Information extends React.PureComponent {
               loading: false,
               cb: internalState => {
                 const { selectedRows } = internalState;
-                router.push(`/hr/resource/informationDisplay?mode=EDIT&id=` + selectedRows[0].id);
+                router.push(
+                  `/hr/resource/informationDisplay?mode=EDIT&id=${selectedRows[0].id}&resId=${
+                    selectedRows[0].resId
+                  }`
+                );
               },
               disabled: internalState => {
                 const { selectedRowKeys } = internalState;
@@ -587,6 +760,13 @@ class Information extends React.PureComponent {
               loading: false,
               cb: internalState => {
                 const { selectedRows } = internalState;
+                if (isNil(selectedRows[0].resNo)) {
+                  createMessage({
+                    type: 'error',
+                    description: '该员工还未完成入职不能发起异动',
+                  });
+                  return;
+                }
                 router.push(`/hr/resource/informationMove?mode=EDIT&id=` + selectedRows[0].id);
               },
               disabled: internalState => {
@@ -602,6 +782,13 @@ class Information extends React.PureComponent {
               loading: false,
               cb: internalState => {
                 const { selectedRows } = internalState;
+                if (isNil(selectedRows[0].resNo)) {
+                  createMessage({
+                    type: 'error',
+                    description: '该员工还未完成入职不能发起离职',
+                  });
+                  return;
+                }
                 router.push(
                   `/hr/resource/informationDimission?mode=EDIT&userId=` + selectedRows[0].id
                 );
@@ -611,21 +798,21 @@ class Information extends React.PureComponent {
                 return selectedRowKeys.length !== 1;
               },
             },
-            {
-              key: 'informationVacation',
-              title: '假期',
-              type: 'primary',
-              size: 'large',
-              loading: false,
-              cb: internalState => {
-                const { selectedRows } = internalState;
-                router.push(`/hr/resource/informationVacation?mode=EDIT&id=` + selectedRows[0].id);
-              },
-              disabled: internalState => {
-                const { selectedRowKeys } = internalState;
-                return selectedRowKeys.length !== 1;
-              },
-            },
+            // {
+            //   key: 'informationVacation',
+            //   title: '假期',
+            //   type: 'primary',
+            //   size: 'large',
+            //   loading: false,
+            //   cb: internalState => {
+            //     const { selectedRows } = internalState;
+            //     router.push(`/hr/resource/informationVacation?mode=EDIT&id=` + selectedRows[0].id);
+            //   },
+            //   disabled: internalState => {
+            //     const { selectedRowKeys } = internalState;
+            //     return selectedRowKeys.length !== 1;
+            //   },
+            // },
             {
               key: 'informationAssess',
               title: '考核',
@@ -634,6 +821,13 @@ class Information extends React.PureComponent {
               loading: false,
               cb: internalState => {
                 const { selectedRows } = internalState;
+                if (isNil(selectedRows[0].resNo)) {
+                  createMessage({
+                    type: 'error',
+                    description: '该员工还未完成入职不能发起考核',
+                  });
+                  return;
+                }
                 router.push(
                   `/hr/resource/informationAssess?mode=EDIT&userId=` + selectedRows[0].id
                 );
@@ -643,17 +837,7 @@ class Information extends React.PureComponent {
                 return selectedRowKeys.length !== 1;
               },
             },
-            {
-              key: 'informationAdd',
-              title: '入职',
-              type: 'primary',
-              size: 'large',
-              loading: false,
-              cb: internalState => {
-                const { selectedRows } = internalState;
-                router.push(`/hr/resource/informationAdd`);
-              },
-            },
+
             {
               key: 'sync',
               title: '同步到用友',
@@ -707,6 +891,48 @@ class Information extends React.PureComponent {
             },
           ]}
         />
+        <Modal
+          visible={qrCodeFlag}
+          footer={[
+            <Button key="back" type="primary">
+              <a id="down_link" onClick={this.downLoadQrCode}>
+                下载二维码
+              </a>
+            </Button>,
+            // <Button
+            //   key="submit"
+            //   type="primary"
+            //   // loading={loading}
+            //   onClick={this.copyUrl}
+            // >
+            //   复制链接
+            // </Button>,
+            <Button
+              key="submit"
+              type="primary"
+              // loading={loading}
+              onClick={() => this.setState({ qrCodeFlag: false })}
+            >
+              关闭
+            </Button>,
+          ]}
+        >
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <QRCode id="qrCode" value={qrcodeUrl} size={300} />
+            <p style={{ margin: '20px auto' }}>
+              链接：
+              <span id="url_text">{qrcodeUrl}</span>
+            </p>
+          </div>
+        </Modal>
+
         <ExportModal
           visible={exportVisible}
           handleCancel={this.handleCancel}

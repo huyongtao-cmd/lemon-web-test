@@ -14,6 +14,7 @@ import withdrawFlowPay from './withdrawFlowPay.hbs';
 import transferMoney from './transferMoney.hbs';
 import paymentApply from './paymentApply.hbs';
 import contract from './contract.hbs';
+import information from './information.hbs';
 
 const handlebarsMap = {
   ACC_A12: exspenseNormal, // 非差旅
@@ -58,6 +59,8 @@ const handlebarsMap = {
   ACC_A108: paymentApply, // 付款申请单:资源赋能类采购
   ACC_A110: paymentApply, // 付款申请单:预付款：预付款（产品贸易类）/预付款（服务贸易类）/预付款（其它）
   ADM_M02: contract, //法务合同
+
+  INFO: information, // 员工详情
 };
 
 export function getHandlebars(name) {

@@ -20,7 +20,7 @@ export default {
         type: 'updateState',
         payload: {
           formData: {},
-          dataList: [],
+          dataList: []
         },
       });
     },

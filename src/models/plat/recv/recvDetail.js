@@ -3,7 +3,7 @@ import { queryRecvplanDetail } from '@/services/plat/recv/Contract';
 export default {
   namespace: 'platRecvDetail',
   state: {
-    formData: {},
+    formData: {}
   },
   effects: {
     *query({ payload }, { call, put }) {

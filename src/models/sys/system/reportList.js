@@ -37,9 +37,9 @@ export default {
       if (response && response.ok) {
         createMessage({ type: 'success', description: '删除成功' });
         yield put({
-          type: 'query',
+          type: 'query'
         });
-        return;
+        return
       }
       createMessage({ type: 'error', description: response.reason || '删除失败' });
     },

@@ -41,7 +41,7 @@ class PurchasesList extends PureComponent {
     closeReason: '',
     sceneVisible: false,
     sceneList: [],
-    sceneCode: null,
+    sceneCode:null,
   };
 
   componentDidMount() {
@@ -184,7 +184,7 @@ class PurchasesList extends PureComponent {
           sceneVisible: true,
           selectedRow: rowData,
           sceneList: newSceneList,
-          sceneCode: newSceneList && newSceneList.length === 1 ? newSceneList[0].code : null,
+          sceneCode:newSceneList&&newSceneList.length===1?newSceneList[0].code:null
         });
       } else {
         createMessage({

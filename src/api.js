@@ -1629,6 +1629,45 @@ module.exports = {
       assessorSave: '/api/worth/v1/performance/communicate/assessor/save', // 绩效考核沟通考核人填写通过提交
       hrSave: '/api/worth/v1/performance/communicate/hr/save', // 绩效考核沟通hr填写通过提交
       checkassessed: '/api/worth/v1/performance/communicate/assessed', // 查看被考核人填写内容
+
+      // KPI周期管理
+      targetPeriodList: '/api/kpi/v1/kpi/period/select', // KPI周期列表
+      targetPeriodSave: '/api/kpi/v1/kpi/period/save', // KPI周期新增/修改
+      targetPeriodDelete: '/api/kpi/v1/kpi/period/del/:ids', // KPI周期删除
+      targetPeriodDetail: '/api/kpi/v1/kpi/period/select/:id', // KPI周期详情
+      targetResList: '/api/kpi/v1/kpi/res/select', // KPI周期待通知人员
+      targetNoticedList: '/api/kpi/v1/kpi/res/selectNoticed', // KPI周期已通知人员
+      feedbackResList: '/api/kpi/v1/kpi/res/feedback/select', // KPI周期待通知人员
+      feedbackNoticedList: '/api/kpi/v1/kpi/res/feedback/selectNoticed', // KPI周期已通知人员
+      summaryResList: '/api/kpi/v1/kpi/res/summary/select', // KPI周期待通知人员
+      summaryNoticedList: '/api/kpi/v1/kpi/res/summary/selectNoticed', // KPI周期已通知人员
+      targetBatchSet: '/api/kpi/v1/kpi/target/batchSet/:id', // 批量发起设置通知
+      feedbackBatchSet: '/api/kpi/v1/kpi/feedback/batchSet/:id', // 批量发起年中反馈通知
+      summaryBatchSet: '/api/kpi/v1/kpi/summary/batchSet/:id', // 批量发起年末报告通知
+
+      // 绩效目标管理
+      performanceTargetList: '/api/kpi/v1/kpi/target/select', //KPI目标列表
+      performanceTargetSave: '/api/kpi/v1/kpi/target/save', //KPI目标新增/修改
+      performanceTargetDelete: '/api/kpi/v1/kpi/target/del/:ids', //KPI目标删除
+      performanceTargetDetail: '/api/kpi/v1/kpi/target/select/:id', //KPI目标详情
+      indexTargetSave: '/api/kpi/v1/kpi/target/index/save', //KPI指标新增/修改
+      indexTargetDelete: '/api/kpi/v1/kpi/target/index/del/:ids', //KPI指标删除
+      indexHistory: '/api/kpi/v1/kpi//target/index/history/:id/:versions', //KPI指标删除
+      getResDetail: '/api/kpi/v1/kpi/target/getResDetail', //根据资源获取详情
+      getPeriodList: '/api/kpi/v1/kpi/period/selectlist', //获取目标周期列表
+
+      // KPI年中反馈管理
+      performanceFeedbackList: '/api/kpi/v1/kpi/feedback/select', //KPI年中反馈列表
+      performanceFeedbackDetail: '/api/kpi/v1/kpi/feedback/select/:id', //KPI年中反馈详情
+      performanceFeedbackSave: '/api/kpi/v1/kpi/feedback/save', //KPI年中反馈保存
+      feedbackCheckChanging: '/api/kpi/v1/kpi/res/feedback/checkChanging', //个人修改了绩效考核指标后，如果流程没有走完，该节点的审批不能放过去
+
+      // 年末述职报告管理
+      performanceSummaryList: '/api/kpi/v1/kpi/summary/select', //年末述职报告列表
+      performanceSummaryDetail: '/api/kpi/v1/kpi/summary/select/:id', //年末述职报告详情
+      performanceSummarySave: '/api/kpi/v1/kpi/summary/save', //年末述职报告保存
+      stageAssesmentEvaluateSave: '/api/kpi/v1/kpi/stageAssesment/evaluate/save', //评价及建议
+      gradeBatchPublish: '/api/kpi/v1/kpi/grade/batchPublish', //批量发起KPI打分公布流程
     },
 
     // 财务期间管理
@@ -1787,6 +1826,11 @@ module.exports = {
       cancelCheck: '/api/base/v1/resCapaExamLog/cancel/:id/:type', //  适岗考核能力列表取消考核
       getTrainingList: '/api/base/v1/resCapaExamLog/getTrainingProgList/:id', //  适岗考核能力列表页行 点击 试岗培训  获取 试岗培训列表
       updateCheckStatus: '/api/base/v1/resCapaExamLog/updateStatus', // 更新考核状态
+    },
+    information: {
+      personExpand: '/api/production/personExpand/saveOrUpdate', //员工录入信息新增 post
+      getByResId: '/api/production/personExpand/getByResId', //根据resId查询资源录入信息-回显 get
+      getResInfoByResId: '/api/production/personExpand/getResInfoByResId', //根据resId查询资源基础信息 get
     },
   },
   sys: {
@@ -2639,6 +2683,7 @@ module.exports = {
       modifyInformationUri: '/api/production/user/information/modifyInformation', // put
       informationImport: '/api/production/user/information/importExcel', //excel导入  post
       informationDetailUri: '/api/production/user/information/:id', // get
+      userInduction: '/api/production/user/information/induction', // post 离职申请
       //我的借款
       loanListPagingUri: '/api/production/cos/loan/paging', // get
       exportEmployee: '/api/production/user/information/payExport', // post 员工信息导出所选字段
@@ -2652,6 +2697,13 @@ module.exports = {
       informationLeaveApply: '/api/production/userLeaveApply/insert', // post 离职申请
       informationLeaveOverAllUri: '/api/production/userLeaveApply/overall', // 离职流程
       informationLeaveFlowDetail: '/api/production/userLeaveApply/findByKey/:id', // get 试用期考核流程
+      // 培训管理
+      trainInsert: '/api/production/userTrain/insert', // post 新增培训记录
+      trainOverAll: '/api/production/userTrain/overall', // put 修改培训记录
+      trainDelete: '/api/production/userTrain/logicalDelete', // Patch 删除培训记录
+      trainList: '/api/production/userTrain/paging', // get 查询培训记录列表
+      trainFindOne: '/api/production/userTrain/findByKey/:id', // get  培训记录详情
+      trainImport: '/api/production/userTrain/importExcel', //excel导入  post
     },
     //用友同步接口
     inter: {

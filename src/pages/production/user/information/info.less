@@ -1,0 +1,109 @@
+.infoEntry {
+  @media only screen and (min-width: 992px) {
+    padding: 30px 15%;
+    .info-title {
+      font-size: 40px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-size: 20px;
+      color: rgb(41, 68, 136);
+      font-weight: bold;
+    }
+    .tip {
+      font-size: 14px;
+      color: red;
+      margin: 10px 0;
+    }
+    .base-info {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      font-size: 16px;
+      .info-item {
+        width: 50%;
+        display: flex;
+        margin: 10px 0;
+
+        .label {
+          width: 30%;
+          text-align: right;
+        }
+        .value {
+          width: 70%;
+          text-align: left;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    :global {
+      .ant-form {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .ant-form-item {
+          width: 100%;
+        }
+        .ant-form-item-label {
+          white-space: pre-wrap;
+        }
+        .ant-form-item-children {
+          display: flex;
+        }
+      }
+    }
+    .two {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      :global {
+        .ant-form-item {
+          width: 50%;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    padding: 10px 20px;
+    .info-title {
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .title {
+      font-size: 18px;
+      color: rgb(41, 68, 136);
+      font-weight: bold;
+    }
+    .tip {
+      font-size: 14px;
+      color: red;
+      margin: 10px 0;
+    }
+    .base-info {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      .info-item {
+        width: 100%;
+        display: flex;
+        margin: 5px;
+
+        .label {
+          width: 30%;
+          text-align: right;
+        }
+        .value {
+          width: 70%;
+          text-align: right;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}

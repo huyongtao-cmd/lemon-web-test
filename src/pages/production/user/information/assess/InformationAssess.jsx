@@ -127,8 +127,10 @@ class InformationAssess extends Component {
       userId,
       ...param,
     };
-    const resSub = await outputHandle(informationAssSubmit, data);
-    cb(resSub);
+    const resSub = await outputHandle(informationAssSubmit, data, 'string', false);
+    if (resSub.ok) {
+      cb(resSub);
+    }
   };
 
   handleOverall = async (param, cb) => {

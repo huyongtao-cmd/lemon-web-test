@@ -154,7 +154,7 @@ const checkStatus = (response, requestCfg, newOptions) => {
     return response;
   }
   // eslint-disable-next-line
-  console.log('[EL-AJAX]: response failed!');
+  // console.log('[EL-AJAX]: response failed!');
   const errorText = HTTP_CODE[response.status] || response.statusText;
   if (response.status === 401 && isNil(hasDialog)) {
     // 需要 checkPermission 的时候，说明已经有至少一个 401 存在了，要取消其他正在执行的请求（此时他们都属于无效请求了）
@@ -372,7 +372,7 @@ const retrieveCache = (expirys, hashcode) => {
 
 function parseResponse(response) {
   // eslint-disable-next-line
-  console.log('[RES]:', response);
+  // console.log('[RES]:', response);
   const contentType = response.headers.get('content-type') || '';
 
   let respType = 'text';
@@ -418,7 +418,7 @@ function httpRequest(
   const { expirys } = options; // || 60;
   if (expirys) {
     // eslint-disable-next-line
-    console.log('[EL-AJAX]: Expirys detected, dur =', expirys, '. Caching procedure activated.');
+    // console.log('[EL-AJAX]: Expirys detected, dur =', expirys, '. Caching procedure activated.');
     hashcode = hashMaker(url, options.body);
     const cache = retrieveCache(expirys, hashcode);
     if (cache) {
@@ -430,7 +430,7 @@ function httpRequest(
   // (dva actually resolved this, but here we practice it as original)
   const requestUrl = [options.mock ? clientUrl : serverUrl, url].join('');
   // eslint-disable-next-line
-  console.log(`[REQ]${options.mock ? '[mock]' : ''}[${newOptions.method}]: ${url}`);
+  // console.log(`[REQ]${options.mock ? '[mock]' : ''}[${newOptions.method}]: ${url}`);
   const requestCfg = {
     url: requestUrl,
     method: newOptions.method,
@@ -458,7 +458,7 @@ function httpRequest(
           const { response = {} } = e;
           const { status } = response;
           // eslint-disable-next-line
-          console.log('[EL-AJAX]: Failed to respond, reason ->', e);
+          // console.log('[EL-AJAX]: Failed to respond, reason ->', e);
           // createNotify.error({ title: 'misc.hint', content: '网络请求无响应。'});
           // 与过滤器一致
           return resultMaker({ headers: void 0, status: status || 400 }, response);

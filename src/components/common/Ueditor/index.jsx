@@ -30,7 +30,6 @@ export default class Ueditor extends React.Component {
         initialContent,
       });
       this.setState({ ueditor });
-
       ueditor.addListener('contentChange', editor => {
         const html = ueditor.getContent();
         onChange(html);

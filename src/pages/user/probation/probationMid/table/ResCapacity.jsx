@@ -139,7 +139,7 @@ class ResCapacity extends Component {
       loading: fetchDataLoading,
       dataSource: capacityListSelected,
       showColumn: false,
-      onRow: () => {},
+      onRow: () => { },
       showSearch: false,
       showExport: false,
       showAdd: false,

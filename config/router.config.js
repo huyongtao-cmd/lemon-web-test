@@ -22,6 +22,12 @@ export default [
     // ]
   },
   {
+    desc: '入职信息录入',
+    path: 'infoEntry',
+    // name: 'addEntry',
+    component: './production/user/information/infoEntry',
+  },
+  {
     desc: 'APP下载',
     path: '/download',
     name: 'download',
@@ -1844,6 +1850,75 @@ export default [
               },
             ],
           },
+          {
+            desc: '我的绩效',
+            path: 'performance',
+            name: 'performance',
+            icon: 'line-chart',
+            menu: false,
+            routes: [
+              {
+                desc: '绩效目标管理',
+                path: 'performanceTarget',
+                name: 'performanceTarget',
+                component: './plat/prefMgmt/performanceTarget/index',
+              },
+              {
+                desc: '修改绩效目标',
+                path: 'performanceTarget/targetEdit',
+                name: 'performanceTargetEdit',
+                component: './plat/prefMgmt/performanceTarget/edit',
+              },
+              {
+                desc: '绩效目标详情',
+                path: 'performanceTarget/detail',
+                name: 'performanceTargetDetail',
+                component: './plat/prefMgmt/performanceTarget/detail',
+              },
+              {
+                desc: '年中绩效反馈管理',
+                path: 'performanceFeedback',
+                name: 'performanceFeedback',
+                component: './plat/prefMgmt/performanceFeedback/index',
+              },
+              {
+                desc: '修改年中KPI回顾',
+                path: 'performanceFeedback/feedbackEdit',
+                name: 'performanceFeedbackEdit',
+                component: './plat/prefMgmt/performanceFeedback/edit',
+              },
+              {
+                desc: '年中KPI回顾详情',
+                path: 'performanceFeedback/detail',
+                name: 'performanceFeedbackDetail',
+                component: './plat/prefMgmt/performanceFeedback/detail',
+              },
+              {
+                desc: '年终述职报告管理',
+                path: 'performanceReport',
+                name: 'performanceReport',
+                component: './plat/prefMgmt/performanceReport/index',
+              },
+              // {
+              //   desc: '新建年末述职报告',
+              //   path: 'performanceReport/creat',
+              //   name: 'performanceReportCreat',
+              //   component: './plat/prefMgmt/performanceReport/edit',
+              // },
+              {
+                desc: '修改年末述职报告',
+                path: 'performanceReport/reportEdit',
+                name: 'performanceReportEdit',
+                component: './plat/prefMgmt/performanceReport/edit',
+              },
+              {
+                desc: '年末述职报告详情',
+                path: 'performanceReport/detail',
+                name: 'performanceReportDetail',
+                component: './plat/prefMgmt/performanceReport/detail',
+              },
+            ],
+          },
         ],
       },
 
@@ -1922,6 +1997,12 @@ export default [
                 path: 'resInfo',
                 name: 'resInfo',
                 component: './org/bu/Main/ResInfo',
+              },
+              {
+                desc: '组织架构图导图',
+                path: 'orgChart',
+                name: 'orgChart',
+                component: './org/bu/Main/OrganizationChart',
               },
               {
                 desc: 'BU资源管理(新)',
@@ -2629,6 +2710,42 @@ export default [
             name: 'prefMgmt',
             icon: 'line-chart',
             routes: [
+              {
+                desc: '目标周期管理',
+                path: 'targetCycle',
+                name: 'targetCycleList',
+                component: './plat/prefMgmt/targetCycle/index',
+              },
+              {
+                desc: '绩效目标管理',
+                path: 'performanceTarget',
+                name: 'performanceTarget',
+                component: './plat/prefMgmt/performanceTarget/index',
+              },
+              {
+                desc: '修改绩效目标',
+                path: 'performanceTarget/targetEdit',
+                name: 'performanceTargetEdit',
+                component: './plat/prefMgmt/performanceTarget/edit',
+              },
+              {
+                desc: '年中绩效反馈管理',
+                path: 'performanceFeedback',
+                name: 'performanceFeedback',
+                component: './plat/prefMgmt/performanceFeedback/index',
+              },
+              {
+                desc: '年终述职报告管理',
+                path: 'performanceReport',
+                name: 'performanceReport',
+                component: './plat/prefMgmt/performanceReport/index',
+              },
+              {
+                desc: '修改年末述职报告',
+                path: 'performanceReport/reportEdit',
+                name: 'performanceReportEdit',
+                component: './plat/prefMgmt/performanceReport/edit',
+              },
               {
                 desc: '绩效考核模板',
                 path: 'prefCheck/temp',

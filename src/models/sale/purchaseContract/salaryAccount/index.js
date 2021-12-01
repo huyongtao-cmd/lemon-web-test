@@ -2,6 +2,7 @@ import { getAccountsList, deleteAccountFn } from '@/services/sale/purchaseContra
 import createMessage from '@/components/core/AlertMessage';
 import { businessPageDetailByNo } from '@/services/sys/system/pageConfig';
 
+
 export default {
   namespace: 'salaryAccountList',
   state: {
@@ -57,6 +58,7 @@ export default {
       }
       return {};
     },
+
   },
 
   reducers: {

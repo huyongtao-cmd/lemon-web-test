@@ -14,7 +14,7 @@ const { Field } = FieldList;
 const AddrEditT1 = props => (
   <AddrEditContext.Consumer>
     {({ form: { getFieldDecorator }, formData, abOuSel }) => {
-      console.warn(formData);
+      console.warn(formData)
       return (
         <FieldList
           layout="horizontal"
@@ -58,11 +58,7 @@ const AddrEditT1 = props => (
               content: '个人填写个人信息，公司填写公司信息，BU不用填写详细信息。',
             }}
           >
-            <UdcSelect
-              code="COM:AB_TYPE"
-              placeholder="请选择地址簿类型"
-              disabled={!!formData.abNo}
-            />
+            <UdcSelect code="COM:AB_TYPE" placeholder="请选择地址簿类型" disabled={!!formData.abNo} />
           </Field>
           <Field
             name="idenNo"
@@ -93,14 +89,9 @@ const AddrEditT1 = props => (
                 : formData.relateType && formData.relateType.split(','),
             }}
           >
-            <UdcSelect
-              mode="multiple"
-              code="TSK:AB_RELATE_TYPE"
-              placeholder="请选择相关主档"
-              disabled
-            />
+            <UdcSelect mode="multiple" code="TSK:AB_RELATE_TYPE" placeholder="请选择相关主档" disabled />
           </Field>
-
+  
           <Field
             name="legalAbNo"
             label="法人地址薄"
@@ -118,7 +109,7 @@ const AddrEditT1 = props => (
             />
           </Field>
         </FieldList>
-      );
+      )
     }}
   </AddrEditContext.Consumer>
 );

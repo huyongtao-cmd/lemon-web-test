@@ -59,12 +59,20 @@ class MyVacationList extends PureComponent {
       },
     } = this.props;
     const { vacationDate, ...params } = payload;
+    const { resId: tempResId } = fromQs();
     if (Array.isArray(vacationDate) && vacationDate[0] && vacationDate[1]) {
       [params.expirationDateStart, params.expirationDateEnd] = vacationDate;
     }
     delete params.baseBu;
-    const { response } = await vacationList({ ...params, resId });
-    return response.data;
+    let res;
+    // 有userId的时候，通过userId查询TA的假期
+    if (tempResId) {
+      res = await vacationList({ ...params, resId: tempResId });
+    } else {
+      res = await vacationList({ ...params, resId });
+    }
+    // const { response } = await vacationList({ ...params, resId });
+    return res.response.data;
   };
 
   deleteData = async keys =>
@@ -193,16 +201,19 @@ class MyVacationList extends PureComponent {
   };
 
   render() {
+    const { userId } = this.props;
     return (
       <PageHeaderWrapper title="假期管理">
         <SearchTable
           wrapperInternalState={internalState => {
             this.setState({ getInternalState: internalState });
           }}
+          showExport={!userId}
+          showColumnSwitch={!userId}
           defaultSortBy="id"
           defaultSortDirection="DESC"
           showSearchCardTitle={false}
-          searchForm={this.renderSearchForm()}
+          searchForm={!userId && this.renderSearchForm()}
           fetchData={this.fetchData}
           columns={this.renderColumns()}
           extraButtons={[]}

@@ -45,3 +45,4 @@ export async function getaccountInfoById({ id }) {
 export async function generateByCostById({ id }) {
   return request.get(toUrl(generateByCost, { id }));
 }
+

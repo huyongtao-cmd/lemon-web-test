@@ -103,6 +103,7 @@ class ReportMgtEdit extends PureComponent {
         },
       });
     }
+    
 
     // 正常套路
     let value = null;

@@ -15,7 +15,7 @@ const {
   roleList,
   roleSave,
   reportUpload,
-  reportBaseUrl,
+  reportBaseUrl
 } = api.sys.report;
 
 // 展示

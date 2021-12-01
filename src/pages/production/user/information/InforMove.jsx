@@ -16,14 +16,15 @@ import BaseInput from '@/components/production/basic/BaseInput';
 import BuSimpleSelect from '@/components/production/basic/BuSimpleSelect';
 import ResSimpleSelect from '@/components/production/basic/ResSimpleSelect';
 import BaseCustomSelect from '@/components/production/basic/BaseCustomSelect';
-// css样式
-import styles from './InforMove.less';
+import BaseSelect from '@/components/production/basic/BaseSelect';
 import BpmWrapper from '@/pages/gen/BpmMgmt/BpmWrapper';
 import { getUrl } from '@/utils/flowToRouter';
 import { createConfirm } from '@/components/core/Confirm';
 import { pushFlowTask } from '@/services/gen/flow';
 import createMessage from '@/components/core/AlertMessage';
 import BpmConnection from '@/pages/gen/BpmMgmt/BpmConnection';
+// css样式
+import styles from './InforMove.less';
 
 // namespace声明
 const DOMAIN = 'informationMove';
@@ -90,8 +91,6 @@ class InformationMove extends React.PureComponent {
     };
   }
 
-  // http://localhost:3001/hr/resource/informationMove?
-  // mode=EDIT&id=28&prcId=2cc57ef1-4865-11ec-8333-86edba683254&taskId=&mode=view&from=http%3A%2F%2Flocalhost%3A3001%2Fuser%2Fflow%2Fprocess%3Ftype%3Dprocs
   componentDidMount() {
     // 调用页面载入初始化方法,一般是请求页面数据
     // fromQs 方法从url获取路径参数，仅能在组件加载时调用一次，且只能在一级组件调用，后续在组件内部维护自己的url参数。否则多TAB体系可能会出BUG
@@ -164,6 +163,7 @@ class InformationMove extends React.PureComponent {
       user: { extInfo = {} }, // 取当前登陆人的resId
     } = this.props;
     const { getFieldDecorator } = form;
+    const { taskKey } = fieldsConfig;
     const allBpm = [{ docId: formData.id, procDefKey: 'USER01', title: '员工异动流程' }];
 
     const {
@@ -216,7 +216,6 @@ class InformationMove extends React.PureComponent {
           onBtnClick={({ operation, bpmForm }) => {
             const { branch, remark } = bpmForm;
             const { key } = operation;
-            const { taskKey } = fieldsConfig;
             // 加签
             if (key === 'FLOW_COUNTERSIGN') {
               return Promise.resolve(true);
@@ -226,9 +225,15 @@ class InformationMove extends React.PureComponent {
               this.handleSave(
                 {
                   result: 'APPROVED',
-                  taskId,
+                  procTaskId: taskId,
                   procRemark: remark,
                   branch,
+                  dryRunFlag: true,
+                  ...detail,
+                  changeRemark,
+                  effectiveDate,
+                  submit: true,
+                  flowCommit: true,
                 },
                 () => {
                   const url = getUrl().replace('edit', 'view'); // view代替edit
@@ -260,6 +265,10 @@ class InformationMove extends React.PureComponent {
             }
             // 通过
             if (key === 'FLOW_PASS') {
+              let flowCommit = false;
+              if (taskKey === 'USER01_01_SUBMIT_i') {
+                flowCommit = true;
+              }
               this.handleSave(
                 {
                   result: 'APPROVED',
@@ -267,10 +276,17 @@ class InformationMove extends React.PureComponent {
                   procRemark: remark,
                   branch,
                   dryRunFlag: true,
-                  ...detail,
+                  buId: newBuId || formData.buId,
+                  parentResId: newParentResId || formData.parentResId,
+                  position: newPosition || formData.position,
+                  jobGrade: newJobGrade || formData.jobGrade,
+                  salary: newSalary || formData.salary,
+                  baseCity: newBaseCity || formData.baseCity,
+                  bonusType: newBonusType || formData.bonusType,
                   changeRemark,
                   effectiveDate,
                   submit: true,
+                  flowCommit,
                 },
                 () => {
                   createMessage({ type: 'success', description: '操作成功' });
@@ -298,7 +314,6 @@ class InformationMove extends React.PureComponent {
                       submit: true,
                     },
                     () => {
-                      // closeThenGoto(`/hr/resource/information?refresh=` + new Date().valueOf());
                       closeThenGoto(`/user/flow/process?type=procs`);
                     }
                   );
@@ -357,13 +372,14 @@ class InformationMove extends React.PureComponent {
                   </Col>
                   <Col className="inner-row" span={12}>
                     <Form.Item>
+                      {/**/}
                       {getFieldDecorator(formMode === 'DESCRIPTION' ? 'buId' : 'newBuId', {
                         rules: [{ required: true, message: '请选择部门' }],
                       })(
                         <BuSimpleSelect
                           id="buId"
                           placeholder="请选择"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           size="large"
                           value={formMode === 'DESCRIPTION' ? buId : newBuId || undefined}
                           onChange={value =>
@@ -396,7 +412,7 @@ class InformationMove extends React.PureComponent {
                         <ResSimpleSelect
                           id="parentResId"
                           placeholder="请选择"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           size="large"
                           value={newParentResId || undefined}
                           onChange={value =>
@@ -427,7 +443,7 @@ class InformationMove extends React.PureComponent {
                           id="position"
                           fieldKey="position"
                           size="large"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           value={newPosition}
                           onChange={value =>
                             this.setState({
@@ -456,7 +472,7 @@ class InformationMove extends React.PureComponent {
                         <BaseCustomSelect
                           id="jobGrade"
                           size="large"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           value={newJobGrade || undefined}
                           onChange={value =>
                             this.setState({
@@ -486,7 +502,7 @@ class InformationMove extends React.PureComponent {
                         <BaseInput
                           id="salary"
                           fieldKey="salary"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           size="large"
                           value={newSalary}
                           onChange={value =>
@@ -517,11 +533,15 @@ class InformationMove extends React.PureComponent {
                           rules: [{ required: true, message: '请选择奖金类型' }],
                         }
                       )(
-                        <BaseInput
+                        <BaseSelect
                           id="bonusType"
                           size="large"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           value={newBonusType}
+                          descList={[
+                            { value: '项目制', title: '项目制' },
+                            { value: '年薪制', title: '年薪制' },
+                          ]}
                           onChange={value =>
                             this.setState({
                               newBonusType: value,
@@ -553,7 +573,7 @@ class InformationMove extends React.PureComponent {
                           id="baseCity"
                           value={newBaseCity || undefined}
                           size="large"
-                          disabled={formMode === 'DESCRIPTION'}
+                          disabled={formMode === 'DESCRIPTION' && taskKey !== 'USER01_01_SUBMIT_i'}
                           onChange={value =>
                             this.setState({
                               newBaseCity: value,
@@ -567,11 +587,11 @@ class InformationMove extends React.PureComponent {
                 </Row>
               </div>
             </div>
-            <div className="intro">
+            <div className="intro" style={{ marginTop: '30px' }}>
               <BusinessForm
                 form={form}
                 formData={formData}
-                formMode={formMode}
+                formMode={taskKey !== 'USER01_01_SUBMIT_i' ? formMode : 'EDIT'}
                 defaultColumnStyle={12}
               >
                 <FormItem

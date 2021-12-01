@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import router from 'umi/router';
 import Link from 'umi/link';
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Button } from 'antd';
 import DataTable from '@/components/common/DataTable';
 import TreeSearch from '@/components/common/TreeSearch';
 import { createConfirm } from '@/components/core/Confirm';
@@ -63,6 +63,10 @@ class OrgBu extends PureComponent {
     this.setState({
       buHistoryVisible: true,
     });
+  };
+
+  gotoArchart = () => {
+    router.push(`/org/bu/orgChart`);
   };
 
   render() {
@@ -358,15 +362,20 @@ class OrgBu extends PureComponent {
             style={{ borderRight: '1px dashed #e8e8e8', paddingRight: '24px', minHeight: '600px' }}
           >
             {!loading.effects[`${DOMAIN}/findbuMainTree`] ? (
-              <TreeSearch
-                showSearch
-                showBtn={pathname !== '/org/bu/main' ? 'showBtn' : false}
-                showBtnModel={this.showBtnModel}
-                placeholder="请输入关键字"
-                treeData={treeData}
-                onSelect={this.onSelect}
-                defaultExpandedKeys={treeData.map(item => `${item.id}`)}
-              />
+              <>
+                <Button type="primary" onClick={this.gotoArchart}>
+                  切换查看模式
+                </Button>
+                <TreeSearch
+                  showSearch
+                  showBtn={pathname !== '/org/bu/main' ? 'showBtn' : false}
+                  showBtnModel={this.showBtnModel}
+                  placeholder="请输入关键字"
+                  treeData={treeData}
+                  onSelect={this.onSelect}
+                  defaultExpandedKeys={treeData.map(item => `${item.id}`)}
+                />
+              </>
             ) : (
               <Loading />
             )}

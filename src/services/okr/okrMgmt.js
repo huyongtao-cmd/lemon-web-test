@@ -299,3 +299,10 @@ export async function getOkrListByStatusFn(params) {
 export async function getOkrListByUpdateFn(params) {
   return request.get(toQs(getOkrListByUpdate, params));
 }
+
+// 获取架构图数据
+export async function queryTreeData(params) {
+  return request.get(
+    `/api/org/v1/bu/buStructure?specialBuNo=${params?.specialBuNo}&simple=${params?.simple}`
+  );
+}

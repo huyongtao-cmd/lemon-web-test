@@ -24,7 +24,7 @@ export default {
       const { status, response } = yield call(customerSaveRq, formData);
       if (status === 200) {
         if (response && response.ok) {
-          if (payload) {
+          if(payload){
             return createMessage({ type: 'success', description: '提交成功' });
           }
           createMessage({ type: 'success', description: '提交成功' });

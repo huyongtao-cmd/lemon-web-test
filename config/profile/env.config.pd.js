@@ -6,4 +6,5 @@ export default {
   isAntiCsrf: 1,
   isAntiDebug: 0,
   logLvl: 4,
+  crossUrl: '/telework',
 };

@@ -56,7 +56,7 @@ class ProcessPanel extends React.Component {
     const className = type => (isCurrent(type) ? 'tw-btn-primary' : 'tw-btn-default');
 
     return (
-      <PageHeaderWrapper title="我的流程1">
+      <PageHeaderWrapper title="我的流程">
         <Card
           className="tw-card-adjust"
           bordered={false}

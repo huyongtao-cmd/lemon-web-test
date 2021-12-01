@@ -12,6 +12,7 @@ import { getPaymentApplyData } from './paymentApply';
 import { expenseClaimDetail, loanApplyDetail, otherPaymentDetail } from '@/services/production/cos';
 import { tripManagementClaimDetail } from '@/services/production/adm/trip/tripApply';
 import { pcontractDetailRq } from '@/services/workbench/contract';
+import { informationDetail } from '@/services/production/user';
 
 import { paymentRequestDetail } from '@/services/production/pur';
 
@@ -217,6 +218,43 @@ export async function getPrintData() {
     case 'PUR05': {
       const res = await paymentRequestDetail({ id });
       if (res) {
+        formData = res.response.data;
+      }
+      break;
+    }
+    // 员工详情
+    case 'INFO': {
+      const res = await informationDetail({ id });
+      if (res) {
+        const { personExpand } = res.response.data;
+        if (personExpand.physicalCondition === 'N') {
+          personExpand.physicalCondition = null;
+        }
+        if (personExpand.partyMember === 'N') {
+          personExpand.partyMember = null;
+        }
+        if (personExpand.kinsfolkWorked === 'N') {
+          personExpand.kinsfolkWorked = null;
+        }
+        if (personExpand.kinsfolkWorkedOpponent === 'N') {
+          personExpand.kinsfolkWorkedOpponent = null;
+        }
+        if (personExpand.otherInterest === 'N') {
+          personExpand.otherInterest = null;
+        }
+        if (personExpand.qualification === '01') {
+          personExpand.qualification = '大专';
+        } else if (personExpand.qualification === '02') {
+          personExpand.qualification = '本科';
+        } else if (personExpand.qualification === '03') {
+          personExpand.qualification = '硕士';
+        } else if (personExpand.qualification === '04') {
+          personExpand.qualification = '博士';
+        } else if (personExpand.qualification === '05') {
+          personExpand.qualification = 'MBA';
+        } else if (personExpand.qualification === '06') {
+          personExpand.qualification = '其他';
+        }
         formData = res.response.data;
       }
       break;

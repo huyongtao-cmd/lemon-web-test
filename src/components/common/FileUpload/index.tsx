@@ -51,7 +51,7 @@ class Index extends PureComponent<Props, any>{
     const { beforeUpload } = this.props;
     // 增加max参数，增加文件大小限制
     const { maxFileSize } = this.props; // maxFileSize单位为M
-    
+
     // 先判断不能有为空的文件
     const emptyError = fileList.filter(
       // 接口返回的fileList内无size字段，只有itemSize字段
@@ -335,6 +335,7 @@ class Index extends PureComponent<Props, any>{
       ele = false,
 
     } = this.props;
+
     const { visible, fileList } = this.state;
     const props = {
       accept,

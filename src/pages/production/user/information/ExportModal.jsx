@@ -20,6 +20,7 @@ class ExportModal extends React.PureComponent {
       template: {},
       templates: [],
       activeKey: '',
+      isChoose: true, // 导出摸板选择和取消选择
     };
   }
 
@@ -41,14 +42,14 @@ class ExportModal extends React.PureComponent {
   handleOk = async btnType => {
     const { handleOk, handleExport } = this.props;
     const { template } = this.state;
-    const chooseField = document.getElementsByName('field');
+    const chooseField = document.getElementsByName('field'); // 获取所有的字段
     const value = [];
     for (let i = 0; i < chooseField.length; i += 1) {
-      if (chooseField[i].checked) value.push(chooseField[i].value);
+      if (chooseField[i].checked) value.push(chooseField[i].value); // 获取选中的字段
     }
-    if (!value.length && !template) {
+    if (!value.length && !Object.keys(template).length) {
       createMessage({
-        type: 'info',
+        type: 'error',
         description: '请选择要导出的属性',
       });
       return;
@@ -63,8 +64,8 @@ class ExportModal extends React.PureComponent {
     titleArr = titleArr.join(',');
     valueArr = valueArr.join(',');
     const newList = {
-      titleArr: !template ? titleArr : [],
-      valueArr: !template ? valueArr : [],
+      titleArr: !Object.keys(template).length ? titleArr : [],
+      valueArr: !Object.keys(template).length ? valueArr : [],
     };
     await handleExport(newList, btnType, template);
     handleOk();
@@ -72,10 +73,12 @@ class ExportModal extends React.PureComponent {
 
   // 选择要导出的模板
   chooseTemplate = (item, index) => {
+    const { isChoose } = this.state;
     const { template, activeKey } = this.state;
     this.setState({
-      template: item,
-      activeKey: index,
+      template: isChoose ? item : {},
+      activeKey: isChoose ? index : '',
+      isChoose: !isChoose,
     });
   };
 
@@ -124,7 +127,7 @@ class ExportModal extends React.PureComponent {
 
   render() {
     const { visible, handleOk, handleCancel, columns, destroyOnClose } = this.props;
-    const { template, templates, activeKey } = this.state;
+    const { template, templates, activeKey, isChoose } = this.state;
     return (
       <Modal
         title="导出员工信息"
@@ -142,7 +145,7 @@ class ExportModal extends React.PureComponent {
             导出
           </Button>,
         ]}
-        destroyOnClose={destroyOnClose}
+        destroyOnClose
         className="modal-page"
       >
         <div className="basic">
@@ -167,7 +170,7 @@ class ExportModal extends React.PureComponent {
               <img alt="删除" src={deleteIcon} onClick={() => this.deleteTemplate(index)} />
               <li
                 className={activeKey !== index ? 'template' : 'active-template'}
-                onClick={() => this.chooseTemplate(item, index)}
+                onClick={() => this.chooseTemplate(item, index, isChoose)}
               >
                 {item.tempName}
               </li>

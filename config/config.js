@@ -56,6 +56,7 @@ export default {
     // 工程内部全局变量 - 请勿随意自行添加
     APP_TYPE: process.env.APP_TYPE || '',
     SERVER_URL: env.serverHost,
+    CROSS_URL: env.crossUrl,
   },
   // polyfill - BRAND SPANKING NEW
   targets: {

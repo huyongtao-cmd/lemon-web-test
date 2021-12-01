@@ -9,11 +9,7 @@ import {
   saveEvalsRq,
   getCapacityListRq,
 } from '@/services/user/probation/probation';
-import {
-  queryCapaTree,
-  queryCapaTreeDetail,
-  queryCapaTreeDetailWithText,
-} from '@/services/plat/capa/capa';
+import { queryCapaTree, queryCapaTreeDetail, queryCapaTreeDetailWithText } from '@/services/plat/capa/capa';
 import { getViewConf } from '@/services/gen/flow';
 import { selectUserMultiCol } from '@/services/user/Contract/sales';
 import { selectBuMultiCol } from '@/services/org/bu/bu';
@@ -110,7 +106,7 @@ export default {
       });
     },
 
-    *queryCapaTreeDataDetailWithText({ payload }, { call, put, select }) {
+    * queryCapaTreeDataDetailWithText({ payload }, { call, put, select }) {
       let { capaTreeDataDetailTotal, capaTreeDataDetail } = yield select(
         ({ platCapaSetCreate }) => platCapaSetCreate
       );
@@ -399,11 +395,11 @@ export default {
           payload: {
             fieldsConfig: isEmpty(response)
               ? {
-                  buttons: [],
-                  panels: {
-                    disabledOrHidden: {},
-                  },
-                }
+                buttons: [],
+                panels: {
+                  disabledOrHidden: {},
+                },
+              }
               : response,
             flowForm: {
               remark: undefined,

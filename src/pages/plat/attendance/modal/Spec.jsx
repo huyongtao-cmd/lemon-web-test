@@ -125,7 +125,10 @@ class SpecModal extends React.Component {
             }}
             {...fieldLayout}
           >
-            <TimePicker format="HH:mm" onChange={e => this.changeData(e, 'attendanceTimeStart')} />
+            <TimePicker
+              format="HH:mm"
+              onChange={e => this.changeData(e, 'attendanceTimeStart')}
+            />
           </Field>
           <Field
             name="attendanceTimeEnd"
@@ -141,7 +144,10 @@ class SpecModal extends React.Component {
             }}
             {...fieldLayout}
           >
-            <TimePicker format="HH:mm" onChange={e => this.changeData(e, 'attendanceTimeEnd')} />
+            <TimePicker
+              format="HH:mm"
+              onChange={e => this.changeData(e, 'attendanceTimeEnd')}
+            />
           </Field>
         </FieldList>
       </Modal>

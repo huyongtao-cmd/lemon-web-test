@@ -127,6 +127,8 @@ export default {
       }
       createMessage({ type: 'error', description: response.reason || '生成资源离职信息失败' });
       return [];
+
+
     },
     // 资源列表 离职确认（继续）
     *resLeaveUpdate({ payload }, { put, call }) {
@@ -165,7 +167,7 @@ export default {
 
   subscriptions: {
     setup({ dispatch, history }) {
-      return history.listen(({ pathname, search }) => {});
+      return history.listen(({ pathname, search }) => { });
     },
   },
 };

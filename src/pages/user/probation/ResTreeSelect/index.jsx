@@ -105,12 +105,12 @@ class ResModal extends React.Component {
     this.setState({
       selectQuery: {
         ...selectQuery,
-        id: selectedKeys,
+        id: selectedKeys
       },
     });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { selectQuery } = this.state;
     this.setState({
       selectQuery: {
@@ -129,6 +129,7 @@ class ResModal extends React.Component {
       createMessage({ type: 'error', description: '请输入能力名称' });
     }
   };
+
 
   tableProps = () => {
     const {
@@ -195,7 +196,7 @@ class ResModal extends React.Component {
   };
 
   render() {
-    const { visible, title, treeData = [] } = this.props;
+    const { visible, title, treeData = [], } = this.props;
     const { expandedKeys, autoExpandParent } = this.state;
 
     return (
@@ -234,30 +235,25 @@ class ResModal extends React.Component {
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 18 }}
                   >
-                    <Input
-                      onChange={this.handleChange}
-                      onPressEnter={this.handleQuery}
-                      style={{ width: '60%' }}
-                    />
+
+                    <Input onChange={this.handleChange} onPressEnter={this.handleQuery} style={{ width: '60%' }} />
                     <Button
                       className="tw-btn-primary"
                       style={{ marginLeft: '10px', marginBottom: 0 }}
                       labelCol={{ span: 6 }}
                       wrapperCol={{ span: 18 }}
                       onClick={this.handleQuery}
-                    >
-                      查询
+                    >查询
                     </Button>
                   </Form.Item>
                 </Col>
                 <Col xs={2} />
               </Row>
-              <div style={{ width: '95%', margin: '0 auto' }}>
-                <Divider dashed />
-              </div>
+              <div style={{ width: '95%', margin: '0 auto' }}><Divider dashed /></div>
               <DataTable {...this.tableProps()} />
             </div>
           </Col>
+
         </Row>
       </Modal>
     );
